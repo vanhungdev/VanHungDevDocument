@@ -1,4 +1,4 @@
-# Tạo và cài đặt máy ảo nginx để triển khai ứng dụng thực tế
+# Tạo và cài đặt máy ảo VPS Centos để triển khai ứng dụng thực tế
 Viết cái gì đó ở đây
 
 ## Phần 1: Cấu hình SSH Server Centos 7: 
