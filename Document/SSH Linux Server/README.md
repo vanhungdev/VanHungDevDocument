@@ -26,7 +26,7 @@ firewall-cmd --add-port=22/tcp --permanent
 firewall-cmd --reload
 systemctl restart sshd
 systemctl status sshd
-
+ ```
 
 Cài vim để chỉnh sửa file
 
