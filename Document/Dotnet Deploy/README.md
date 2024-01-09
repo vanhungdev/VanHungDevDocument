@@ -92,3 +92,7 @@ Lưu ý: nếu chạy ở local thì không cần `linux/amd64` cái này chỉ 
  ```bash
   docker run -p 44380:80 --name containerName vanhungdev/imageName:v.1.1 
  ```
+
+## Phần 2: Cấu hình SSL và reverse proxy:
+
+Phần này xem ở phần nginx
