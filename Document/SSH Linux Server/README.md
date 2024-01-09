@@ -65,7 +65,7 @@ Thêm Docker repo
 
 
 
-## Phần 3: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, minio, portainer:
+## Phần 3: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, Minio, Portainer:
 
 Tạo file docker Compose có tên docker-compose.yaml như sau:
  ```bash
