@@ -28,6 +28,12 @@ systemctl restart sshd
 systemctl status sshd
 
 
+Cài vim để chỉnh sửa file
+
+ ```bash
+ sudo yum install vim
+ ```
+
  ```
 Copy file từ server về
 
