@@ -41,7 +41,9 @@ Chúng ta sửa file cấu hình như sau thì sẽ có Reverse proxy
 	}
  ```
 ## Phần 3: Load balancing:  
- **title:**  
+
+ **Cấu hình Load balancing:**  
+ 
  ```bash
 
 	upstream app1 {
@@ -60,10 +62,7 @@ Chúng ta sửa file cấu hình như sau thì sẽ có Reverse proxy
 
  ```
 
-Một số thuật toán Load balancing cơ bản như `Round Robin`,`Least Connections`,`IP Hash`,`Weighted Round Robin` tuỳ trường hợp mà sử dụng
-
-
-
+Một số thuật toán Load balancing cơ bản như `Round Robin`,`Least Connections`,`IP Hash`,`Weighted Round Robin` tuỳ trường hợp mà sử dụng.  
 ## Phần 4: Cấu hình HTTP Caching cho Nginx:  
  **title:**  
  ```bash
