@@ -64,7 +64,10 @@ Chúng ta sửa file cấu hình như sau thì sẽ có Reverse proxy
 
 Một số thuật toán Load balancing cơ bản như `Round Robin`,`Least Connections`,`IP Hash`,`Weighted Round Robin` tuỳ trường hợp mà sử dụng.  
 ## Phần 4: Cấu hình HTTP Caching cho Nginx:  
- **title:**  
+ **HTTP Caching:**  
+
+-- Chưa lĩnh hội được
+ 
  ```bash
    -- lệnh ở đây
 
