@@ -1,4 +1,4 @@
-# Master Parallel Consumer Kafka
+# Kafka Master
 
 ## Phần 1: Gới thiệu tác giả
 
