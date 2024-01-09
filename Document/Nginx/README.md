@@ -27,10 +27,18 @@ Truy cập vào file config
  ```
 
 ## Phần 2: Reverse proxy:  
- **title:**  
- ```bash
-   -- lệnh ở đây
+ **Cài đặt Reverse proxy:**  
 
+Chúng ta sửa file cấu hình như sau thì sẽ có Reverse proxy
+ 
+ ```bash
+       location /api/creditcard{    
+	    proxy_pass http://example.com;
+	}
+
+	location /api/debitcard {    
+	    proxy_pass http://example.com;
+	}
  ```
 ## Phần 3: Load balancing:  
  **title:**  
