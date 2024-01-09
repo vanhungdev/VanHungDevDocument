@@ -1,5 +1,5 @@
 # Cấu hình Elasticsearch và kibana
-- Viết cái gì đó ở đây
+- Việc tạo một elasticsearch và kibana giúp chúng ta theo dõi hoạt động của hệ thống và fix bug một cách dễ dàng, tiện lợi
 
 ## Phần 1: Cài đặt ELK Stack:  
 
@@ -11,7 +11,7 @@
 4. **Chạy kibna container** - Chúng ta cần chạy kiban container.
 5. **Lấy code từ log kibana và kết nối với elasticsearch** - Chạy thử ở môi trường thật.
 
-**Tạo elastic network:**  
+**1. Tạo elastic network:**  
 
  ```bash
   docker network create elastic
@@ -29,7 +29,8 @@ Sau khi cài xong chạy lệnh
 sudo sysctl -w vm.max_map_count=262144
  ```
 
-**Cấu hình và tạo elastic-server container:**  
+**2. Tạo elastic-server container**  
+
   Tạo elastic-server container:  
  
  ```bash
@@ -37,7 +38,7 @@ sudo sysctl -w vm.max_map_count=262144
 
  ```
 
-  Lấy password của tài khoản kibana_system:  
+**3. Lấy password của tài khoản kibana_system**  
  
  ```bash
 docker exec -it elastic-server /usr/share/elasticsearch/bin/elasticsearch-reset-password -u kibana_system
@@ -50,11 +51,13 @@ docker exec -it elastic-server /usr/share/elasticsearch/bin/elasticsearch-reset-
 
  ```
 
-**Chạy kibna container:**  
+**4. Chạy kibna container**  
  
  ```bash
   docker run --name kib01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.11.3
  ```
+
+**5. Lấy code từ log kibana và kết nối với elasticsearch**  
 Lưu ý: cần xem log của kibana và lấy code  
 elastic_server là http://elastic-server:9200 hoặc là ip của container name của elasticsearch là được
 
