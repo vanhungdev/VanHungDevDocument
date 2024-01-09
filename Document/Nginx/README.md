@@ -4,32 +4,32 @@
 ## Phần 1: Cài đặt nginx:  
  **title:**  
  ```bash
-   -- lện ở đây
+   -- lệnh ở đây
 
  ```
 ## Phần 2: Reverse proxy:  
  **title:**  
  ```bash
-   -- lện ở đây
+   -- lệnh ở đây
 
  ```
 ## Phần 3: Load balancing:  
  **title:**  
  ```bash
-   -- lện ở đây
+   -- lệnh ở đây
 
  ```
 ## Phần 4: Cấu hình HTTP Caching cho Nginx:  
  **title:**  
  ```bash
-   -- lện ở đây
+   -- lệnh ở đây
 
  ```
 
 ## Phần 5: Cấu hình Rate Limiting :  
  **title:**  
  ```bash
-   -- lện ở đây
+   -- lệnh ở đây
 
  ```
 
