@@ -56,4 +56,4 @@ docker exec -it elastic-server /usr/share/elasticsearch/bin/elasticsearch-reset-
   docker run --name kib01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.11.3
  ```
 Lưu ý: cần xem log của kibana và lấy code  
-elastic_server là http://<containerName>:9200 hoặc là ip của container là được
+elastic_server là http://elastic-server:9200 hoặc là ip của container name của elasticsearch là được
