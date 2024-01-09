@@ -142,15 +142,31 @@ Tạo index:
 
  ```bash
 curl -u "elastic:Provanhung77" -X POST "http://your_ip_address:9200/name_index1/_doc" -H 'Content-Type: application/json' -d '{
-  "@t": "2023-11-14T06:31:05.4412033Z",
-  "@mt": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
-  "@r": [427.1187],
-  "CorrelationId": "276554f2-044c-4c3d-a622-2ee080f1ec05",
-  "IpAddress": "::1",
-
-  // Other fields here
-
-}'
+    "@t": "2023-11-14T06:31:05.4412033Z",
+    "@mt": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+    "@r": [427.1187],
+    "CorrelationId": "276554f2-044c-4c3d-a622-2ee080f1ec05",
+    "IpAddress": "::1",
+    "viewResultModel": "null",
+    "CustomLog": "",
+    "Host": "localhost:5001",
+    "Source": "1",
+    "timestamp": "2023-11-14T13:31:05.4313672+07:00",
+    "DateTime": "14-11-2023 13:31:05",
+    "SourceType": "USER-LOG",
+    "Protocol": "HTTP/1.1",
+    "Scheme": "http",
+    "ContentType": "text/html; charset=utf-8",
+    "Header": [],
+    "LogFolder": "bloghung.controllers.homecontroller.index",
+    "EndpointName": "/",
+    "RequestMethod": "GET",
+    "RequestPath": "/",
+    "StatusCode": 200,
+    "Elapsed": 427.1187,
+    "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+    "RequestId": "0HMV4RD3E53ED:00000001"
+  }'
  ```
 
 ## Phần 3: Một số câu query elastic cơ bản: 
