@@ -71,12 +71,67 @@ Một số thuật toán Load balancing cơ bản như `Round Robin`,`Least Conn
  ```
 
 ## Phần 5: Cấu hình Rate Limiting :  
- **title:**  
+ **Basic Rate Limiting:**
+
+ 
  ```bash
-   -- lệnh ở đây
+
+	limit_req_zone $binary_remote_addr zone=mylimit:10m rate=10r/s;
+	 
+	server {
+	    location /login/ {
+	        limit_req zone=mylimit;
+	        
+	        proxy_pass http://my_upstream;
+	    }
+	}
 
  ```
 
+ **Handling Bursts:**
+
+ 
+ ```bash
+
+location /login/ {
+    limit_req zone=mylimit burst=20;
+ 
+    proxy_pass http://my_upstream;
+}
+ ```
+
+ **Queueing with No Delay:**
+
+ 
+ ```bash
+
+	location /login/ {
+	    limit_req zone=mylimit burst=20 nodelay;
+	 
+	    proxy_pass http://my_upstream;
+	}
+
+ ```
+
+ **Two-Stage Rate Limiting:**
+
+ 
+ ```bash
+
+	limit_req_zone $binary_remote_addr zone=ip:10m rate=5r/s;
+
+	server {
+	    listen 80;
+	    location / {
+	        limit_req zone=ip burst=12 delay=8;
+	        proxy_pass http://website;
+	    }
+	}
+
+
+ ```
+
+Tham khảo thêm ở https://www.nginx.com/blog/rate-limiting-nginx/
 
 ## Phần 6: Cấu hình reverse proxy, load Balance và Let's Encrypt SSL cho container:  
  **Cài đặt nginx proxy:**  
