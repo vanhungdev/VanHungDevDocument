@@ -1,8 +1,13 @@
 # Tạo và cài đặt máy ảo nginx để triển khai ứng dụng thực tế
 Viết cái gì đó ở đây
 
+## Phần 1: Cấu hình SSH Server Centos 7:
+  **Lưu ý:** Viết cái gì đó ở đây:  
 
-## Phần 2: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, minio, portainer:
+## Phần 2: Cài đặt docker trên Centos 7:
+  **Lưu ý:** Viết cái gì đó ở đây:  
+
+## Phần 3: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, minio, portainer:
 
 Tạo file docker Compose có tên docker-compose.yaml như sau:
  ```bash
