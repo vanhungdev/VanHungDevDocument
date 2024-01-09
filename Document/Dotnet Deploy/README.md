@@ -71,7 +71,7 @@ Lưu ý: nếu chạy ở local thì không cần `linux/amd64` cái này chỉ 
  ```bash
   docker run -p 44388:80 --name containerName  imageName
  ```
-**4. Đẩy Repositories kên docker hub**  
+**4. Đẩy image kên docker hub**  
   Login vào docker hub:  
  
  ```bash
