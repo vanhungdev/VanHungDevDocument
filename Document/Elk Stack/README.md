@@ -62,7 +62,111 @@ Lưu ý: cần xem log của kibana và lấy code
 elastic_server là http://elastic-server:9200 hoặc là ip của container name của elasticsearch là được
 
 ## Phần 2: Tạo và đánh index elastic: 
-Viết cái gì đó ở đây
+Tạo index:
+Đoạn code này cần chạy trong mục dev tools
+
+ ```bash
+   http://your_ip_address:5601/app/dev_tools#/console
+ ```
+ 
+ ```bash
+  PUT /name_index1
+{
+  "mappings": {
+    "properties": {
+      "@t": {"type": "date"},
+      "@mt": {"type": "text"},
+      "@r": {"type": "float"},
+      "CorrelationId": {"type": "keyword"},
+      "IpAddress": {"type": "ip"},
+      "viewResultModel": {"type": "text"},
+      "CustomLog": {"type": "text"},
+      "Host": {"type": "keyword"},
+      "Source": {"type": "keyword"},
+      "timestamp": {"type": "date"},
+      "DateTime": {"type": "text"},
+      "SourceType": {"type": "keyword"},
+      "Protocol": {"type": "keyword"},
+      "Scheme": {"type": "keyword"},
+      "ContentType": {"type": "keyword"},
+      "Header": {"type": "object"},
+      "LogFolder": {"type": "keyword"},
+      "EndpointName": {"type": "keyword"},
+      "RequestMethod": {"type": "keyword"},
+      "RequestPath": {"type": "keyword"},
+      "StatusCode": {"type": "integer"},
+      "Elapsed": {"type": "float"},
+      "SourceContext": {"type": "keyword"},
+      "RequestId": {"type": "keyword"}
+    }
+  }
+}
+ ```
+
+Đẩy dữ liệu vào index:
+ 
+ ```bash
+  POST /name_index1/_doc
+{
+  "@t": "2023-11-14T06:31:05.4412033Z",
+  "@mt": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "@r": [427.1187],
+  "CorrelationId": "276554f2-044c-4c3d-a622-2ee080f1ec05",
+  "IpAddress": "::1",
+  "viewResultModel": "null",
+  "CustomLog": "",
+  "Host": "localhost:5001",
+  "Source": "1",
+  "timestamp": "2023-11-14T13:31:05.4313672+07:00",
+  "DateTime": "14-11-2023 13:31:05",
+  "SourceType": "USER-LOG",
+  "Protocol": "HTTP/1.1",
+  "Scheme": "http",
+  "ContentType": "text/html; charset=utf-8",
+  "Header": [],
+  "LogFolder": "bloghung.controllers.homecontroller.index",
+  "EndpointName": "/",
+  "RequestMethod": "GET",
+  "RequestPath": "/",
+  "StatusCode": 200,
+  "Elapsed": 427.1187,
+  "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+  "RequestId": "0HMV4RD3E53ED:00000001"
+}
+
+ ```
+
+**Cách 2 là call bằng postman**  
+
+Thêm index
+
+ ```bash
+curl -u "elastic:Provanhung77" -X POST "http://localhost:9200/ten_index/_doc" -H 'Content-Type: application/json' -d '{
+  "@t": "2023-11-14T06:31:05.4412033Z",
+  "@mt": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "@r": [427.1187],
+  "CorrelationId": "276554f2-044c-4c3d-a622-2ee080f1ec05",
+  "IpAddress": "::1",
+
+  // Other fields here
+
+}'
+ ```
+
+Đẩy dữ liệu
+
+ ```bash
+curl -u "elastic:Provanhung77" -X POST "http://localhost:9200/ten_index/_doc" -H 'Content-Type: application/json' -d '{
+  "@t": "2023-11-14T06:31:05.4412033Z",
+  "@mt": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+  "@r": [427.1187],
+  "CorrelationId": "276554f2-044c-4c3d-a622-2ee080f1ec05",
+  "IpAddress": "::1",
+
+  // Other fields here
+
+}'
+ ```
 
 ## Phần 3: Một số câu query elastic cơ bản: 
 Viết cái gì đó ở đây
