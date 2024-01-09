@@ -138,25 +138,10 @@ Tạo index:
 
 **Cách 2 là call bằng postman**  
 
-Thêm index
+Đẩy dữ liệu và thêm index
 
  ```bash
-curl -u "elastic:Provanhung77" -X POST "http://localhost:9200/ten_index/_doc" -H 'Content-Type: application/json' -d '{
-  "@t": "2023-11-14T06:31:05.4412033Z",
-  "@mt": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
-  "@r": [427.1187],
-  "CorrelationId": "276554f2-044c-4c3d-a622-2ee080f1ec05",
-  "IpAddress": "::1",
-
-  // Other fields here
-
-}'
- ```
-
-Đẩy dữ liệu
-
- ```bash
-curl -u "elastic:Provanhung77" -X POST "http://localhost:9200/ten_index/_doc" -H 'Content-Type: application/json' -d '{
+curl -u "elastic:Provanhung77" -X POST "http://your_ip_address:9200/name_index1/_doc" -H 'Content-Type: application/json' -d '{
   "@t": "2023-11-14T06:31:05.4412033Z",
   "@mt": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
   "@r": [427.1187],
