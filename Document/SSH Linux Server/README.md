@@ -5,6 +5,7 @@ Viết cái gì đó ở đây
 
 SSH vào server
 
+ ```bash
 whoami
 SSH root@ip_address
  ```
