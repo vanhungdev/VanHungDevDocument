@@ -73,8 +73,8 @@ Một số thuật toán Load balancing cơ bản như `Round Robin`,`Least Conn
 ## Phần 5: Cấu hình Rate Limiting :  
  **Basic Rate Limiting:**   
    
-Áp dụng giới hạn tốc độ được định nghĩa trong limit_req_zone cho một vị trí cụ thể (/login/ trong ví dụ).  
-Ví dụ, mỗi địa chỉ IP duy nhất bị giới hạn ở 10 yêu cầu mỗi giây đối với URL /login/.  
+  Áp dụng giới hạn tốc độ được định nghĩa trong limit_req_zone cho một vị trí cụ thể (/login/ trong ví dụ).  
+  Ví dụ, mỗi địa chỉ IP duy nhất bị giới hạn ở 10 yêu cầu mỗi giây đối với URL /login/.  
 
  
  ```bash
@@ -93,7 +93,8 @@ Ví dụ, mỗi địa chỉ IP duy nhất bị giới hạn ở 10 yêu cầu m
 
  **Handling Bursts algorithm:**  
    
-Định rõ số lượng yêu cầu mà một khách hàng có thể thực hiện vượt quá giới hạn tốc độ đã xác định. Trong ví dụ, burst=20 cho phép một khách hàng gửi đến 20 yêu cầu nhanh chóng trước khi bắt đầu giới hạn.   
+  Định rõ số lượng yêu cầu mà một khách hàng có thể thực hiện vượt quá giới hạn tốc độ đã xác định. Trong ví dụ, burst=20 cho phép một khách hàng gửi đến 20 yêu cầu nhanh 
+  chóng trước khi bắt đầu giới hạn.   
 
 Yêu cầu vượt quá giới hạn sẽ được đưa vào hàng đợi và được xử lý đúng cách.   
  
@@ -107,6 +108,9 @@ location /login/ {
  ```
 
  **Queueing with No Delay algorithm:**
+  
+  Cùng với burst, thêm nodelay giúp giữ cho lưu lượng đi qua mà không làm trang web trở nên chậm chạp.
+  Ngay khi có khe trống trong hàng đợi, yêu cầu vượt quá giới hạn sẽ được chuyển tiếp ngay lập tức.
 
  
  ```bash
@@ -121,6 +125,9 @@ location /login/ {
 
  **Two-Stage Rate Limiting algorithm:**
 
+  Kỹ thuật này (kích hoạt bằng delay parameter) cho phép một sự linh hoạt hai giai đoạn, giúp xử lý những lượng yêu cầu đột ngột và duy trì một giới hạn tốc độ dài hạn.
+  Trong ví dụ, 8 yêu cầu đầu tiên được xử lý mà không có độ trễ, nhưng sau đó, những yêu cầu vượt quá giới hạn sẽ được trì hoãn để duy trì tốc độ 5 yêu cầu mỗi giây.
+  
  
  ```bash
 
