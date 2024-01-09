@@ -1,8 +1,41 @@
 # Cấu hình nginx server bằng docker
 - Viết cái gì đó ở đây
+- 
+## Phần 1: Cài đặt nginx:  
+ **title:**  
+ ```bash
+   -- lện ở đây
 
-## Phần 1: Cấu hình reverse proxy, load Balance và Let's Encrypt SSL:  
- **Cài đặt nginx:**  
+ ```
+## Phần 2: Reverse proxy:  
+ **title:**  
+ ```bash
+   -- lện ở đây
+
+ ```
+## Phần 3: Load balancing:  
+ **title:**  
+ ```bash
+   -- lện ở đây
+
+ ```
+## Phần 4: Cấu hình HTTP Caching cho Nginx:  
+ **title:**  
+ ```bash
+   -- lện ở đây
+
+ ```
+
+## Phần 5: Cấu hình Rate Limiting :  
+ **title:**  
+ ```bash
+   -- lện ở đây
+
+ ```
+
+
+## Phần 6: Cấu hình reverse proxy, load Balance và Let's Encrypt SSL cho container:  
+ **Cài đặt nginx proxy:**  
 
  ```bash
     docker run -d -p 80:80 -p 443:443 --name nginx-proxy --privileged=true \
