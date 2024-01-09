@@ -57,3 +57,9 @@ docker exec -it elastic-server /usr/share/elasticsearch/bin/elasticsearch-reset-
  ```
 Lưu ý: cần xem log của kibana và lấy code  
 elastic_server là http://elastic-server:9200 hoặc là ip của container name của elasticsearch là được
+
+## Phần 2: Tạo và đánh index: 
+Viết cái gì đó ở đây
+
+## Phần 3: Một số câu query cơ bản: 
+Viết cái gì đó ở đây
