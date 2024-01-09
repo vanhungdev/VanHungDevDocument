@@ -1,4 +1,4 @@
-# Triển khai ứng dựng asp.NET 7 trên môi trường container VPS Centos 7x
+# Triển khai ứng dựng ASP.NET 7 trên môi trường container VPS Centos 7x
 ## Phần 1: Deploy ứng dụng .NET lên VPS:  
 
 **Để deploy được úng dụng .NET 7 lên chúng ta cần có các bước sau:**   
