@@ -34,7 +34,6 @@ Cài vim để chỉnh sửa file
  sudo yum install vim
  ```
 
- ```
 Copy file từ server về
 
  ```bash
