@@ -8,6 +8,16 @@
    docker run -d -p 80:80 -p 443:443 --name nginx nginx
 
  ```
+
+Truy cập vào file config
+```bash
+   docker exec -it nginx /bin/bash
+
+   nano /etc/nginx/conf.d/default.conf
+   vi /etc/nginx/conf.d/default.conf
+
+ ```
+
 ## Phần 2: Reverse proxy:  
  **title:**  
  ```bash
