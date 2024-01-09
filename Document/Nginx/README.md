@@ -72,6 +72,8 @@ Một số thuật toán Load balancing cơ bản như `Round Robin`,`Least Conn
 
 ## Phần 5: Cấu hình Rate Limiting :  
  **Basic Rate Limiting:**
+Áp dụng giới hạn tốc độ được định nghĩa trong limit_req_zone cho một vị trí cụ thể (/login/ trong ví dụ).  
+Ví dụ, mỗi địa chỉ IP duy nhất bị giới hạn ở 10 yêu cầu mỗi giây đối với URL /login/.  
 
  
  ```bash
@@ -89,7 +91,8 @@ Một số thuật toán Load balancing cơ bản như `Round Robin`,`Least Conn
  ```
 
  **Handling Bursts algorithm:**
-
+Định rõ số lượng yêu cầu mà một khách hàng có thể thực hiện vượt quá giới hạn tốc độ đã xác định. Trong ví dụ, burst=20 cho phép một khách hàng gửi đến 20 yêu cầu nhanh chóng trước khi bắt đầu giới hạn.  
+Yêu cầu vượt quá giới hạn sẽ được đưa vào hàng đợi và được xử lý đúng cách.   
  
  ```bash
 
