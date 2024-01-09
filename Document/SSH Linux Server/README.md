@@ -4,6 +4,26 @@ Viết cái gì đó ở đây
 ## Phần 1: Cấu hình SSH Server Centos 7:
   **Lưu ý:** Viết cái gì đó ở đây:  
 
+Sau khi SSH vào centos VPS thì chạy tuần tự một số lênh sau:  
+ ```bash
+
+whoami
+cat /etc/os-release
+sudo passwd
+su
+systemctl stop sshd
+yum remove openssh-server
+yum install openssh openssh-server openssh-clients openssl-libs -y
+systemctl start sshd
+systemctl enable sshd
+firewall-cmd --add-port=22/tcp --permanent
+firewall-cmd --reload
+systemctl restart sshd
+systemctl status sshd
+
+
+ ```
+
 ## Phần 2: Cài đặt docker trên Centos 7:
   **Lưu ý:** Viết cái gì đó ở đây:  
 
