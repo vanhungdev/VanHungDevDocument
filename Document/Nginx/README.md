@@ -2,9 +2,9 @@
 - Viết cái gì đó ở đây
 - 
 ## Phần 1: Cài đặt nginx:  
- **title:**  
+ **Cài đặt nginx container:**  
  ```bash
-   -- lệnh ở đây
+   docker run -d -p 80:80 -p 443:443 --name nginx nginx
 
  ```
 ## Phần 2: Reverse proxy:  
