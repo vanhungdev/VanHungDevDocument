@@ -29,6 +29,12 @@ systemctl status sshd
 
 
  ```
+Copy file từ server về
+
+ ```bash
+ scp -r ~/desktop/PUPD/PUBDServerApi root@ip_address:/nguyenhung  /// Tải file lên host
+ scp -r root@ip_address:/nguyenhung ~/desktop/PUPD/PUBDServerApi /// dowload file về
+ ```
 
 ## Phần 2: Cài đặt docker trên Centos 7:
 
