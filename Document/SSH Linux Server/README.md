@@ -31,7 +31,28 @@ systemctl status sshd
  ```
 
 ## Phần 2: Cài đặt docker trên Centos 7:
-  **Lưu ý:** Viết cái gì đó ở đây:  
+
+Cài đặt yum
+
+ ```bash
+sudo yum install -y yum-utils
+ ```
+
+Thêm Docker repo
+
+ ```bash
+do yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+ ```
+
+Thêm Docker repo
+
+ ```bash
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+ ```
+
+
+
+
 
 ## Phần 3: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, minio, portainer:
 
