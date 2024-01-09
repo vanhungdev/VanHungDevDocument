@@ -1,4 +1,4 @@
-# Cấu hình nginx bằng docker
+# Cấu hình nginx server bằng docker
 - todo
 
 ## Phần 1: Cấu hình reverse proxy, load Balance và Let's Encrypt SSL:  
