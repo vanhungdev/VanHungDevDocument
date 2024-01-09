@@ -9,6 +9,14 @@
 
  ```
 
+Cài đặt vi hoặc nano để chỉnh sửa file
+```bash
+   apt-get update
+   apt-get install -y vim
+   apt-get install -y nano
+ ```
+
+
 Truy cập vào file config
 ```bash
    docker exec -it nginx /bin/bash
