@@ -6,10 +6,11 @@
 1. **Tạo docker file** - Để chạy các SDK cần thiết.
 2. **Build image** - Chúng ta sẽ build image từ docker file.
 3. **Run và test ở local** - test website trước ở localhost kiểm tra các file tài nguyên đã được chưa.
-4. **Đẩy Repositories kên docker hub** - Công cụ theo dõi và quản lý cần thiết cho việc load test.
+4. **Đẩy Repositories lên docker hub** - Công cụ theo dõi và quản lý cần thiết cho việc load test.
 5. **Run và test trên VPS Centos** - chạy thử ở môi trường thật.
 6. **Cấu hình Reverse Proxy, Load Balance, trỏ domain và Let's Encrypt SSL** - chạy thử ở môi trường thật.
 
+1. **Tạo docker file**
 Tạo file docker file có tên `dockerfile` đặt ở đường dẫn có file .sln như sau:  
 
 
@@ -50,7 +51,8 @@ ENTRYPOINT ["dotnet", "BlogHung.dll"]
 
 ```
 
- **Chạy Docker file:**  
+2. **Build image**
+   
   **Lưu ý:** Để trình chạy docker file không gặp lỗi thì chú ý các mục sau:  
 
 1. Chú ý `Cấu trúc thư mục` .  
@@ -63,13 +65,13 @@ Mở terminal và di chuyển đến thư mục chứa tệp Dockerfile, sau đ�
  ```
 Lưu ý: nếu chạy ở local thì không cần `linux/amd64` cái này chỉ để deploy lên VPS Centos
 
- 
+3. **Run và test ở local**
   Run container:  
  
  ```bash
   docker run -p 44388:80 --name containerName  imageName
  ```
-
+4. **Đẩy Repositories kên docker hub**
   Login vào docker hub:  
  
  ```bash
@@ -87,12 +89,13 @@ Lưu ý: nếu chạy ở local thì không cần `linux/amd64` cái này chỉ 
  ```bash
   docker push vanhungdev/imageName:v.1.1
  ```
+
+5. **Run và test trên VPS Centos** 
   Run container trên môi trường VPS Centos:  
  
  ```bash
   docker run -p 44380:80 --name containerName vanhungdev/imageName:v.1.1 
  ```
-
-## Phần 2: Cấu hình SSL và reverse proxy:
+6. **Cấu hình Reverse Proxy, Load Balance, trỏ domain và Let's Encrypt SSL**
 
 Phần này xem ở phần nginx
