@@ -88,7 +88,7 @@ Một số thuật toán Load balancing cơ bản như `Round Robin`,`Least Conn
 
  ```
 
- **Handling Bursts:**
+ **Handling Bursts algorithm:**
 
  
  ```bash
@@ -100,7 +100,7 @@ location /login/ {
 }
  ```
 
- **Queueing with No Delay:**
+ **Queueing with No Delay algorithm:**
 
  
  ```bash
@@ -113,7 +113,7 @@ location /login/ {
 
  ```
 
- **Two-Stage Rate Limiting:**
+ **Two-Stage Rate Limiting algorithm:**
 
  
  ```bash
