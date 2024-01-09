@@ -43,9 +43,27 @@ Chúng ta sửa file cấu hình như sau thì sẽ có Reverse proxy
 ## Phần 3: Load balancing:  
  **title:**  
  ```bash
-   -- lệnh ở đây
+
+	upstream app1 {
+	     least_conn;
+	     server host1.example.com;    
+	     server host2.example.com;    
+	     server host3.example.com;
+	}
+	server {    
+	      listen 80;    
+	      server_name example.com;
+	      location /api/card {       
+	        proxy_pass http://app1;   
+	    }
+	}
 
  ```
+
+Một số thuật toán Load balancing cơ bản như `Round Robin`,`Least Connections`,`IP Hash`,`Weighted Round Robin` tuỳ trường hợp mà sử dụng
+
+
+
 ## Phần 4: Cấu hình HTTP Caching cho Nginx:  
  **title:**  
  ```bash
