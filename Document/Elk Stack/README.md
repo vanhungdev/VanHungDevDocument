@@ -191,12 +191,12 @@ full JSON request body
 ```bash
 Tìm tất cả field theo value  
   POST /index1/_search
-{
-  "query": {
-    "query_string": {
-      "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+  {
+    "query": {
+      "query_string": {
+        "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+      }
     }
   }
-}
  ```
 
