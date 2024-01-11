@@ -171,3 +171,11 @@ curl -u "elastic:Provanhung77" -X POST "http://your_ip_address:9200/name_index1/
 
 ## Phần 3: Một số câu query elastic cơ bản: 
 Viết cái gì đó ở đây
+
+1. Basic Match Query
+
+Search Lite API  
+Tìm tất cả field theo value  
+```bash
+  GET /index1/_search?q=a0aff37f-5720-4d49-b2ea-0d91ff26f1ac
+ ```
