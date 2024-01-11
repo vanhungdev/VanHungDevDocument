@@ -216,3 +216,22 @@ Portainer:
   portainer/portainer-ce
 
  ```
+
+SQL Server:  
+
+ ```bash
+  docker run -d --name sql-server-container 
+  -p 1433:1433 
+  -e ACCEPT_EULA=Y  
+  -e SA_PASSWORD=Provanhung77
+  mcr.microsoft.com/mssql/server:2017-latest
+
+ ```
+Redis:  
+
+ ```bash
+    docker run -d --name redis 
+  -p 6379:6379
+  -e REDIS_PASSWORD=Provanhung77 
+  redis:latest
+ ```
