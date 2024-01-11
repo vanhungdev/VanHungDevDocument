@@ -175,17 +175,36 @@ Viết cái gì đó ở đây
 
 **Basic Match Query**
 
+Tìm tất cả field theo value   
 Search Lite API  
 
 ```bash
-Tìm tất cả field theo value  
   GET /index1/_search?q=a0aff37f-5720-4d49-b2ea-0d91ff26f1ac
  ```
 
 
 Full JSON request body
 ```bash
-Tìm tất cả field theo value  
+  POST /index1/_search
+  {
+    "query": {
+      "query_string": {
+        "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+      }
+    }
+  }
+ ```
+
+Tìm theo field được chỉ định   
+Search Lite API  
+
+```bash
+  POST /index1/_search?q=CorrelationId=30d2418f-0c51-44c8-98e3-a5cc06532c76
+ ```
+
+
+Full JSON request body
+```bash
   POST /index1/_search
   {
     "query": {
