@@ -41,6 +41,16 @@ Copy file từ server về
  scp -r root@ip_address:/nguyenhung ~/desktop/PUPD/PUBDServerApi /// dowload file về
  ```
 
+
+Một số lệnh khác
+
+ ```bash
+pwd // xem thư mục hiện tại
+mkdir // tạo thư mục mới
+rm -r /path   // xoá thư mục
+
+ ```
+
 ## Phần 2: Cài đặt docker trên Centos 7:
 
 Cài đặt yum
@@ -60,9 +70,6 @@ Thêm Docker repo
  ```bash
  sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
  ```
-
-
-
 
 
 ## Phần 3: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, Minio, Portainer:
