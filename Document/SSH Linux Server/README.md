@@ -251,7 +251,7 @@ Kafka:
     ```bash
 	docker run -d --name zookeeper --network kafka-net -p 2181:2181 wurstmeister/zookeeper
 	```	
-	1.1. Zookeeper container Đối với macbook M1:
+	2.1. Zookeeper container Đối với macbook M1:
     ```bash
     docker run -d --name zookeeper --network kafka-net -p 2181:2181 arm64v8/zookeeper
     ``` 
