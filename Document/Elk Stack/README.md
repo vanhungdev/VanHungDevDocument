@@ -187,7 +187,7 @@ Tìm tất cả field theo value
   GET /index1/_search?q=a0aff37f-5720-4d49-b2ea-0d91ff26f1ac
  ```
 
-full JSON request body
+Full JSON request body
 ```bash
 Tìm tất cả field theo value  
   POST /index1/_search
