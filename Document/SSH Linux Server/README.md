@@ -45,10 +45,14 @@ Coppy file từ container docker:
 
  ```bash
 
-docker cp <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml ~/desktop/docker2  // copy 
+docker cp <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml ~/desktop/docker2  // copy
+vim /root/elasticsearch.yml // chú ý thêm /root/
 
-docker cp ~/desktop/docker2/elasticsearch.yml <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml // ghi đè
+docker cp /root/elasticsearch.yml <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml // ghi đè
 
+// kiểm tra thử có chưa
+docker exec -it <container_id> /bin/bash
+cat /usr/share/elasticsearch/config/elasticsearch.yml
  ```
 
 
