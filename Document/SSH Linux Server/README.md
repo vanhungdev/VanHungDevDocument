@@ -177,6 +177,11 @@ Mở terminal và di chuyển đến thư mục chứa tệp docker-compose.yml,
  ```bash
   docker-compose up -d
  ```
+
+Gỡ chạy lại nếu lỗi:  
+ ```bash
+  docker-compose down
+ ```
  
   Truy cập portainer để kiểm tra các dịch vụ đã chạy đủ chưa:  
  
