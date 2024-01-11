@@ -199,12 +199,13 @@ MongoDB:
 
 Minio:  
 
+ ```bash
   docker run -d --name minio-server \
   -p 9011:9000 -p 9001:9001 \
   -e MINIO_ROOT_USER=hungnv165 \ 
   -e MINIO_ROOT_PASSWORD=Provanhung77 \
   minio/minio:latest server /data --console-address ":9001"
-
+ ```
 Portainer:  
 
  ```bash
