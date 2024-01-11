@@ -174,7 +174,29 @@ Viết cái gì đó ở đây
 1. Basic Match Query
 
 Search Lite API  
-Tìm tất cả field theo value  
+
 ```bash
+Tìm tất cả field theo value  
   GET /index1/_search?q=a0aff37f-5720-4d49-b2ea-0d91ff26f1ac
  ```
+
+Search Lite API  
+
+```bash
+Tìm tất cả field theo value  
+  GET /index1/_search?q=a0aff37f-5720-4d49-b2ea-0d91ff26f1ac
+ ```
+
+full JSON request body
+```bash
+Tìm tất cả field theo value  
+  POST /index1/_search
+{
+  "query": {
+    "query_string": {
+      "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+    }
+  }
+}
+ ```
+
