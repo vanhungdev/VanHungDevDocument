@@ -185,3 +185,33 @@ Mở terminal và di chuyển đến thư mục chứa tệp docker-compose.yml,
  ```
 
 
+## Phần 4: Cài đặt docker thủ công từng container:
+
+MongoDB:  
+
+ ```bash
+    docker run -d --name mongodb \
+  -p 27017:27017 \ 
+  -e MONGO_INITDB_ROOT_USERNAME=hungnv165 \
+  -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 \
+  mongo:latest
+ ```
+
+Minio:  
+
+  docker run -d --name minio-server \
+  -p 9011:9000 -p 9001:9001 \
+  -e MINIO_ROOT_USER=hungnv165 \ 
+  -e MINIO_ROOT_PASSWORD=Provanhung77 \
+  minio/minio:latest server /data --console-address ":9001"
+
+Portainer:  
+
+ ```bash
+    docker run -d --name portainer \
+  -p 9000:9000 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \ 
+  portainer/portainer-ce
+
+ ```
