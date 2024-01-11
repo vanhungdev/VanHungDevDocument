@@ -40,6 +40,16 @@ Copy file từ server về
  scp -r ~/desktop/PUPD/PUBDServerApi root@ip_address:/nguyenhung  /// Tải file lên host
  scp -r root@ip_address:/nguyenhung ~/desktop/PUPD/PUBDServerApi /// dowload file về
  ```
+  
+Coppy file từ container docker:
+
+ ```bash
+
+docker cp 489751164a3d:/usr/share/elasticsearch/config/elasticsearch.yml ~/desktop/docker2  // copy 
+
+docker cp ~/desktop/docker2/elasticsearch.yml 489751164a3d:/usr/share/elasticsearch/config/elasticsearch.yml // ghi đè
+
+ ```
 
 
 Một số lệnh khác
