@@ -462,7 +462,7 @@ Boosting query bao gồm:
 `negative_boost:` Hệ số giảm điểm cho phần negative. Ở đây là 0.2, tức giảm 20% điểm.  
 Như vậy, query sẽ hoạt động như sau:  
 
-Tìm các document thỏa MẸ các điều kiện trong positive (có sale và giá <= 100). Những document này sẽ được tăng điểm.  
+Tìm các document thỏa các điều kiện trong positive (có sale và giá <= 100). Những document này sẽ được tăng điểm.  
 Trong số các document tìm được ở bước 1, nếu có document thỏa điều kiện trong negative (stock > 30), sẽ bị giảm điểm đi 20%.  
 Cuối cùng sắp xếp các document theo thứ tự điểm giảm dần và trả về kết quả.  
 Như vậy, query sẽ ưu tiên những sản phẩm có giá tốt, đang giảm giá nhưng tồn kho ít. Đồng thời hạ thấp xuống những sản phẩm tồn kho nhiều.  
