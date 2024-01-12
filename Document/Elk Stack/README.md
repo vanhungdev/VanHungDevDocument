@@ -354,6 +354,15 @@ Chuẩn bị dữ liệu test
 
  ```
 
+Lưu ý: thêm size để hiển thị thêm document
+
+```bash
+{
+  "_source": true,
+  "size": 100
+}
+
+ ```
 
 ```bash
   POST products/_search
