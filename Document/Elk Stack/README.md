@@ -330,6 +330,49 @@ Gọi bằng cURL post man
 
 **2. Boolean query**
 
+
+Chuẩn bị dữ liệu test  
+
+```bash
+  POST products/_bulk
+{"index":{"_id":4}}
+{"name":"Product 4","desc":"Description 4","price":129,"stock":42,"sale":false,"created_at":"2023-01-04T17:22:08Z"}
+{"index":{"_id":5}}
+{"name":"Product 5","desc":"Description 5","price":79,"stock":31,"sale":true,"created_at":"2023-01-11T02:03:33Z"}
+{"index":{"_id":6}}
+{"name":"Product 6","desc":"Description 6","price":149,"stock":12,"sale":false,"created_at":"2023-01-18T23:44:55Z"}
+{"index":{"_id":7}}
+{"name":"Product 7","desc":"Description 7","price":189,"stock":24,"sale":true,"created_at":"2023-01-23T09:18:26Z"}
+{"index":{"_id":8}}
+{"name":"Product 8","desc":"Description 8","price":99,"stock":7,"sale":false,"created_at":"2023-01-27T14:45:17Z"}
+{"index":{"_id":9}}
+{"name":"Product 9","desc":"Description 9","price":219,"stock":19,"sale":false,"created_at":"2023-02-05T06:31:48Z"}
+{"index":{"_id":10}}
+{"name":"Product 10","desc":"Description 10","price":175,"stock":14,"sale":true,"created_at":"2023-02-09T12:55:19Z"}
+{"index":{"_id":11}}  
+{"name":"Product 11","desc":"Description 11","price":225,"stock":29,"sale":false,"created_at":"2023-02-12T23:08:44Z"}
+{"index":{"_id":12}}
+{"name":"Product 12","desc":"Description 12","price":339,"stock":25,"sale":true,"created_at":"2023-02-15T07:22:36Z"}
+{"index":{"_id":13}}
+{"name":"Product 13","desc":"Description 13","price":199,"stock":18,"sale":false,"created_at":"2023-02-19T13:47:17Z"}
+{"index":{"_id":14}}
+{"name":"Product 14","desc":"Description 14","price":290,"stock":4,"sale":true,"created_at":"2023-02-22T00:09:58Z"} 
+{"index":{"_id":15}}
+{"name":"Product 15","desc":"Description 15","price":420,"stock":10,"sale":false,"created_at":"2023-02-26T06:33:29Z"}
+{"index":{"_id":16}}
+{"name":"Product 16","desc":"Description 16","price":340,"stock":12,"sale":false,"created_at":"2023-02-27T04:56:11Z"}
+{"index":{"_id":17}}
+{"name":"Product 17","desc":"Description 17","price":260,"stock":8,"sale":true,"created_at":"2023-02-28T22:13:32Z"}
+{"index":{"_id":18}}
+{"name":"Product 18","desc":"Description 18","price":180,"stock":23,"sale":false,"created_at":"2023-01-01T15:47:24Z"}
+{"index":{"_id":19}}
+{"name":"Product 19","desc":"Description 19 good","price":120,"stock":17,"sale":true,"created_at":"2023-01-05T03:18:45Z"}
+{"index":{"_id":20}}
+{"name":"Product 20","desc":"Description 20 bad","price":220,"stock":11,"sale":false,"created_at":"2023-01-10T12:41:16Z"}
+
+ ```
+
+
 ```bash
   POST products/_search
   {
