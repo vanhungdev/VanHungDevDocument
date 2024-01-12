@@ -195,7 +195,7 @@ Full JSON request body
   }
  ```
 
-Lọc kết quả trả về
+Lọc kết quả trả về chỉ lấy `fields.LogFolder`, `fields.SourceContext`, `fields.ContentType`, lọc theo `size`, `from`
 ```bash
   POST /index1/_search
   {
