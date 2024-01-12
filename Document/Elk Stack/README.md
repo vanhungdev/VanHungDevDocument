@@ -184,38 +184,54 @@ Search Lite API
 
 
 Full JSON request body
+Nếu chúng ta không để `fields` thì sẽ tìm tất cả file, còn nếu để thì chỉ tìm trong phạm vị `fields`
+
+
 ```bash
   POST /index1/_search
   {
-    "query": {
-      "query_string": {
-        "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+      "query": {
+          "multi_match" : {
+              "query" : "7f5c6f5f-bd57-4a71-bd7a-3037d4efcb44",
+              "fields" : ["fields.CorrelationId.keyword", "fields.IpAddress.keyword"]
+          }
       }
-    }
   }
  ```
+
+
 
 Lọc kết quả trả về chỉ lấy `fields.LogFolder`, `fields.SourceContext`, `fields.ContentType`, lọc theo `size`, `from`
 ```bash
   POST /index1/_search
-  {
-    "query": {
-      "query_string": {
-        "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
-      }
-    },
-    "size": 2,
-    "from": 0,
-    "_source": ["fields.LogFolder", "fields.SourceContext", "fields.ContentType"],
-    "highlight": {
-      "fields": {
-        "fields.LogFolder": {},
-        "fields.SourceContext": {},
-        "fields.ContentType": {}
-      }
+{
+  "query": {
+    "multi_match": {
+      "query": "7f5c6f5f-bd57-4a71-bd7a-3037d4efcb44",
+      "fields": [
+        "fields.CorrelationId.keyword",
+        "fields.IpAddress.keyword"
+      ]
+    }
+  },
+  "size": 2,
+  "from": 0,
+  "_source": [
+    "fields.LogFolder",
+    "fields.SourceContext",
+    "fields.ContentType"
+  ],
+  "highlight": {
+    "fields": {
+      "fields.LogFolder": {},
+      "fields.SourceContext": {},
+      "fields.ContentType": {}
     }
   }
+}
 
+
+// Nếu kết hợp lại thì chỉ tìm trong `fields` và chỉ trả về trong `_source`
  ```
 
 Gọi bằng cURL post man
