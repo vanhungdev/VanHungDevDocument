@@ -195,6 +195,30 @@ Full JSON request body
   }
  ```
 
+Lọc kết quả trả về
+```bash
+  POST /index1/_search
+  {
+    "query": {
+      "query_string": {
+        "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+      }
+    },
+    "size": 2,
+    "from": 0,
+    "_source": ["fields.LogFolder", "fields.SourceContext", "fields.ContentType"],
+    "highlight": {
+      "fields": {
+        "fields.LogFolder": {},
+        "fields.SourceContext": {},
+        "fields.ContentType": {}
+      }
+    }
+  }
+
+ ```
+
+
 Tìm theo field được chỉ định   
 Search Lite API  
 
