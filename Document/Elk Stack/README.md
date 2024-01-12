@@ -331,18 +331,14 @@ Gọi bằng cURL post man
 Search Lite API  
 
 ```bash
-1
+ POST /index1/_search
+  {
+      "query": {
+          "multi_match" : {
+              "query" : "7f5c6f5f-bd57-4a71-bd7a-3037d4efcb44",
+              "fields" : ["fields.CorrelationId.keyword", "fields.IpAddress.keyword"]
+          }
+      }
+  }
  ```
 
-
-Full JSON request body
-```bash
-2
-
- ```
-
-Gọi bằng cURL post man
-```bash
-3
-
- ```
