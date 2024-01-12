@@ -432,7 +432,26 @@ Boosting query bao gồm:
 
 `positive:` Điều kiện để tăng điểm cho document. Ở đây sử dụng bool must để kết hợp 2 điều kiện:   
 `negative_boost:` Hệ số giảm điểm cho phần negative. Ở đây là 0.2, tức giảm 20% điểm.  
-  
+
+2. Constant score 
+
+```bash
+{
+  "query": {
+    "constant_score": {
+      "filter": {
+        "term": {
+          "sale": true
+        }
+      },
+      "boost": 5
+    }
+  }
+}
 
 
+ ```
+Truy vấn constant score không tính đến độ liên quan của tài liệu. Nó chỉ gán điểm số cố định cho các tài liệu phù hợp với điều kiện lọc.  
+Bạn có thể sử dụng truy vấn constant score để ưu tiên các tài liệu cụ thể, bất kể mức độ phù hợp của chúng.  
+Bạn cũng có thể sử dụng truy vấn constant score để tạo các truy vấn có điểm số cố định, chẳng hạn như truy vấn để tìm tất cả các tài liệu được tạo gần đây.  
 
