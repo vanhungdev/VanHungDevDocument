@@ -173,9 +173,9 @@ curl -u "elastic:Provanhung77" -X POST "http://your_ip_address:9200/name_index1/
 Viết cái gì đó ở đây
 
 
-**1. Basic Match Query**
+**1. Match và multi_match Query**
 
-**Tìm tất cả field theo value**  
+**Tìm tất cả field theo value (multi_match)**  
 Search Lite API  
 
 ```bash
@@ -267,7 +267,7 @@ Gọi bằng cURL post man
  ```
 
 
-**Tìm theo field được chỉ định**  
+**Tìm theo field được chỉ định (match)**  
 Search Lite API  
 
 ```bash
@@ -325,20 +325,3 @@ Gọi bằng cURL post man
    }'
 
  ```
-
-**2. Multi-field Search**
-
-Search Lite API  
-
-```bash
- POST /index1/_search
-  {
-      "query": {
-          "multi_match" : {
-              "query" : "7f5c6f5f-bd57-4a71-bd7a-3037d4efcb44",
-              "fields" : ["fields.CorrelationId.keyword", "fields.IpAddress.keyword"]
-          }
-      }
-  }
- ```
-
