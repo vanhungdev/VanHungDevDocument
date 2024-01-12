@@ -277,34 +277,52 @@ GET /index1/_search?q=fields.CorrelationId.keyword:30d2418f-0c51-44c8-98e3-a5cc0
 
 Full JSON request body
 ```bash
-  POST /index1/_search
-  {
+POST /index1/_search
+ {
     "query": {
-      "term": {
-        "fields.CorrelationId.keyword": {
-          "value": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+        "match": {
+            "fields.CorrelationId.keyword": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
         }
-      }
+    },
+    "size": 2,
+    "from": 0,
+    "_source": [
+        "fields.LogFolder",
+        "fields.SourceContext",
+        "fields.ContentType"
+    ],
+    "highlight": {
+        "fields": {
+            "title": {}
+        }
     }
-  }
+}
 
  ```
 
 Gọi bằng cURL post man
 ```bash
-curl --location 'http://elastic:Provanhung77@34.16.204.104:9200/index1/_search' \
---header 'Content-Type: application/json' \
---data '{
-    "query": {
-      "term": {
-        "fields.CorrelationId.keyword": {
-          "value": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
-        }
-      }
-    }
-  }'
-
-
+   curl --location 'http://elastic:Jfs-zBo+NO4dhxVuJEpR@34.16.204.104:9200/index1/_search' \
+   --header 'Content-Type: application/json' \
+   --data '{
+       "query": {
+           "match": {
+               "fields.CorrelationId.keyword": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+           }
+       },
+       "size": 2,
+       "from": 0,
+       "_source": [
+           "fields.LogFolder",
+           "fields.SourceContext",
+           "fields.ContentType"
+       ],
+       "highlight": {
+           "fields": {
+               "title": {}
+           }
+       }
+   }'
 
  ```
 
