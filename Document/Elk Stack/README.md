@@ -329,7 +329,6 @@ Gọi bằng cURL post man
  ```
 
 **2. Compound queries**  
-
 1.Boolean query
 
 Chuẩn bị dữ liệu test  
@@ -394,7 +393,6 @@ Kết quả trả về sẽ được đánh giá dựa trên:
 Bắt buộc phải thỏa mãn các điều kiện trong must và filter  
 Nếu thỏa must và filter, sẽ ưu tiên document có chứa từ "good" trong should  
 Loại bỏ các document chứa từ "bad" trong must_not  
-
 
 2. Boolean query
 
