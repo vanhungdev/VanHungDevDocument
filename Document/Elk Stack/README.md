@@ -175,7 +175,8 @@ curl -u "elastic:Provanhung77" -X POST "http://your_ip_address:9200/name_index1/
 **1. Match và multi_match Query**
 
 `match:` Tìm kiếm full text. Cho phép tìm kiếm văn bản tự do, tìm các document có chứa từ khóa. Sử dụng analyzer để tokenize văn bản.  
-`multi_match:` Cho phép match trên nhiều trường cùng lúc thay vì 1 trường. Có thể kết hợp với các loại query khác như match, match_phrase, etc.
+`multi_match:` Cho phép match trên nhiều trường cùng lúc thay vì 1 trường. Có thể kết hợp với các loại query khác như match, match_phrase, etc.  
+
 **Tìm tất cả field theo value (multi_match)**  
 Search Lite API  
 
