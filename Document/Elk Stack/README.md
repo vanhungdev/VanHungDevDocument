@@ -328,7 +328,7 @@ Gọi bằng cURL post man
 
  ```
 
-**2. Compound queriesedit**  
+**2. Compound queries**  
 
 1.Boolean query
 
