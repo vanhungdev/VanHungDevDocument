@@ -170,7 +170,6 @@ curl -u "elastic:Provanhung77" -X POST "http://your_ip_address:9200/name_index1/
  ```
 
 ## Phần 3: Một số câu query elastic cơ bản: 
-Viết cái gì đó ở đây
 
 
 **1. Match và multi_match Query**
