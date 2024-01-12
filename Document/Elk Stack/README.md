@@ -327,3 +327,45 @@ Gọi bằng cURL post man
    }'
 
  ```
+
+**2. Boolean query**
+
+```bash
+  POST products/_search
+  {
+    "query": {
+      "bool": {
+        "must": [
+          { "match": { "name": "product" }} 
+        ],
+        
+        "filter": [
+          { "range": { "price": { "gte": 100 }} }
+        ],
+        
+        "should": [
+          { "match": { "desc": "good" }}
+        ],
+        
+        "must_not": [
+          { "match": { "desc": "bad" }} 
+        ]
+      }
+    }
+  }
+
+
+ ```
+
+Boolean query trên có ý nghĩa:
+
+`MUST:` Name phải chứa từ "product"  
+`FILTER:` Giá phải >= 100  
+`SHOULD:` Nên chứa từ "good" trong desc (không bắt buộc)  
+`MUST_NOT:` Không chứa từ "bad" trong desc  
+Kết quả trả về sẽ được đánh giá dựa trên:  
+
+Bắt buộc phải thỏa mãn các điều kiện trong must và filter  
+Nếu thỏa must và filter, sẽ ưu tiên document có chứa từ "good" trong should  
+Loại bỏ các document chứa từ "bad" trong must_not  
+  
