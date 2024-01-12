@@ -204,31 +204,31 @@ Nếu chúng ta không để `fields` thì sẽ tìm tất cả file, còn nếu
 Lọc kết quả trả về chỉ lấy `fields.LogFolder`, `fields.SourceContext`, `fields.ContentType`, lọc theo `size`, `from`
 ```bash
   POST /index1/_search
-{
-  "query": {
-    "multi_match": {
-      "query": "7f5c6f5f-bd57-4a71-bd7a-3037d4efcb44",
-      "fields": [
-        "fields.CorrelationId.keyword",
-        "fields.IpAddress.keyword"
-      ]
-    }
-  },
-  "size": 2,
-  "from": 0,
-  "_source": [
-    "fields.LogFolder",
-    "fields.SourceContext",
-    "fields.ContentType"
-  ],
-  "highlight": {
-    "fields": {
-      "fields.LogFolder": {},
-      "fields.SourceContext": {},
-      "fields.ContentType": {}
+  {
+    "query": {
+      "multi_match": {
+        "query": "7f5c6f5f-bd57-4a71-bd7a-3037d4efcb44",
+        "fields": [
+          "fields.CorrelationId.keyword",
+          "fields.IpAddress.keyword"
+        ]
+      }
+    },
+    "size": 2,
+    "from": 0,
+    "_source": [
+      "fields.LogFolder",
+      "fields.SourceContext",
+      "fields.ContentType"
+    ],
+    "highlight": {
+      "fields": {
+        "fields.LogFolder": {},
+        "fields.SourceContext": {},
+        "fields.ContentType": {}
+      }
     }
   }
-}
 
 
 // Nếu kết hợp lại thì chỉ tìm trong `fields` và chỉ trả về trong `_source`
