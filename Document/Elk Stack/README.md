@@ -460,16 +460,18 @@ Bạn cũng có thể sử dụng truy vấn constant score để tạo các tru
 
 ```bash
 
-
+Chưa lĩnh hội được
 
  ```
+Viết mô tả
+
 
 5. Function score query 
 
 ```bash
-aa
+Chưa lĩnh hội được
 
  ```
-aaa
+Viết mô tả
 
 
