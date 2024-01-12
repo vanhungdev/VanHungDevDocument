@@ -71,68 +71,68 @@ Tạo index:
  
  ```bash
   PUT /name_index1
-{
-  "mappings": {
-    "properties": {
-      "@t": {"type": "date"},
-      "@mt": {"type": "text"},
-      "@r": {"type": "float"},
-      "CorrelationId": {"type": "keyword"},
-      "IpAddress": {"type": "ip"},
-      "viewResultModel": {"type": "text"},
-      "CustomLog": {"type": "text"},
-      "Host": {"type": "keyword"},
-      "Source": {"type": "keyword"},
-      "timestamp": {"type": "date"},
-      "DateTime": {"type": "text"},
-      "SourceType": {"type": "keyword"},
-      "Protocol": {"type": "keyword"},
-      "Scheme": {"type": "keyword"},
-      "ContentType": {"type": "keyword"},
-      "Header": {"type": "object"},
-      "LogFolder": {"type": "keyword"},
-      "EndpointName": {"type": "keyword"},
-      "RequestMethod": {"type": "keyword"},
-      "RequestPath": {"type": "keyword"},
-      "StatusCode": {"type": "integer"},
-      "Elapsed": {"type": "float"},
-      "SourceContext": {"type": "keyword"},
-      "RequestId": {"type": "keyword"}
-    }
-  }
-}
+   {
+     "mappings": {
+       "properties": {
+         "@t": {"type": "date"},
+         "@mt": {"type": "text"},
+         "@r": {"type": "float"},
+         "CorrelationId": {"type": "keyword"},
+         "IpAddress": {"type": "ip"},
+         "viewResultModel": {"type": "text"},
+         "CustomLog": {"type": "text"},
+         "Host": {"type": "keyword"},
+         "Source": {"type": "keyword"},
+         "timestamp": {"type": "date"},
+         "DateTime": {"type": "text"},
+         "SourceType": {"type": "keyword"},
+         "Protocol": {"type": "keyword"},
+         "Scheme": {"type": "keyword"},
+         "ContentType": {"type": "keyword"},
+         "Header": {"type": "object"},
+         "LogFolder": {"type": "keyword"},
+         "EndpointName": {"type": "keyword"},
+         "RequestMethod": {"type": "keyword"},
+         "RequestPath": {"type": "keyword"},
+         "StatusCode": {"type": "integer"},
+         "Elapsed": {"type": "float"},
+         "SourceContext": {"type": "keyword"},
+         "RequestId": {"type": "keyword"}
+       }
+     }
+   }
  ```
 
 Đẩy dữ liệu vào index:
  
  ```bash
   POST /name_index1/_doc
-{
-  "@t": "2023-11-14T06:31:05.4412033Z",
-  "@mt": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
-  "@r": [427.1187],
-  "CorrelationId": "276554f2-044c-4c3d-a622-2ee080f1ec05",
-  "IpAddress": "::1",
-  "viewResultModel": "null",
-  "CustomLog": "",
-  "Host": "localhost:5001",
-  "Source": "1",
-  "timestamp": "2023-11-14T13:31:05.4313672+07:00",
-  "DateTime": "14-11-2023 13:31:05",
-  "SourceType": "USER-LOG",
-  "Protocol": "HTTP/1.1",
-  "Scheme": "http",
-  "ContentType": "text/html; charset=utf-8",
-  "Header": [],
-  "LogFolder": "bloghung.controllers.homecontroller.index",
-  "EndpointName": "/",
-  "RequestMethod": "GET",
-  "RequestPath": "/",
-  "StatusCode": 200,
-  "Elapsed": 427.1187,
-  "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
-  "RequestId": "0HMV4RD3E53ED:00000001"
-}
+   {
+     "@t": "2023-11-14T06:31:05.4412033Z",
+     "@mt": "HTTP {RequestMethod} {RequestPath} responded {StatusCode} in {Elapsed:0.0000} ms",
+     "@r": [427.1187],
+     "CorrelationId": "276554f2-044c-4c3d-a622-2ee080f1ec05",
+     "IpAddress": "::1",
+     "viewResultModel": "null",
+     "CustomLog": "",
+     "Host": "localhost:5001",
+     "Source": "1",
+     "timestamp": "2023-11-14T13:31:05.4313672+07:00",
+     "DateTime": "14-11-2023 13:31:05",
+     "SourceType": "USER-LOG",
+     "Protocol": "HTTP/1.1",
+     "Scheme": "http",
+     "ContentType": "text/html; charset=utf-8",
+     "Header": [],
+     "LogFolder": "bloghung.controllers.homecontroller.index",
+     "EndpointName": "/",
+     "RequestMethod": "GET",
+     "RequestPath": "/",
+     "StatusCode": 200,
+     "Elapsed": 427.1187,
+     "SourceContext": "Serilog.AspNetCore.RequestLoggingMiddleware",
+     "RequestId": "0HMV4RD3E53ED:00000001"
+   }
 
  ```
 
