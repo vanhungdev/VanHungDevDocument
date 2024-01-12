@@ -337,24 +337,6 @@ Chuẩn bị dữ liệu test
   POST products/_bulk
 {"index":{"_id":4}}
 {"name":"Product 4","desc":"Description 4","price":129,"stock":42,"sale":false,"created_at":"2023-01-04T17:22:08Z"}
-{"index":{"_id":5}}
-{"name":"Product 5","desc":"Description 5","price":79,"stock":31,"sale":true,"created_at":"2023-01-11T02:03:33Z"}
-{"index":{"_id":6}}
-{"name":"Product 6","desc":"Description 6","price":149,"stock":12,"sale":false,"created_at":"2023-01-18T23:44:55Z"}
-{"index":{"_id":7}}
-{"name":"Product 7","desc":"Description 7","price":189,"stock":24,"sale":true,"created_at":"2023-01-23T09:18:26Z"}
-{"index":{"_id":8}}
-{"name":"Product 8","desc":"Description 8","price":99,"stock":7,"sale":false,"created_at":"2023-01-27T14:45:17Z"}
-{"index":{"_id":9}}
-{"name":"Product 9","desc":"Description 9","price":219,"stock":19,"sale":false,"created_at":"2023-02-05T06:31:48Z"}
-{"index":{"_id":10}}
-{"name":"Product 10","desc":"Description 10","price":175,"stock":14,"sale":true,"created_at":"2023-02-09T12:55:19Z"}
-{"index":{"_id":11}}  
-{"name":"Product 11","desc":"Description 11","price":225,"stock":29,"sale":false,"created_at":"2023-02-12T23:08:44Z"}
-{"index":{"_id":12}}
-{"name":"Product 12","desc":"Description 12","price":339,"stock":25,"sale":true,"created_at":"2023-02-15T07:22:36Z"}
-{"index":{"_id":13}}
-{"name":"Product 13","desc":"Description 13","price":199,"stock":18,"sale":false,"created_at":"2023-02-19T13:47:17Z"}
 {"index":{"_id":14}}
 {"name":"Product 14","desc":"Description 14","price":290,"stock":4,"sale":true,"created_at":"2023-02-22T00:09:58Z"} 
 {"index":{"_id":15}}
