@@ -379,7 +379,6 @@ Chuẩn bị dữ liệu test
     }
   }
 
-
  ```
 
 Boolean query trên có ý nghĩa:
@@ -395,5 +394,78 @@ Nếu thỏa must và filter, sẽ ưu tiên document có chứa từ "good" tro
 Loại bỏ các document chứa từ "bad" trong must_not  
 
 2. Boosting query
+
+```bash
+   POST products/_search
+   {
+     "query": {
+       "boosting": {
+         "positive": {
+           "range": {
+             "stock": {
+               "lte": 10
+             }
+           }
+         },
+         "negative": {
+           "range": {
+             "stock": {
+               "gt": 10
+             }
+           }
+         },
+         "negative_boost": 0.3
+       }
+     }
+   }
+
+ ```
+
+  
+Sản phẩm tồn kho <= 10 sẽ được tăng điểm, còn > 10 sẽ bị giảm điểm.
+
+
+
+```bash
+   POST products/_search 
+   {
+     "query": {
+       "boosting": {
+         "positive": {
+           "bool": {
+             "must": [
+               { "term": { "sale": true }}, 
+               { "range": { "price": { "lte": 100 }}}
+             ]
+           }
+         },
+         "negative": {
+           "term": {
+             "stock": {
+               "gt": 30 
+             }
+           }
+         },
+         "negative_boost": 0.2
+       }
+     }
+   }
+
+ ```
+
+Boosting query bao gồm:  
+
+`positive:` Điều kiện để tăng điểm cho document. Ở đây sử dụng bool must để kết hợp 2 điều kiện:  
+`term:` "sale" = true  
+`range:` "price" <= 100  
+`negative:` Điều kiện để giảm điểm cho document. Sử dụng term để kiểm tra "stock" > 30  
+`negative_boost:` Hệ số giảm điểm cho phần negative. Ở đây là 0.2, tức giảm 20% điểm.  
+Như vậy, query sẽ hoạt động như sau:  
+
+Tìm các document thỏa MẸ các điều kiện trong positive (có sale và giá <= 100). Những document này sẽ được tăng điểm.  
+Trong số các document tìm được ở bước 1, nếu có document thỏa điều kiện trong negative (stock > 30), sẽ bị giảm điểm đi 20%.  
+Cuối cùng sắp xếp các document theo thứ tự điểm giảm dần và trả về kết quả.  
+Như vậy, query sẽ ưu tiên những sản phẩm có giá tốt, đang giảm giá nhưng tồn kho ít. Đồng thời hạ thấp xuống những sản phẩm tồn kho nhiều.  
+
 
 
