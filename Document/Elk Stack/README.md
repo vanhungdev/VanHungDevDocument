@@ -223,7 +223,7 @@ Tìm theo field được chỉ định
 Search Lite API  
 
 ```bash
-  POST /index1/_search?q=CorrelationId=30d2418f-0c51-44c8-98e3-a5cc06532c76
+GET /index1/_search?q=fields.CorrelationId.keyword:30d2418f-0c51-44c8-98e3-a5cc06532c76
  ```
 
 
@@ -232,10 +232,13 @@ Full JSON request body
   POST /index1/_search
   {
     "query": {
-      "query_string": {
-        "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+      "term": {
+        "fields.CorrelationId.keyword": {
+          "value": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+        }
       }
     }
   }
+
  ```
 
