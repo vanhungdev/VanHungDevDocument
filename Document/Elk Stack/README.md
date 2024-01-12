@@ -220,18 +220,26 @@ Lọc kết quả trả về chỉ lấy `fields.LogFolder`, `fields.SourceConte
 
 Gọi bằng cURL post man
 ```bash
-curl --location 'http://elastic:Provanhung77@34.16.204.104:9200/index1/_search' \
---header 'Content-Type: application/json' \
---data '{
+
+  curl -X POST \
+    -H 'Content-Type: application/json' \
+    -d '{
     "query": {
-      "term": {
-        "fields.CorrelationId.keyword": {
-          "value": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
-        }
+      "query_string": { 
+        "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+      }
+    },
+    "size": 2,
+    "from": 0,
+    "_source": ["fields.LogFolder", "fields.SourceContext", "fields.ContentType"],
+    "highlight": {
+      "fields": {
+        "fields.LogFolder": {},
+        "fields.SourceContext": {},  
+        "fields.ContentType": {}
       }
     }
-  }'
-
+  }' http://elastic:Provanhung77@34.16.204.104:9200/index1/_search
  ```
 
 
@@ -260,25 +268,19 @@ Full JSON request body
 
 Gọi bằng cURL post man
 ```bash
-  curl -X POST \
-    -H 'Content-Type: application/json' \
-    -d '{
+curl --location 'http://elastic:Provanhung77@34.16.204.104:9200/index1/_search' \
+--header 'Content-Type: application/json' \
+--data '{
     "query": {
-      "query_string": { 
-        "query": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
-      }
-    },
-    "size": 2,
-    "from": 0,
-    "_source": ["fields.LogFolder", "fields.SourceContext", "fields.ContentType"],
-    "highlight": {
-      "fields": {
-        "fields.LogFolder": {},
-        "fields.SourceContext": {},  
-        "fields.ContentType": {}
+      "term": {
+        "fields.CorrelationId.keyword": {
+          "value": "30d2418f-0c51-44c8-98e3-a5cc06532c76"
+        }
       }
     }
-  }' http://elastic:Provanhung77@34.16.204.104:9200/index1/_search
+  }'
+
+
 
  ```
 
