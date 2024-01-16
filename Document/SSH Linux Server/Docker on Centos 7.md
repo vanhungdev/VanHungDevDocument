@@ -1,71 +1,8 @@
-# Tạo và cài đặt máy ảo VPS Centos để triển khai ứng dụng thực tế
-VPS Centos rất ổn định và phù hợp để triển khai ứng dụng thực tế.
+# Tạo và cài đặt máy ảo VPS Centos để triển khai ứng dụng thực tế  
 
-## Phần 1: Cấu hình SSH Server Centos 7: 
+Trong phần này sẽ hướng dẫn tất tần tật về docker trên VPS Centos 7.
 
-SSH vào server
-
- ```bash
-SSH root@ip_address
- ```
-
-
-Sau khi SSH vào centos VPS thì chạy tuần tự một số lênh sau:  
- ```bash
-
-whoami
-cat /etc/os-release
-sudo passwd
-su
-systemctl stop sshd
-yum remove openssh-server
-yum install openssh openssh-server openssh-clients openssl-libs -y
-systemctl start sshd
-systemctl enable sshd
-firewall-cmd --add-port=22/tcp --permanent
-firewall-cmd --reload
-systemctl restart sshd
-systemctl status sshd
- ```
-
-Cài vim để chỉnh sửa file
-
- ```bash
- sudo yum install vim
- ```
-
-Copy file từ server về
-
- ```bash
- scp -r ~/desktop/PUPD/PUBDServerApi root@ip_address:/nguyenhung  /// Tải file lên host
- scp -r root@ip_address:/nguyenhung ~/desktop/PUPD/PUBDServerApi /// dowload file về
- ```
-  
-Coppy file từ container docker:
-
- ```bash
-
-docker cp <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml ~/desktop/docker2  // copy
-vim /root/elasticsearch.yml // chú ý thêm /root/
-
-docker cp /root/elasticsearch.yml <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml // ghi đè
-
-// kiểm tra thử có chưa
-docker exec -it <container_id> /bin/bash
-cat /usr/share/elasticsearch/config/elasticsearch.yml
- ```
-
-
-Một số lệnh khác
-
- ```bash
-pwd // xem thư mục hiện tại
-mkdir // tạo thư mục mới
-rm -r /path   // xoá thư mục
-
- ```
-
-## Phần 2: Cài đặt docker trên Centos 7:
+## Phần 1: Cài đặt docker trên Centos 7:
 
 Cài đặt yum
 
@@ -96,7 +33,7 @@ Start và kiểm tra trạng thái docker
 
 
 
-## Phần 3: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, Minio, Portainer:
+## Phần 2: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, Minio, Portainer:
 
 Tạo file docker Compose có tên docker-compose.yaml như sau:
  ```bash
@@ -221,7 +158,7 @@ Gỡ chạy lại nếu lỗi:
  ```
 
 
-## Phần 4: Cài đặt docker thủ công từng container:
+## Phần 3: Cài đặt docker thủ công từng container:
 
 **Portainer:**  
 
@@ -282,7 +219,7 @@ Gỡ chạy lại nếu lỗi:
 	Kafdrop chưa có cho macbook m1 (arm64v8)
 
 
-## Phần 5: Build image chuyển dữ liệu giữa các server: 
+## Phần 4: Build image chuyển dữ liệu giữa các server: 
 **Cách 1: Build image từ container và chuyển file bằng cách SSH vào server đích**
 1. Commit container này thành một image mới.  
 
@@ -321,6 +258,7 @@ docker login // login vào docker hub
  ```
 
 **Cách 2:Build image từ container và đẩy lên docker hub sau đó build image**
+
 1. Commit container này thành một image mới.  
 
  ```bash
@@ -353,7 +291,4 @@ docker push vanhungdev/mongodb-image:v.16.01.2024
 
 4. Run trên server mới như bình thường.  
 
- ```bash
-docker run -d --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=hungnv165 -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 vanhungdev/mongodb-image:v.16.01.2024
- ```
 	
