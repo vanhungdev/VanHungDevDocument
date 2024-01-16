@@ -99,3 +99,8 @@ Lưu ý: nếu chạy ở local thì không cần `linux/amd64` cái này chỉ 
 **6. Cấu hình Reverse Proxy, Load Balance, trỏ domain và Let's Encrypt SSL**  
 
 Phần này xem ở phần nginx
+
+
+**7. Cách chỉnh appsettings.Development.json trên môi trường container**  
+
+Cần xem phần này
