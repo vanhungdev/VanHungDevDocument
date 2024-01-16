@@ -271,7 +271,7 @@ docker images
 #Commit container thành image
 docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024
 
-# Commit container thành image
+# Câu lênh mẫu sẽ như sau
 docker commit sql-server-container sql-server-container_backup
 
 # login vào docker hub
