@@ -269,4 +269,34 @@ Gỡ chạy lại nếu lỗi:
 	docker run -d --name kafdrop --network kafka-net -p 9091:9000 -e KAFKA_BROKERCONNECT=kafka:9093 -e JVM_OPTS="-Xms32M -Xmx64M" obsidiandynamics/kafdrop
     ```
 	Kafdrop chưa có cho macbook m1 (arm64v8)
+
+
+## Phần 5: Build image chuyển dữ liệu giữa các server: 
+
+1. Commit container này thành một image mới.  
+
+ ```bash
+docker ps
+
+docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024
+
+docker login
+ ```
+
+2. Đánh tag cho image.  
+
+ ```bash
+docker tag <tên image muốn build> <tên_đăng_nhập>/<tên image muốn build>:v.16.01.2024
+
+docker tag mongodb-image vanhungdev/mongodb-image:v.16.01.2024
+
+docker push vanhungdev/mongodb-image:v.16.01.2024
+
+ ```
+
+3. Run trên server mới như bình thường
+
+ ```bash
+docker run -d --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=hungnv165 -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 vanhungdev/mongodb-image:v.16.01.2024
+ ```
 	
