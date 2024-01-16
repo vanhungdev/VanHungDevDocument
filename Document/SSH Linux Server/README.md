@@ -283,7 +283,44 @@ Gỡ chạy lại nếu lỗi:
 
 
 ## Phần 5: Build image chuyển dữ liệu giữa các server: 
+**Cách 1: Build image từ container và chuyển file bằng cách SSH vào server đích**
+1. Commit container này thành một image mới.  
 
+ ```bash
+docker ps
+
+docker commit sql-server-container sql-server-container_backup
+
+docker login // login vào docker hub
+ ```
+
+2. Tạo file trên server đích.  
+
+ ```bash
+   # Trên máy chủ đích
+   ssh root@34.125.19.138
+
+   # Tạo thư mục /var/lib/docker/tmp nếu chưa có
+   mkdir -p /var/lib/docker/tmp
+ ```
+
+3. Đẩy image từ server nguồn sang server đích.  
+
+ ```bash
+ docker save sql-server-container_backup | gzip | ssh root@34.125.19.138 'gunzip | docker load'
+
+ # Hoặc có thể tạo thư mục /var/lib/docker/tmp trực tiếp trong dòng lệnh như sau.
+ docker save sql-server-container_backup | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"
+
+ ```
+
+4. Build lại image trên server đích.  
+
+ ```bash
+ docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 sql-server-container_backup
+ ```
+
+**Cách 2:Build image từ container và đẩy lên docker hub sau đó build image**
 1. Commit container này thành một image mới.  
 
  ```bash
