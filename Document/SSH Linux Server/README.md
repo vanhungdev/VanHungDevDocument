@@ -213,36 +213,36 @@ Gỡ chạy lại nếu lỗi:
 
 ## Phần 4: Cài đặt docker thủ công từng container:
 
-MongoDB:  
+**MongoDB:**  
 
  ```bash
  docker run -d --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=hungnv165 -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 mongo:latest
  ```
 
-Minio:  
+**Minio:***  
 
  ```bash
   docker run -d --name minio-server -p 9011:9000 -p 9001:9001 -e MINIO_ROOT_USER=hungnv165 -e MINIO_ROOT_PASSWORD=Provanhung77 minio/minio:latest server /data --console-address ":9001"
  ```
-Portainer:  
+**Portainer:**  
 
  ```bash
  docker run -d --name portainer -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
 
  ```
 
-SQL Server:  
+**SQL Server:**   
 
  ```bash
   docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 mcr.microsoft.com/mssql/server:2017-latest
 
  ```
-Redis:  
+**Redis:**    
 
  ```bash
  docker run -d --name redis -p 6379:6379-e REDIS_PASSWORD=Provanhung77 redis:latest
  ```
-Kafka:
+**Kafka:**  
 
 1. Tạo networks:  
     ```bash
