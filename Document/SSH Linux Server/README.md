@@ -216,7 +216,7 @@ Gỡ chạy lại nếu lỗi:
 MongoDB:  
 
  ```bash
-    docker run -d --name mongodb \
+ docker run -d --name mongodb \
   -p 27017:27017 \ 
   -e MONGO_INITDB_ROOT_USERNAME=hungnv165 \
   -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 \
@@ -235,7 +235,7 @@ Minio:
 Portainer:  
 
  ```bash
-    docker run -d --name portainer \
+ docker run -d --name portainer \
   -p 9000:9000 \
   -v /var/run/docker.sock:/var/run/docker.sock \
   -v portainer_data:/data \ 
@@ -256,7 +256,7 @@ SQL Server:
 Redis:  
 
  ```bash
-    docker run -d --name redis 
+ docker run -d --name redis 
   -p 6379:6379
   -e REDIS_PASSWORD=Provanhung77 
   redis:latest
