@@ -262,7 +262,11 @@ docker login // login vào docker hub
 1. Commit container này thành một image mới.  
 
  ```bash
+# Xem danh sách container
 docker ps
+
+#Xem danh sách images
+docker images
 
 #Commit container thành image
 docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024
