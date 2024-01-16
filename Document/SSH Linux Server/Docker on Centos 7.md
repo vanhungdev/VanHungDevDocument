@@ -257,7 +257,7 @@ docker login // login vào docker hub
  docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 sql-server-container_backup
  ```
 
-**Cách 2:Build image từ container và đẩy lên docker hub sau đó build image**
+**Cách 2: Build image từ container và đẩy lên docker hub sau đó build image**
 
 1. Commit container này thành một image mới.  
 
