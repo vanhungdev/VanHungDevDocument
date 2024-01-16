@@ -79,7 +79,7 @@ Thêm Docker repo
 sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
  ```
 
-Thêm Docker repo
+Cài dặt docker và docker compose
 
  ```bash
  sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
