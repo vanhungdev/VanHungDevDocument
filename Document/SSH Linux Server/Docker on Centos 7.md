@@ -272,7 +272,7 @@ docker images
 docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024
 
 # Commit container thành image
-docker commit mongodb mongodb-image:v.16.01.2024
+docker commit sql-server-container sql-server-container_backup
 
 # login vào docker hub
 docker login
@@ -281,18 +281,23 @@ docker login
 2. Đánh tag cho image.  
 
  ```bas
-docker tag mongodb-image vanhungdev/mongodb-image:v.16.01.2024
+docker tag sql-server-container_backup vanhungdev/sql-server-container_backup:v.16.01.2024
 
  ```
 
 3. push lên docker hub.    
 
  ```bas
-docker push vanhungdev/mongodb-image:v.16.01.2024
+docker push vanhungdev/sql-server-container_backup:v.16.01.2024
 
  ```
 
 
 4. Run trên server mới như bình thường.  
+
+ ```bas
+docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 sql-server-container_backup:v.16.01.2024
+
+ ```
 
 	
