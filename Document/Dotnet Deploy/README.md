@@ -11,6 +11,7 @@
 6. **Cấu hình Reverse Proxy, Load Balance, trỏ domain và Let's Encrypt SSL** - chạy thử ở môi trường thật.
 
 **1. Tạo docker file**  
+
 Tạo file docker file có tên `dockerfile` đặt ở đường dẫn có file .sln như sau:  
 
 
@@ -66,12 +67,14 @@ Mở terminal và di chuyển đến thư mục chứa tệp Dockerfile, sau đ�
 Lưu ý: nếu chạy ở local thì không cần `linux/amd64` cái này chỉ để deploy lên VPS Centos
 
 **3. Run và test ở local**  
+
   Run container:  
  
  ```bash
   docker run -p 44388:80 --name containerName  imageName
  ```
 **4. Đẩy image kên docker hub**  
+
   Login vào docker hub:  
  
  ```bash
@@ -90,7 +93,8 @@ Lưu ý: nếu chạy ở local thì không cần `linux/amd64` cái này chỉ 
   docker push vanhungdev/imageName:v.1.1
  ```
 
-**5. Run và test trên VPS Centos**  
+**5. Run và test trên VPS Centos** 
+
   Run container trên môi trường VPS Centos:  
  
  ```bash
