@@ -278,23 +278,28 @@ Gỡ chạy lại nếu lỗi:
  ```bash
 docker ps
 
-docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024
+docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024 // commit container thành image
 
-docker login
+docker login login vào docker hub
  ```
 
 2. Đánh tag cho image.  
 
- ```bash
-docker tag <tên image muốn build> <tên_đăng_nhập>/<tên image muốn build>:v.16.01.2024
-
+ ```bas
 docker tag mongodb-image vanhungdev/mongodb-image:v.16.01.2024
 
+
+ ```
+
+3. push lên docker hub.    
+
+ ```bas
 docker push vanhungdev/mongodb-image:v.16.01.2024
 
  ```
 
-3. Run trên server mới như bình thường
+
+4. Run trên server mới như bình thường.  
 
  ```bash
 docker run -d --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=hungnv165 -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 vanhungdev/mongodb-image:v.16.01.2024
