@@ -254,6 +254,7 @@ docker login // login vào docker hub
 4. Build lại image trên server đích.  
 
  ```bash
+# lưu ý nó dùng password của container cũ
  docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 sql-server-container_backup
  ```
 
@@ -297,6 +298,7 @@ docker push vanhungdev/sql-server-container_backup:v.16.01.2024
 
  ```bas
 
+# lưu ý nó dùng password của container cũ
 docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 vanhungdev/sql-server-container_backup:v.16.01.2024
 
  ```
