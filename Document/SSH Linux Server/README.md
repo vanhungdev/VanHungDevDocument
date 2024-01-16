@@ -219,7 +219,7 @@ Gỡ chạy lại nếu lỗi:
  docker run -d --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=hungnv165 -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 mongo:latest
  ```
 
-**Minio:***  
+**Minio:**  
 
  ```bash
   docker run -d --name minio-server -p 9011:9000 -p 9001:9001 -e MINIO_ROOT_USER=hungnv165 -e MINIO_ROOT_PASSWORD=Provanhung77 minio/minio:latest server /data --console-address ":9001"
