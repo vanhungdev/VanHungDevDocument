@@ -103,4 +103,21 @@ Phần này xem ở phần nginx
 
 **7. Cách chỉnh appsettings.Development.json trên môi trường container**  
 
-Cần xem phần này
+bin vào môi trương container:  
+
+ ```bash
+  docker exec -it <container_id> /bin/sh 
+ ```
+
+Cài đặt vi hoặc nano để chỉnh sửa file
+```bash
+   apt-get update
+   apt-get install -y vim
+   apt-get install -y nano
+ ```
+
+Sửa file:
+
+```bash
+vim /src/appsettings.Development.json
+ ```
