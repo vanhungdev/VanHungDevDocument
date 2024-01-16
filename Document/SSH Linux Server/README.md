@@ -325,6 +325,7 @@ docker login // login vào docker hub
 
  ```bash
 docker ps
+
 #Commit container thành image
 docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024
 
