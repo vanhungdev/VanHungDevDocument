@@ -296,6 +296,7 @@ docker push vanhungdev/sql-server-container_backup:v.16.01.2024
 4. Run trên server mới như bình thường.  
 
  ```bas
+
 docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 vanhungdev/sql-server-container_backup:v.16.01.2024
 
  ```
