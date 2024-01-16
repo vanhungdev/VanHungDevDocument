@@ -85,6 +85,16 @@ Cài dặt docker và docker compose
  sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
  ```
 
+Start và kiểm tra trạng thái docker
+
+ ```bash
+
+   sudo systemctl start docker // start docker engine 
+   sudo systemctl stop docker // stop docker engine 
+   sudo systemctl status docker // xem trạng thái
+ ```
+
+
 
 ## Phần 3: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, Minio, Portainer:
 
