@@ -122,7 +122,7 @@ Sửa file:
 vim /src/appsettings.Development.json
  ```
 
-Sửa file:
+Cách dùm vim để chỉnh sửa file:
   - Sa khi cấu hình xong file docker compose xong thì nhấn: `esc + :wq` để lưu và thoát.  
   - Phím `i` để chỉnh sửa.  
   - Phím `gg` để đưa con trỏ chuột về đầu file.   
