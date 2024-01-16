@@ -221,7 +221,7 @@ Gỡ chạy lại nếu lỗi:
 
 ## Phần 4: Build image chuyển dữ liệu giữa các server: 
 **Cách 1: Build image từ container và chuyển file bằng cách SSH vào server đích**
-1. Commit container này thành một image mới.  
+1. Commit container này thành một image mới(chạy theo các bước phải comit trước để có data).  
 
  ```bash
 docker ps
