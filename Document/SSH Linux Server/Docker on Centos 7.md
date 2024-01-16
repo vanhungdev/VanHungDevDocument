@@ -228,6 +228,9 @@ docker ps
 
 docker commit sql-server-container sql-server-container_backup
 
+# Đánh tag
+docker tag sql-server-container_backup sql-server-container_backup:v.16.01.2024
+
 docker login // login vào docker hub
  ```
 
@@ -243,11 +246,12 @@ docker login // login vào docker hub
 
 3. Đẩy image từ server nguồn sang server đích.  
 
+
  ```bash
- docker save sql-server-container_backup | gzip | ssh root@34.125.19.138 'gunzip | docker load'
+ docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.125.19.138 'gunzip | docker load'
 
  # Hoặc có thể tạo thư mục /var/lib/docker/tmp trực tiếp trong dòng lệnh như sau.
- docker save sql-server-container_backup | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"
+ docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"
 
  ```
 
@@ -255,7 +259,7 @@ docker login // login vào docker hub
 
  ```bash
 # lưu ý nó dùng password của container cũ
- docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 sql-server-container_backup
+ docker run -d --name sql-server-container -p 1433:1433 sql-server-container_backup:v.16.01.2024
  ```
 
 **Cách 2: Build image từ container và đẩy lên docker hub sau đó build image**
@@ -299,7 +303,7 @@ docker push vanhungdev/sql-server-container_backup:v.16.01.2024
  ```bas
 
 # lưu ý nó dùng password của container cũ
-docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 vanhungdev/sql-server-container_backup:v.16.01.2024
+docker run -d --name sql-server-container -p 1433:1433 vanhungdev/sql-server-container_backup:v.16.01.2024
 
  ```
 
