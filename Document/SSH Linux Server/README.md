@@ -325,11 +325,14 @@ docker login // login vào docker hub
 
  ```bash
 docker ps
+#Commit container thành image
+docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024
 
-docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024 // commit container thành image
-docker commit mongodb mongodb-image:v.16.01.2024 // commit container thành image
+# Commit container thành image
+docker commit mongodb mongodb-image:v.16.01.2024
 
-docker login login vào docker hub
+# login vào docker hub
+docker login
  ```
 
 2. Đánh tag cho image.  
