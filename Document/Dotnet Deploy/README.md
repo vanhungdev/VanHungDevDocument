@@ -119,7 +119,7 @@ Cài đặt vi hoặc nano để chỉnh sửa file
 Sửa file:
 
 ```bash
-vim /src/appsettings.Development.json
+vim appsettings.Development.json
  ```
 
 Cách dùm vim để chỉnh sửa file:
