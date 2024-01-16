@@ -228,8 +228,6 @@ docker ps
 
 docker commit sql-server-container sql-server-container_backup:v.16.01.2024
 
-# Đánh tag
-docker tag sql-server-container_backup sql-server-container_backup:v.16.01.2024
 
 docker login // login vào docker hub
  ```
