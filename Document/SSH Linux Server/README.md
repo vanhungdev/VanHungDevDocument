@@ -279,6 +279,7 @@ Gỡ chạy lại nếu lỗi:
 docker ps
 
 docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024 // commit container thành image
+docker commit mongodb mongodb-image:v.16.01.2024 // commit container thành image
 
 docker login login vào docker hub
  ```
@@ -287,7 +288,6 @@ docker login login vào docker hub
 
  ```bas
 docker tag mongodb-image vanhungdev/mongodb-image:v.16.01.2024
-
 
  ```
 
