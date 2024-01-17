@@ -227,7 +227,18 @@ Gỡ chạy lại nếu lỗi:
 
 ## Phần 4: Build image chuyển dữ liệu giữa các server  
 **Cách 1: Build image từ container và chuyển file bằng cách SSH vào server đích**
-1. Commit container này thành một image mới(chạy theo các bước phải comit trước để có data).  
+
+
+Các bước cài đặt  
+ ```bash
+	Step 1. Commit container này thành một image mới
+	Step 2. Tạo file trên server đích.  
+	Step 3. Đẩy image từ server nguồn sang server đích. 
+	Step 4. Build lại image trên server đích.
+```
+
+
+Step 1. Commit container này thành một image mới(chạy theo các bước phải comit trước để có data).  
 
  ```bash
 # xem danh sách container đang chạy
@@ -240,7 +251,7 @@ docker commit sql-server-container sql-server-container_backup:v.16.01.2024
 docker login 
  ```
 
-2. Tạo file trên server đích.  
+Step 2. Tạo file trên server đích.  
 
  ```bash
    # Trên máy chủ đích
@@ -250,7 +261,7 @@ docker login
    mkdir -p /var/lib/docker/tmp
  ```
 
-3. Đẩy image từ server nguồn sang server đích.  
+Step 3. Đẩy image từ server nguồn sang server đích.  
 
 
  ```bash
@@ -263,7 +274,7 @@ docker login
 
  ```
 
-4. Build lại image trên server đích.  
+Step 4. Build lại image trên server đích.  
 
  ```bash
  # lưu ý nó dùng password của container cũ
@@ -272,7 +283,15 @@ docker login
 
 **Cách 2: Build image từ container và đẩy lên docker hub sau đó build image**
 
-1. Commit container này thành một image mới.  
+ ```bash
+	Step 1. Commit container này thành một image mới.  
+	Step 2. Đánh tag cho images.
+	Step 3. Push lên docker hub.
+	Step 4. Run trên server mới như bình thường.
+```
+
+
+Step 1. Commit container này thành một image mới.  
 
  ```bash
 # Xem danh sách container
@@ -291,7 +310,7 @@ docker commit sql-server-container sql-server-container_backup
 docker login
  ```
 
-2. Đánh tag cho image.  
+Step 2. Đánh tag cho images.  
 
  ```bas
 
@@ -300,7 +319,7 @@ docker tag sql-server-container_backup vanhungdev/sql-server-container_backup:v.
 
  ```
 
-3. Push lên docker hub.    
+Step 3. Push lên docker hub.    
 
  ```bas
 docker push vanhungdev/sql-server-container_backup:v.16.01.2024
@@ -308,7 +327,7 @@ docker push vanhungdev/sql-server-container_backup:v.16.01.2024
  ```
 
 
-4. Run trên server mới như bình thường.  
+Step 4. Run trên server mới như bình thường.  
 
  ```bas
 
