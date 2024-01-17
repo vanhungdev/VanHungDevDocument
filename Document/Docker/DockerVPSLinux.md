@@ -476,14 +476,10 @@ docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300  -t es01:v.17.01.
 
 Backup Kibana Server:  
 
-Đối với kibana không backup kiểu này được nến phải cài lại container  
+Đối với kibana không backup kiểu này không được thì cài lại container  
 
 
  ```bas
-
-docker run --name kib01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.11.3
-
-
 # Chạy trên server hiện tại
 docker commit kib01 kib01:v.17.01.2024  
 docker save kib01:v.17.01.2024 | gzip | ssh root@34.170.130.200 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
