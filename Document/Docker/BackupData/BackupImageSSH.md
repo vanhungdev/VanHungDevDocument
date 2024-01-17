@@ -1,11 +1,9 @@
-# Build image chuyển dữ liệu giữa các server  
+# Build image chuyển dữ liệu giữa các server (docker save) 
 
 Trong phần này sẽ hướng dẫn tất tần tật về build image chuyển dữ liệu giữa các server
 
 
 ## Phần 1: Build image chuyển dữ liệu giữa các server  
-** Build image từ container và chuyển file bằng cách SSH vào server đích**
-
 
 Các bước cài đặt  
  ```bash
