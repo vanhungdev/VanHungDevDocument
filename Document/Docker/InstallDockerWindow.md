@@ -52,7 +52,7 @@ Mở PowerShell và chạy lệnh này để đặt WSL 2 làm phiên bản mặ
 wsl --set-default-version 2
  ```
 
-## Phần 1: Tải docker desktop:  
+## Phần 2: Tải docker desktop:  
 
 Tải docker desktop tại trang chủ đường link sau  
 
