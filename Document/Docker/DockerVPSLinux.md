@@ -138,6 +138,18 @@ networks:
 
  ```
 
+ **Lưu ý biến môi trường Kafka container:**  
+ `INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092` Chú ý INSIDE OUTSITE khi chạy ở local để kết nối được với Kafdrop
+ `KAFKA_ADVERTISED_LISTENERS` Nếu dùng host VPS thì để IP như sau:      
+ `KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://34.171.40.194:9092`.   
+ Với localhost: `KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092`
+ 
+ **Lưu ý biến môi trường Kafdrop container:**  
+ `KAFKA_BROKERCONNECT` Lưu ý nếu dùng VPS thì để IP như sau:  
+ `KAFKA_BROKERCONNECT: 34.171.40.194:9092`.
+
+
+
 **Chạy Docker Compose:**  
   **Lưu ý:** Để trình chạy file docker compose không gặp lỗi thì chú ý các mục sau:  
 
