@@ -486,7 +486,7 @@ docker run --name kib01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kiba
 
 # Chạy trên server hiện tại
 docker commit kib01 kib01:v.17.01.2024  
-docker save kib01:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
+docker save kib01:v.17.01.2024 | gzip | ssh root@34.170.130.200 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
 #Chạy trên server đích  
 docker run --name kib01 --net elastic -p 5601:5601 kib01:v.17.01.2024
