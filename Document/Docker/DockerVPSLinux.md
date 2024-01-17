@@ -427,7 +427,7 @@ Backup SQL Server:
 
  ```bas
 
-
+# Chạy trên server hiện tại
 docker commit kib01 kib01:v.17.01.2024  
 docker save kib01:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
@@ -441,6 +441,7 @@ Backup Mongodb:
 
  ```bas
 
+# Chạy trên server hiện tại
 docker commit mongodb mongodb:v.17.01.2024  
 docker save mongodb:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
@@ -454,7 +455,7 @@ Backup Minio-server:
 
  ```bas
 
-
+# Chạy trên server hiện tại
 docker commit minio-server minio-server:v.17.01.2024  
 docker save minio-server:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
@@ -468,6 +469,7 @@ Backup SQL Server:
 
  ```bas
 
+# Chạy trên server hiện tại
 docker commit redis redis:v.17.01.2024  
 docker save redis:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
  
