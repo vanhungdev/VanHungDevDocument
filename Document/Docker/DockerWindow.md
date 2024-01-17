@@ -46,7 +46,7 @@ Trước khi cài đặt WSL 2, bạn phải kích hoạt tính năng tùy chọ
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
  ```
 
-Khởi động lại máy tính
+Khởi động lại máy tính  
 **Step 4 - Set WSL 2 as your default version**  
 Mở PowerShell và chạy lệnh này để đặt WSL 2 làm phiên bản mặc định khi cài đặt bản phân phối Linux mới:  
 
