@@ -64,9 +64,3 @@ mkdir // tạo thư mục mới
 rm -r /path   // xoá thư mục
 
  ```
-
-
- ```bash
-docker run -d --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=hungnv165 -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 vanhungdev/mongodb-image:v.16.01.2024
- ```
-	
