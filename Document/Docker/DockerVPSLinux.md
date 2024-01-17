@@ -2,7 +2,7 @@
 
 Trong phần này sẽ hướng dẫn tất tần tật về docker trên VPS Centos 7.
 
-## Phần 1: Cài đặt docker trên Centos 7:
+## Phần 1: Cài đặt docker trên Centos 7  
 
 Cài đặt yum
 
@@ -37,7 +37,7 @@ Start và kiểm tra trạng thái docker
 
 
 
-## Phần 2: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, Minio, Portainer:
+## Phần 2: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, Minio, Portainer  
 
 Tạo file docker Compose có tên docker-compose.yaml như sau:
  ```bash
@@ -162,7 +162,7 @@ Gỡ chạy lại nếu lỗi:
  ```
 
 
-## Phần 3: Cài đặt docker thủ công từng container:
+## Phần 3: Cài đặt docker thủ công từng container  
 
 **Portainer:**  
 
@@ -223,7 +223,7 @@ Gỡ chạy lại nếu lỗi:
 	Kafdrop chưa có cho macbook m1 (arm64v8)
 
 
-## Phần 4: Build image chuyển dữ liệu giữa các server: 
+## Phần 4: Build image chuyển dữ liệu giữa các server  
 **Cách 1: Build image từ container và chuyển file bằng cách SSH vào server đích**
 1. Commit container này thành một image mới(chạy theo các bước phải comit trước để có data).  
 
