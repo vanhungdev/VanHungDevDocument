@@ -59,3 +59,5 @@ Tải docker desktop tại trang chủ đường link sau
  ```bash
 https://www.docker.com/products/docker-desktop/
  ```
+
+Tải và cài đặt như bình thường
