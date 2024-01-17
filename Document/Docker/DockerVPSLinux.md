@@ -7,19 +7,19 @@ Trong phần này sẽ hướng dẫn tất tần tật về docker trên VPS Ce
 Cài đặt yum
 
  ```bash
-sudo yum install -y yum-utils
+  sudo yum install -y yum-utils
  ```
 
 Thêm Docker repo
 
  ```bash
-sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
  ```
 
 Cài dặt docker và docker compose
 
  ```bash
- sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
  ```
 
 Start và kiểm tra trạng thái docker
@@ -232,7 +232,6 @@ docker ps
 
 docker commit sql-server-container sql-server-container_backup:v.16.01.2024
 
-
 docker login // login vào docker hub
  ```
 
@@ -260,7 +259,7 @@ docker login // login vào docker hub
 4. Build lại image trên server đích.  
 
  ```bash
-# lưu ý nó dùng password của container cũ
+ # lưu ý nó dùng password của container cũ
  docker run -d --name sql-server-container -p 1433:1433 sql-server-container_backup:v.16.01.2024
  ```
 
