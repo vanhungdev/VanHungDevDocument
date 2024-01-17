@@ -296,7 +296,7 @@ Step 2. Tạo file trên server đích.
 
  ```bash
    # Trên máy chủ đích
-   ssh root@34.125.19.138
+   ssh root@34.170.130.200
 
    # Tạo thư mục /var/lib/docker/tmp nếu chưa có
    mkdir -p /var/lib/docker/tmp
@@ -308,10 +308,10 @@ Step 3. Đẩy image từ server nguồn sang server đích.
  ```bash
 
  # lưu lại file gzip và gửi đến server đích
- docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.125.19.138 'gunzip | docker load'
+ docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.170.130.200 'gunzip | docker load'
 
  # Hoặc có thể tạo thư mục /var/lib/docker/tmp trực tiếp trong dòng lệnh như sau.
- docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"
+ docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.170.130.200 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"
 
  ```
 
@@ -445,7 +445,7 @@ Backup SQL Server:
 
 # Chạy trên server hiện tại
 docker commit sql-server-container sql-server-container_backup:v.17.01.2024  
-docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
+docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.170.130.200 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
 #Chạy trên server đích  
 docker run -d --name sql-server-container -p 1433:1433 sql-server-container_backup:v.17.01.2024  
@@ -464,7 +464,7 @@ docker network create elastic
  
 # Chạy trên server hiện tại
 docker commit es01 es01:v.17.01.2024  
-docker save es01:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
+docker save es01:v.17.01.2024 | gzip | ssh root@34.170.130.200 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
 #Chạy trên server đích
 docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300  -t es01:v.17.01.2024  
@@ -494,7 +494,7 @@ Backup Mongodb:
 
 # Chạy trên server hiện tại
 docker commit mongodb mongodb:v.17.01.2024  
-docker save mongodb:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
+docker save mongodb:v.17.01.2024 | gzip | ssh root@34.170.130.200 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
 #Chạy trên server đích  
 docker run -d --name mongodb -p 27017:27017  mongodb:v.17.01.2024  
@@ -508,7 +508,7 @@ Backup Minio-server:
 
 # Chạy trên server hiện tại
 docker commit minio-server minio-server:v.17.01.2024  
-docker save minio-server:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
+docker save minio-server:v.17.01.2024 | gzip | ssh root@34.170.130.200 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
 #Chạy trên server đích  
  docker run -d --name minio-server -p 9011:9000 -p 9001:9001  minio-server:v.17.01.2024 server /data --console-address ":9001"  
@@ -522,7 +522,7 @@ Backup SQL Server:
 
 # Chạy trên server hiện tại
 docker commit redis redis:v.17.01.2024  
-docker save redis:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
+docker save redis:v.17.01.2024 | gzip | ssh root@34.170.130.200 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
  
 #Chạy trên server đích  
 docker run -d --name redis -p 6379:6379 minio-server:v.17.01.2024  
