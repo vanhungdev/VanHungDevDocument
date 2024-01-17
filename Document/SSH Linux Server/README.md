@@ -64,3 +64,36 @@ mkdir // tạo thư mục mới
 rm -r /path   // xoá thư mục
 
  ```
+
+## Phần 2: Cài đặt docker trên Centos 7  
+
+Cài đặt yum
+
+ ```bash
+  sudo yum install -y yum-utils
+ ```
+
+Thêm Docker repo
+
+ ```bash
+  sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+ ```
+
+Cài dặt docker và docker compose
+
+ ```bash
+  sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+ ```
+
+Start và kiểm tra trạng thái docker
+
+ ```bash
+   # start docker engine 
+   sudo systemctl start docker
+
+   # stop docker engine 
+   sudo systemctl stop docker
+
+   # xem trạng thái
+   sudo systemctl status docker 
+ ```
