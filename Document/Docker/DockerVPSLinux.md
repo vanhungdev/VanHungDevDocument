@@ -228,11 +228,14 @@ Gỡ chạy lại nếu lỗi:
 1. Commit container này thành một image mới(chạy theo các bước phải comit trước để có data).  
 
  ```bash
+# xem danh sách container đang chạy
 docker ps
 
+# Tạo một images từ container
 docker commit sql-server-container sql-server-container_backup:v.16.01.2024
 
-docker login // login vào docker hub
+# login vào docker hub
+docker login 
  ```
 
 2. Tạo file trên server đích.  
@@ -249,6 +252,8 @@ docker login // login vào docker hub
 
 
  ```bash
+
+ # lưu lại file gzip và gửi đến server đích
  docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.125.19.138 'gunzip | docker load'
 
  # Hoặc có thể tạo thư mục /var/lib/docker/tmp trực tiếp trong dòng lệnh như sau.
@@ -287,6 +292,8 @@ docker login
 2. Đánh tag cho image.  
 
  ```bas
+
+# Đánh tag cho images
 docker tag sql-server-container_backup vanhungdev/sql-server-container_backup:v.16.01.2024
 
  ```
