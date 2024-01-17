@@ -34,13 +34,13 @@ systemctl status sshd
  sudo yum install vim
  ```
 
-**Copy file từ server về**
+**dowload/upload file từ server về**
 
  ```bash
-#  Tải file lên host
+# tải file lên host
  scp -r ~/desktop/PUPD/PUBDServerApi root@ip_address:/nguyenhung
 
-#dowload file về
+# dowload file về
  scp -r root@ip_address:/nguyenhung ~/desktop/PUPD/PUBDServerApi
  ```
 
