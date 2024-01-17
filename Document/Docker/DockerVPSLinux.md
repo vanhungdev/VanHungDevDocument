@@ -213,7 +213,7 @@ Gỡ chạy lại nếu lỗi:
 **Redis:**    
 
  ```bash
- docker run -d --name redis -p 6379:6379-e REDIS_PASSWORD=Provanhung77 redis:latest
+ docker run -d --name redis -p 6379:6379 -e REDIS_PASSWORD=Provanhung77 redis:latest
  ```
 
 
