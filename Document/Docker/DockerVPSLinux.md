@@ -231,7 +231,7 @@ Gỡ chạy lại nếu lỗi:
 # xem danh sách container đang chạy
 docker ps
 
-# Tạo một images từ container
+# tạo một images từ container
 docker commit sql-server-container sql-server-container_backup:v.16.01.2024
 
 # login vào docker hub
@@ -298,7 +298,7 @@ docker tag sql-server-container_backup vanhungdev/sql-server-container_backup:v.
 
  ```
 
-3. push lên docker hub.    
+3. Push lên docker hub.    
 
  ```bas
 docker push vanhungdev/sql-server-container_backup:v.16.01.2024
