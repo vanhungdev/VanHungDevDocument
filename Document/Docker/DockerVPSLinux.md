@@ -462,7 +462,7 @@ docker save minio-server:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p 
  docker run -d --name minio-server -p 9011:9000 -p 9001:9001  minio-server:v.17.01.2024 server /data --console-address ":9001"  
 ```
 
-**redis**   
+**Redis**   
 
 Backup SQL Server:  
 
