@@ -39,13 +39,13 @@ Enable chức năng Windows Subsystem for Linux
  ```
 
 
-**Step 3 - Enable Virtual Machine feature**
+**Step 3 - Enable Virtual Machine feature**  
 Trước khi cài đặt WSL 2, bạn phải kích hoạt tính năng tùy chọn Virtual Machine Platform . Máy của bạn sẽ yêu cầu khả năng ảo hóa để sử dụng tính năng này.  
 
  ```bash
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
  ```
-**Step 4 - Set WSL 2 as your default version**
+**Step 4 - Set WSL 2 as your default version**  
 Mở PowerShell và chạy lệnh này để đặt WSL 2 làm phiên bản mặc định khi cài đặt bản phân phối Linux mới:  
 
  ```bash
