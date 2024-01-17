@@ -208,6 +208,25 @@ Gỡ chạy lại nếu lỗi:
  ```bash
  docker run -d --name redis -p 6379:6379-e REDIS_PASSWORD=Provanhung77 redis:latest
  ```
+
+**Elasticsearch Kibana:**    
+
+Tạo Elasticsearch và Kibana container:  
+ 
+ ```bash
+# Tạo network
+docker network create elastic
+
+# Tạo Elastic Container
+docker run --name elastic-server --net elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "network.host=0.0.0.0"  -e "xpack.security.enabled=true" -e "ELASTIC_PASSWORD=Provanhung77" -e "xpack.security.http.ssl.enabled=false" -t docker.elastic.co/elasticsearch/elasticsearch:8.11.3
+
+# Tạo kibana container
+docker run --name kib01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.11.3
+
+```
+
+Việc cài đặt Elasticsearch và Kibana tương đối phức tạp, cần xem thêm ohaanf elasticsearch
+
 **Kafka:**  
 
 1. Tạo networks:  
