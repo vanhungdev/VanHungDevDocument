@@ -6,6 +6,12 @@ Trong phần này sẽ hướng dẫn tất tần tật về docker trên VPS Ce
 
 ## Phần 1: Cài đặt docker trên Centos 7  
 
+SSH vào server
+
+ ```bash
+SSH root@ip_address
+ ```
+
 Cài đặt yum
 
  ```bash
