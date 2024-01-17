@@ -3,6 +3,7 @@
 Trong phần này sẽ hướng dẫn tải và cài đặt docker trên window.
 
 ## Phần 1: Cài đặt WSL 2:
+
 Có một số lý do chính tại sao Docker trên Windows cần WSL 2:
 
  - WSL 2 sử dụng một kiến trúc ảo hóa Linux hoàn chỉnh thay vì chỉ phần userspace như WSL 1. Điều này cho phép chạy máy ảo Linux đầy đủ hơn. Docker yêu cầu một môi trường Linux đầy đủ.  
@@ -40,6 +41,7 @@ Enable chức năng Windows Subsystem for Linux
 
 
 **Step 3 - Enable Virtual Machine feature**  
+
 Trước khi cài đặt WSL 2, bạn phải kích hoạt tính năng tùy chọn Virtual Machine Platform . Máy của bạn sẽ yêu cầu khả năng ảo hóa để sử dụng tính năng này.  
 
  ```bash
@@ -50,6 +52,7 @@ Khởi động lại máy tính
 
 
 **Step 4 - Set WSL 2 as your default version**  
+
 Mở PowerShell và chạy lệnh này để đặt WSL 2 làm phiên bản mặc định khi cài đặt bản phân phối Linux mới:  
 
  ```bash
