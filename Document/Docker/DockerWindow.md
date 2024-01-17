@@ -62,10 +62,18 @@ wsl --set-default-version 2
 
 ## Phần 2: Tải docker desktop:  
 
-Tải docker desktop tại trang chủ đường link sau  
+**Tải docker desktop tại trang chủ đường link sau**  
 
  ```bash
 https://www.docker.com/products/docker-desktop/
  ```
 
 Tải và cài đặt như bình thường
+
+**Kiểm tra đã được chưa**    
+
+Mở teminal chạy lệnh sau:  
+
+ ```bash
+ Docker ps
+ ```
