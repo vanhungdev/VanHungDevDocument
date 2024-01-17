@@ -1,10 +1,10 @@
-# Build image từ container và đẩy lên docker hub sau đó build image  
+# Backup image bằng cách build images 
 
-Trong phần này sẽ hướng dẫn tất tần tật về Build image từ container và đẩy lên docker hub sau đó build image
+Trong phần này sẽ hướng dẫn tất tần tật về build image từ container và đẩy lên docker hub
 
-## Phần 1: Build image chuyển dữ liệu giữa các server  
+## Phần 1: Build image từ container và đẩy lên docker hub  
 
-**Build image từ container và đẩy lên docker hub sau đó build image**  
+**Build image từ container và đẩy lên docker hub**  
 
  ```bash
 	Step 1. Commit container này thành một image mới.  
