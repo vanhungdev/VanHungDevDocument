@@ -386,17 +386,32 @@ docker run -d --name sql-server-container -p 1433:1433 vanhungdev/sql-server-con
 
 ## Phần 6: Backup và chuyển tất cả các container cũ
 
+**SQL Server**
 
+Backup SQL Server:  
+
+ ```bas
+
+# Chạy trên server hiện tại
 docker commit sql-server-container sql-server-container_backup:v.17.01.2024  
 docker save sql-server-container_backup:v.16.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
 #Chạy trên server đích  
 docker run -d --name sql-server-container -p 1433:1433 sql-server-container_backup:v.17.01.2024  
 
+```
+
+**Elasticsearch** 
+
+Backup SQL Server:  
+
+ ```bas
+
+
 #Chạy trên server đích  
 docker network create elastic   
  
-
+# Chạy trên server hiện tại
 docker commit es01 es01:v.17.01.2024  
 docker save es01:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
@@ -404,18 +419,40 @@ docker save es01:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib
 docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300  -t es01:v.17.01.2024  
 
 
+```
+
+**Kibana** 
+
+Backup SQL Server:  
+
+ ```bas
+
+
 docker commit kib01 kib01:v.17.01.2024  
 docker save kib01:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
 #Chạy trên server đích  
 docker run --name kib01 --net elastic -p 5601:5601 kib01:v.17.01.2024  
+```
 
+**Mongodb**  
+
+Backup Mongodb:  
+
+ ```bas
 
 docker commit mongodb mongodb:v.17.01.2024  
 docker save mongodb:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
 
 #Chạy trên server đích  
 docker run -d --name mongodb -p 27017:27017  mongodb:v.17.01.2024  
+```
+
+**Minio-server** 
+
+Backup Minio-server:  
+
+ ```bas
 
 
 docker commit minio-server minio-server:v.17.01.2024  
@@ -423,7 +460,13 @@ docker save minio-server:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p 
 
 #Chạy trên server đích  
  docker run -d --name minio-server -p 9011:9000 -p 9001:9001  minio-server:v.17.01.2024 server /data --console-address ":9001"  
+```
 
+**redis**   
+
+Backup SQL Server:  
+
+ ```bas
 
 docker commit redis redis:v.17.01.2024  
 docker save redis:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/lib/docker/tmp && gunzip | docker load"  
@@ -431,5 +474,5 @@ docker save redis:v.17.01.2024 | gzip | ssh root@34.125.19.138 "mkdir -p /var/li
 #Chạy trên server đích  
 docker run -d --name redis -p 6379:6379 minio-server:v.17.01.2024  
 
-
+```
 
