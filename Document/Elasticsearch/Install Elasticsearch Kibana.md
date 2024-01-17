@@ -41,7 +41,7 @@ sudo sysctl -w vm.max_map_count=262144
 **3. Lấy password của tài khoản kibana_system**  
  
  ```bash
-docker exec -it elastic-server /usr/share/elasticsearch/bin/elasticsearch-reset-password -u kibana_system
+docker exec -it es01 /usr/share/elasticsearch/bin/elasticsearch-reset-password -u kibana_system
 
  ```
  Nếu vào exec vào rồi hoặc dùng portainer thì chỉ cần 
