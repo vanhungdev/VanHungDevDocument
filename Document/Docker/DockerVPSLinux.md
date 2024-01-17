@@ -25,10 +25,14 @@ Cài dặt docker và docker compose
 Start và kiểm tra trạng thái docker
 
  ```bash
+   # start docker engine 
+   sudo systemctl start docker
 
-   sudo systemctl start docker // start docker engine 
-   sudo systemctl stop docker // stop docker engine 
-   sudo systemctl status docker // xem trạng thái
+   # stop docker engine 
+   sudo systemctl stop docker
+
+   # xem trạng thái
+   sudo systemctl status docker 
  ```
 
 
@@ -268,10 +272,10 @@ docker login // login vào docker hub
 # Xem danh sách container
 docker ps
 
-#Xem danh sách images
+# Xem danh sách images
 docker images
 
-#Commit container thành image
+# Commit container thành image
 docker commit <container hiện tại> <tên image muốn build>:v.16.01.2024
 
 # Câu lênh mẫu sẽ như sau
