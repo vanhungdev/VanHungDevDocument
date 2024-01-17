@@ -40,20 +40,7 @@ Copy file từ server về
  scp -r ~/desktop/PUPD/PUBDServerApi root@ip_address:/nguyenhung  /// Tải file lên host
  scp -r root@ip_address:/nguyenhung ~/desktop/PUPD/PUBDServerApi /// dowload file về
  ```
-  
-Coppy file từ container docker:
 
- ```bash
-
-docker cp <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml ~/desktop/docker2  // copy
-vim /root/elasticsearch.yml // chú ý thêm /root/
-
-docker cp /root/elasticsearch.yml <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml // ghi đè
-
-// kiểm tra thử có chưa
-docker exec -it <container_id> /bin/bash
-cat /usr/share/elasticsearch/config/elasticsearch.yml
- ```
 
 
 Một số lệnh khác
@@ -67,7 +54,7 @@ rm -r /path   // xoá thư mục
 
 ## Phần 2: Cài đặt docker trên Centos 7  
 
-Cài đặt yum
+**Cài đặt yum**
 
  ```bash
   sudo yum install -y yum-utils
@@ -85,7 +72,7 @@ Cài dặt docker và docker compose
   sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
  ```
 
-Start và kiểm tra trạng thái docker
+**Start và kiểm tra trạng thái docker**
 
  ```bash
    # start docker engine 
@@ -96,4 +83,23 @@ Start và kiểm tra trạng thái docker
 
    # xem trạng thái
    sudo systemctl status docker 
+ ```
+
+**Coppy file từ container docker:**
+
+ ```bash
+
+# Lênh coppy file
+docker cp <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml ~/desktop/docker2
+
+# Lệnh chỉnh file (chú ý thêm /root/)
+vim /root/elasticsearch.yml 
+
+docker cp /root/elasticsearch.yml <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml // ghi đè
+
+# kiểm tra thử có chưa (exec vào môi trường container)
+docker exec -it <container_id> /bin/bash
+
+cat /usr/share/elasticsearch/config/elasticsearch.yml
+
  ```
