@@ -1,7 +1,7 @@
 # Tạo và cài đặt máy ảo VPS Centos để triển khai ứng dụng thực tế  
 
 Trong phần này sẽ hướng dẫn tất tần tật về docker trên VPS Centos 7.  
-Để xem cách cài đặt Centos 7 xem ở https://github.com/vanhungdev/VanHungDevDocument/tree/main/Document/SSH%20Linux%20Server
+Để xem cách cài đặt Centos 7 xem ở phần `SSH Linux Server`
 
 
 ## Phần 1: Cài đặt docker trên Centos 7  
