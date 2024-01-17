@@ -3,14 +3,14 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
 
 ## Phần 1: Cấu hình SSH Server Centos 7: 
 
-SSH vào server
+**SSH vào server**
 
  ```bash
 SSH root@ip_address
  ```
 
 
-Sau khi SSH vào centos VPS thì chạy tuần tự một số lênh sau:  
+**Lênh tuần tự để setup server centos**
  ```bash
 
 whoami
@@ -28,7 +28,7 @@ systemctl restart sshd
 systemctl status sshd
  ```
 
-Cài vim để chỉnh sửa file
+**Cài vim để chỉnh sửa file**
 
  ```bash
  sudo yum install vim
@@ -43,7 +43,7 @@ Copy file từ server về
 
 
 
-Một số lệnh khác
+**Một số lệnh khác**
 
  ```bash
 pwd // xem thư mục hiện tại
@@ -60,13 +60,13 @@ rm -r /path   // xoá thư mục
   sudo yum install -y yum-utils
  ```
 
-Thêm Docker repo
+**Thêm Docker repo**
 
  ```bash
   sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
  ```
 
-Cài dặt docker và docker compose
+**Cài dặt docker và docker compose**
 
  ```bash
   sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
