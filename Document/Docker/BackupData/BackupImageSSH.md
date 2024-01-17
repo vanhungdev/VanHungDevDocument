@@ -1,7 +1,6 @@
-# Tạo và cài đặt máy ảo VPS Centos để triển khai ứng dụng thực tế  
+# Build image chuyển dữ liệu giữa các server  
 
-Trong phần này sẽ hướng dẫn tất tần tật về docker trên VPS Centos 7.  
-Để xem cách cài đặt Centos 7 xem ở phần `SSH Linux Server`
+Trong phần này sẽ hướng dẫn tất tần tật về build image chuyển dữ liệu giữa các server
 
 
 ## Phần 1: Build image chuyển dữ liệu giữa các server  
