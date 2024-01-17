@@ -47,6 +47,8 @@ dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /nores
  ```
 
 Khởi động lại máy tính  
+
+
 **Step 4 - Set WSL 2 as your default version**  
 Mở PowerShell và chạy lệnh này để đặt WSL 2 làm phiên bản mặc định khi cài đặt bản phân phối Linux mới:  
 
