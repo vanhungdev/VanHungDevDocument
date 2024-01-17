@@ -34,7 +34,7 @@ systemctl status sshd
  sudo yum install vim
  ```
 
-Copy file từ server về
+**Copy file từ server về**
 
  ```bash
 #  Tải file lên host
