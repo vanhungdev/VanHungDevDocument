@@ -70,7 +70,7 @@ https://www.docker.com/products/docker-desktop/
 
 Tải và cài đặt như bình thường
 
-**Kiểm tra đã được chưa**    
+**Kiểm tra đã cài đặt thành công hay được chưa**    
 
 Mở teminal chạy lệnh sau:  
 
