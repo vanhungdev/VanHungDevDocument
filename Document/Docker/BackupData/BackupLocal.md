@@ -34,14 +34,14 @@ docker save sql-server-container_backup:v.16.01.2024 -o sql-server-backup_16_01_
 **Step 3. Copy file tarball về máy local, ví dụ sử dụng scp**
 
  ```bas
-scp -r root@remote_server:/root/sql-server-backup_16_01_2024.tar ~/backups/
+scp -r root@34.16.204.104:/root/sql-server-backup_16_01_2024.tar D:\dockerBackup
 
  ```
 
 **Step 4. Load image từ file tarball**
 
  ```bas
-docker load -i ~/backups/sql-server-backup_16_01_2024.tar
+docker load -i D:\dockerBackup\sql-server-backup_16_01_2024.tar
 
  ```
 
