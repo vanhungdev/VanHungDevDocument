@@ -12,7 +12,7 @@ Trong phần này sẽ hướng dẫn tất tần tật về Backup Volume trên
     	Step 1. Xác định volumes đang được sử dụng bởi container Elasticsearch.  
     	Step 2. Đánh tag cho images.  
     	Step 3. Sao chép volumes đó sang server đích (thay IP và đường dẫn phù hợp).  
-    	Step 4. Trên server đích, tạo volumes mới với tên tương ứng, ví dụ.  
+    	Step 4. Trên server đích, tạo volumes mới với tên tương ứng, ví dụ.
      Step 5. Chạy container Elasticsearch mới với volumes vừa copy.
 
 ```
