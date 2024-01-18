@@ -142,7 +142,7 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
 
 ## Phần 6: crontab chạy script trên máy SSH để backup file định kỳ  
 
-**Sử dụng chương trình sftp - truyền tải file an toàn**
+**crontab chạy script trên máy SSH để backup file định kỳ**
 
  ```bash
 # Viết thêm ở đây
