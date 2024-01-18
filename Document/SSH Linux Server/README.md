@@ -132,5 +132,13 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
 # Viết thêm ở đây
  ```
 
+## Phần 5: Sử dụng chương trình sftp - truyền tải file an toàn  
+
+**Sử dụng chương trình sftp - truyền tải file an toàn**
+
+ ```bash
+# Viết thêm ở đây
+ ```
+
 
 document https://xuanthulab.net/su-dung-rsync-dong-bo-thu-muc-tren-linux-va-windows.html
