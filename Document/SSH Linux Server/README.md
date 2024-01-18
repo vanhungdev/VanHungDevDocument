@@ -106,3 +106,28 @@ docker exec -it <container_id> /bin/bash
 cat /usr/share/elasticsearch/config/elasticsearch.yml
 
  ```
+
+
+## Phần 2: Tạo SSH Key dể đăng nhập không cần password: 
+
+**Cơ chế xác thực bằng SSH Key**
+
+ ```bash
+# Viết thêm ở đây
+ ```
+
+## Phần 3: Sử dụng Rsync đồng bộ thư mục trên Linux và Windows: 
+
+**Sử dụng Rsync đồng bộ thư mục**
+
+ ```bash
+# Viết thêm ở đây
+ ```
+
+## Phần 4: Sử dụng FUSE để mount ổ đĩa từ xa (server) vào macOS: 
+
+**Sử dụng Rsync đồng bộ thư mục**
+
+ ```bash
+# Viết thêm ở đây
+ ```
