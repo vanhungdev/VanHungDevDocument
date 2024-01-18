@@ -126,7 +126,7 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
 
 ## Phần 4: Sử dụng FUSE để mount ổ đĩa từ xa (server) vào macOS: 
 
-**Sử dụng Rsync đồng bộ thư mục**
+**Sử dụng FUSE để mount ổ đĩa từ xa**
 
  ```bash
 # Viết thêm ở đây
