@@ -131,3 +131,6 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
  ```bash
 # Viết thêm ở đây
  ```
+
+
+document https://xuanthulab.net/su-dung-rsync-dong-bo-thu-muc-tren-linux-va-windows.html
