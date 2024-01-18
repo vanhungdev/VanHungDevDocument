@@ -108,7 +108,7 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
  ```
 
 
-## Phần 2: Tạo SSH Key dể đăng nhập không cần password: 
+## Phần 2: Tạo SSH Key dể đăng nhập không cần password  
 
 **Cơ chế xác thực bằng SSH Key**
 
@@ -116,7 +116,7 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
 # Viết thêm ở đây
  ```
 
-## Phần 3: Sử dụng Rsync đồng bộ thư mục trên Linux và Windows: 
+## Phần 3: Sử dụng Rsync đồng bộ thư mục trên Linux và Windows  
 
 **Sử dụng Rsync đồng bộ thư mục**
 
@@ -124,7 +124,7 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
 # Viết thêm ở đây
  ```
 
-## Phần 4: Sử dụng FUSE để mount ổ đĩa từ xa (server) vào macOS: 
+## Phần 4: Sử dụng FUSE để mount ổ đĩa từ xa (server) vào macOS  
 
 **Sử dụng FUSE để mount ổ đĩa từ xa**
 
