@@ -140,5 +140,12 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
 # Viết thêm ở đây
  ```
 
+## Phần 6: crontab chạy script trên máy SSH để backup file định kỳ  
+
+**Sử dụng chương trình sftp - truyền tải file an toàn**
+
+ ```bash
+# Viết thêm ở đây
+ ```
 
 document https://xuanthulab.net/su-dung-rsync-dong-bo-thu-muc-tren-linux-va-windows.html
