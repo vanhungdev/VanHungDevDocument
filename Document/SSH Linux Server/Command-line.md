@@ -104,3 +104,82 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
 | `tail <file>` | Hiển thị 10 dòng cuối của file | `tail /var/log/messages` |
 | `tail -f <file>` | Theo dõi nội dung file thời gian thực | `tail -f /var/log/syslog` |  
 | `grep <pattern> <file>` | Tìm kiếm theo mẫu trong file | `grep "error" /var/log/messages` |
+
+## Phần 2: tổng hợp các cú pháp Markdown cho GitHub README.md: 
+
+1. Tiêu đề
+
+# Tiêu đề cấp 1
+## Tiêu đề cấp 2
+### Tiêu đề cấp 3
+#### Tiêu đề cấp 4  
+##### Tiêu đề cấp 5
+###### Tiêu đề cấp 6
+2. Định dạng chữ
+
+**In đậm**
+*In nghiêng*  
+~~Gạch ngang~~
+3. Danh sách
+
+- Item 1
+- Item 2
+  - Item 2.1
+  - Item 2.2
+4. Link
+
+[Text hiển thị](https://www.example.com)
+5. Hình ảnh
+
+![Alt text](image.jpg)
+6. Bảng
+
+| Cột 1 | Cột 2 | Cột 3 |
+|-|-|-|  
+| Hàng 1 | Ô 2 | Ô 3|
+| Hàng 2 | Ô 5 | Ô 6|
+7. Block code
+
+```
+// Code block
+```
+8. Gạch đầu dòng
+
+- [ ] Task 1
+- [x] Task 2
+9. Thanh ngăn cách
+
+---
+10. Ký tự đặc biệt
+
+\! \# \$ \% \&
+11. Nhấn mạnh
+
+==Nội dung cần nhấn mạnh==
+12. Chú thích
+
+Hamlet đã nói:
+
+> To be, or not to be, that is the question
+13. Emoji
+
+:smile:
+14. table nâng cao
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+</table>
