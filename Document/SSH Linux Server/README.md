@@ -145,7 +145,14 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
 **crontab chạy script trên máy SSH để backup file định kỳ**
 
  ```bash
-# Viết thêm ở đây
+
+ # Mở file crontab
+ crontab -e
+
+ # Thêm dữ liệu
+ * * * * * echo "Cron job running $(date)"
+
  ```
 
+Lưu và thoát là đẫ chạy được.
 document https://xuanthulab.net/su-dung-rsync-dong-bo-thu-muc-tren-linux-va-windows.html
