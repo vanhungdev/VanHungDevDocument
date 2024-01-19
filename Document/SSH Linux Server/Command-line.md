@@ -105,7 +105,57 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
 | `tail -f <file>` | Theo dõi nội dung file thời gian thực | `tail -f /var/log/syslog` |  
 | `grep <pattern> <file>` | Tìm kiếm theo mẫu trong file | `grep "error" /var/log/messages` |
 
+
 ## Phần 2: tổng hợp các cú pháp Markdown cho GitHub README.md: 
+# File Permissions trong Linux
+
+###  1. Khái niệm
+
+Mỗi file/thư mục đều có các quyền (permissions) riêng cho người dùng truy cập.
+
+Có 3 loại người dùng:
+
+- **Owner:** Người sở hữu file/thư mục
+- **Group:** Nhóm sở hữu file/thư mục
+- **Other users:** Các người dùng còn lại
+
+Có 3 loại quyền:
+
+- **Read (r):** Quyền đọc nội dung file
+- **Write (w):** Quyền thay đổi nội dung file
+- **Execute (x):** Quyền thực thi đối với file executable
+
+### 2. Cách biểu diễn permissions
+
+Permissions được biểu diễn bằng 9 ký tự theo thứ tự:
+
+
+**rwxrwxrwx**
+
+Trong đó:
+
+- 3 ký tự đầu: Quyền của owner
+- 3 ký tự tiếp: Quyền của group
+- 3 ký tự cuối: Quyền của other users
+
+Một số ví dụ:
+
+- `rwxr-xr-x:` Owner có full quyền, group và others chỉ đọc và execute
+- `rw-------:` Chỉ có owner đọc và ghi, không ai khác có quyền
+- `rwxrwxrwx:` Tất cả đều có full quyền
+
+### 3. Xem và thay đổi permissions
+
+Dùng `ls -l` để xem permissions hiện tại
+
+Dùng `chmod` để thay đổi permissions, ví dụ:
+
+```bash
+chmod 640 file.txt # Owner rw, group & others r
+chmod 755 script.sh # Owner rwx, group & others r-x
+
+
+## Phần 3: tổng hợp các cú pháp Markdown cho GitHub README.md: 
 
 1. Tiêu đề
 ```bash
