@@ -168,7 +168,7 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
   
       // Code Here
   
-  ```
+  `.``   // bỏ dấy "."
 
 ```
 
