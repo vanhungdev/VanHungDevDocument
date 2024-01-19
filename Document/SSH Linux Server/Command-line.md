@@ -160,12 +160,14 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
 
 ```
 7. Block code
-```
-```bash
 
 
-```
-```
+"```"bash
+
+
+"```"
+
+
 8. Gạch đầu dòng
 
 ```bash
