@@ -92,3 +92,15 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
 | `get <file>` | Tải file xuống máy local | `get file.txt` |
 | `put <file>` | Tải file lên máy chủ | `put local_file.txt` |
 | `exit` | Thoát khỏi kết nối sFTP | |
+
+
+### Đọc nội dung file 
+
+| Lệnh | Mô tả | Ví dụ |
+|-|-|-|  
+| `cat <file>` | In nội dung file ra màn hình | `cat /etc/passwd` |
+| `less <file>` | Xem nội dung file dạng trang | `less /var/log/messages` |
+| `head <file>` | Hiển thị 10 dòng đầu của file | `head /etc/passwd` |
+| `tail <file>` | Hiển thị 10 dòng cuối của file | `tail /var/log/messages` |
+| `tail -f <file>` | Theo dõi nội dung file thời gian thực | `tail -f /var/log/syslog` |  
+| `grep <pattern> <file>` | Tìm kiếm theo mẫu trong file | `grep "error" /var/log/messages` |
