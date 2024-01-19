@@ -219,9 +219,7 @@ Gỡ chạy lại nếu lỗi:
 **Centos:**    
 
  ```bash
-
  	docker run -dit --name centos7 -v /data:/data centos:7
-
 	yum update -y
 	yum install -y vim wget net-tools
 	yum install -y yum-utils
