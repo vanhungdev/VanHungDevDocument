@@ -1,5 +1,5 @@
-# Tổng hợp các lênh trong docker
-- Tổng hợp các lênh trong docker.
+# Tổng hợp các lệnh trong docker
+- Tổng hợp các lệnh trong docker.
 
 ## Docker command
 
