@@ -141,7 +141,7 @@ Có 2 loại file path:
 Như vậy, file path rất quan trọng trong việc truy xuất và làm việc với file, thư mục trên hệ thống Linux.
 
 
-# Phần 3: tổng hợp các cú pháp Markdown cho GitHub README.md: 
+# Phần 3: File Permissions trong Linux: 
 **File Permissions trong Linux**
 
 ###  1. Khái niệm
