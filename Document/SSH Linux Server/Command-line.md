@@ -77,3 +77,18 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
 | `rsync -r <source> <destination>` | Đồng bộ thư mục | `rsync -r /home/john/folder /backup` | 
 | `rsync -a <source> <username>@<ip>:<dest>` | Đồng bộ từ xa | `rsync -a /home/john john@192.168.1.100:/backup` |
 | `rsync -az <ip>:<src> <dest>` | Đồng bộ từ xa | `rsync -az 192.168.1.100:/home/john/folder /backup` |
+
+### Lệnh sFTP
+
+| Lệnh | Mô tả | Ví dụ |
+|-|-|-|
+| `sftp <username>@<ip>` | Kết nối tới máy chủ sFTP | `sftp john@192.168.1.100` |
+| `ls` | Liệt kê file và thư mục | |  
+| `pwd` | Hiển thị thư mục làm việc hiện tại | |
+| `cd <path>` | Chuyển đến thư mục | `cd /home/john` |
+| `mkdir <dir>` | Tạo thư mục mới | `mkdir folder1` |  
+| `rm <file>` | Xóa file | `rm file.txt` |
+| `rmdir <dir>` | Xóa thư mục rỗng | `rmdir empty_folder` |
+| `get <file>` | Tải file xuống máy local | `get file.txt` |
+| `put <file>` | Tải file lên máy chủ | `put local_file.txt` |
+| `exit` | Thoát khỏi kết nối sFTP | |
