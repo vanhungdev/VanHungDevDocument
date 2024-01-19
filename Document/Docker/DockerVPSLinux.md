@@ -216,6 +216,17 @@ Gỡ chạy lại nếu lỗi:
  docker run -d --name redis -p 6379:6379 -e REDIS_PASSWORD=Provanhung77 redis:latest
  ```
 
+**Centos:**    
+
+ ```bash
+
+ 	docker run -dit --name centos7 -v /data:/data centos:7
+
+	yum update -y
+	yum install -y vim wget net-tools
+	yum install -y yum-utils
+ ```
+
 
 **Elasticsearch Kibana:**    
 
