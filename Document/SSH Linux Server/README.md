@@ -157,5 +157,7 @@ sudo systemctl restart crond
 
  ```
 
+Xem cú pháp tại https://crontab.guru/
+
 Lưu và thoát là đẫ chạy được.
 document https://xuanthulab.net/su-dung-rsync-dong-bo-thu-muc-tren-linux-va-windows.html
