@@ -57,7 +57,8 @@ docker images
  ```bas
 docker run -d --name sql-server -p 1433:1433 sql-server-container_backup:v.16.01.2024
 
-
  ```
 
+
+## Phần 2: CronTab tự động dowlaod file backup file 0h hàng ngày
 
