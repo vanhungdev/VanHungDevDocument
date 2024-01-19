@@ -152,6 +152,9 @@ cat /usr/share/elasticsearch/config/elasticsearch.yml
  # Thêm dữ liệu
  * * * * * echo "Cron job running $(date)"
 
+# Sau khi thêm và lưu thì khởi động lại
+sudo systemctl restart crond
+
  ```
 
 Lưu và thoát là đẫ chạy được.
