@@ -1,7 +1,7 @@
 # Tạo và cài đặt máy ảo VPS Centos để triển khai ứng dụng thực tế
 VPS Centos rất ổn định và phù hợp để triển khai ứng dụng thực tế.
 
-## Phần 1: Tổng hợp các lênh trong Centos 7: 
+# Phần 1: Tổng hợp các lênh trong Centos 7: 
 
 ### Quản lý gói
 
@@ -106,7 +106,7 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
 | `grep <pattern> <file>` | Tìm kiếm theo mẫu trong file | `grep "error" /var/log/messages` |
 
 
-## Phần 2: tổng hợp các cú pháp Markdown cho GitHub README.md: 
+# Phần 2: tổng hợp các cú pháp Markdown cho GitHub README.md: 
 # File Path trong Linux
 
 ## Khái niệm
@@ -141,8 +141,8 @@ Có 2 loại file path:
 Như vậy, file path rất quan trọng trong việc truy xuất và làm việc với file, thư mục trên hệ thống Linux.
 
 
-## Phần 3: tổng hợp các cú pháp Markdown cho GitHub README.md: 
-# File Permissions trong Linux
+# Phần 3: tổng hợp các cú pháp Markdown cho GitHub README.md: 
+**File Permissions trong Linux**
 
 ###  1. Khái niệm
 
@@ -188,9 +188,10 @@ Dùng `chmod` để thay đổi permissions, ví dụ:
 ```bash
 chmod 640 file.txt # Owner rw, group & others r
 chmod 755 script.sh # Owner rwx, group & others r-x
+```
 
 
-## Phần 3: tổng hợp các cú pháp Markdown cho GitHub README.md: 
+# Phần 4: tổng hợp các cú pháp Markdown cho GitHub README.md: 
 
 1. Tiêu đề
 ```bash
