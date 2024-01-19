@@ -159,7 +159,4 @@ docker run -d --name redis -p 6379:6379 minio-server:v.17.01.2024
 
 
 
-## Phần 2: CronTab tự động backup file 0h hàng ngày
-
-
 
