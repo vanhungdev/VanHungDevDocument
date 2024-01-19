@@ -1,26 +1,7 @@
 # Tổng hợp các lênh trong docker
 - Tổng hợp các lênh trong docker.
 
-
-### Install Docker Engine
-
-One click installation script:
-
-```sh
-curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
-```
-
-Run docker as non root user:
-
-```sh
-sudo groupadd docker
-sudo usermod -aG docker $USER
-```
-
-For more information, see [Install Docker Engine](https://docs.docker.com/engine/install/)
-
-## Using Docker
+## Docker command
 
 ### Running Containers
 
