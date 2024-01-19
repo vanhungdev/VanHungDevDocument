@@ -107,6 +107,41 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
 
 
 ## Phần 2: tổng hợp các cú pháp Markdown cho GitHub README.md: 
+# File Path trong Linux
+
+## Khái niệm
+
+File path được sử dụng để chỉ định vị trí của file và thư mục trên hệ thống Linux.
+
+Có 2 loại file path:
+
+- **Absolute path:** Là đường dẫn đầy đủ bắt đầu từ root directory (`/`) đến file hoặc thư mục.
+
+  Ví dụ: `/home/user/documents/file.txt`
+
+- **Relative path:** Là đường dẫn tính từ thư mục hiện tại đến file hoặc thư mục.
+
+  Ví dụ: `documents/notes/note.txt`
+
+## Các ký hiệu thường gặp
+
+- `/`: Root directory
+- `~`: Thư mục home của user hiện tại
+- `.`: Thư mục hiện tại
+- `..`: Thư mục cha của thư mục hiện tại
+- `\` hoặc `/`: Phân cách các thư mục trong đường dẫn
+
+## Các lưu ý quan trọng
+
+- Linux phân biệt chữ hoa chữ thường trong file path.
+- Không nên đặt tên file chứa các ký tự đặc biệt `/ \ ! @ # $ % ^ & * ( )`
+- Có thể sử dụng wildcard `*` hoặc `?` để thay thế 0 hoặc nhiều ký tự bất kỳ trong path.
+- Dấu `/` ở cuối path thường ám chỉ thư mục, còn không có `/` cuối thường là file.
+
+Như vậy, file path rất quan trọng trong việc truy xuất và làm việc với file, thư mục trên hệ thống Linux.
+
+
+## Phần 3: tổng hợp các cú pháp Markdown cho GitHub README.md: 
 # File Permissions trong Linux
 
 ###  1. Khái niệm
