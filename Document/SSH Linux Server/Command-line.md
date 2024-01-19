@@ -109,7 +109,7 @@ VPS Centos rất ổn định và phù hợp để triển khai ứng dụng th�
 # Phần 2: tổng hợp các cú pháp Markdown cho GitHub README.md: 
 # File Path trong Linux
 
-## Khái niệm
+###  Khái niệm
 
 File path được sử dụng để chỉ định vị trí của file và thư mục trên hệ thống Linux.
 
@@ -123,7 +123,7 @@ Có 2 loại file path:
 
   Ví dụ: `documents/notes/note.txt`
 
-## Các ký hiệu thường gặp
+###  Các ký hiệu thường gặp
 
 - `/`: Root directory
 - `~`: Thư mục home của user hiện tại
@@ -131,7 +131,7 @@ Có 2 loại file path:
 - `..`: Thư mục cha của thư mục hiện tại
 - `\` hoặc `/`: Phân cách các thư mục trong đường dẫn
 
-## Các lưu ý quan trọng
+###  Các lưu ý quan trọng
 
 - Linux phân biệt chữ hoa chữ thường trong file path.
 - Không nên đặt tên file chứa các ký tự đặc biệt `/ \ ! @ # $ % ^ & * ( )`
@@ -193,7 +193,7 @@ chmod 755 script.sh # Owner rwx, group & others r-x
 
 # Phần 4: tổng hợp các cú pháp Markdown cho GitHub README.md: 
 
-1. Tiêu đề
+### 1. Tiêu đề
 ```bash
 
 # Tiêu đề cấp 1
@@ -204,7 +204,7 @@ chmod 755 script.sh # Owner rwx, group & others r-x
 ###### Tiêu đề cấp 6
 
 ```
-2. Định dạng chữ
+### 2. Định dạng chữ
 ```bash
 
 **In đậm**
@@ -213,7 +213,7 @@ chmod 755 script.sh # Owner rwx, group & others r-x
 
 ```
 
-3. Danh sách
+### 3. Danh sách
 ```bash
 
 - Item 1
@@ -223,19 +223,19 @@ chmod 755 script.sh # Owner rwx, group & others r-x
 
 ```
 
-4. Link
+### 4. Link
 ```bash
 
 [Text hiển thị](https://www.example.com)
 ```
-5. Hình ảnh
+### 5. Hình ảnh
 
 ```bash
 
 ![Alt text](image.jpg)
 
 ```
-6. Bảng
+### 6. Bảng
 
 ```bash
 
@@ -245,7 +245,7 @@ chmod 755 script.sh # Owner rwx, group & others r-x
 | Hàng 2 | Ô 5 | Ô 6|
 
 ```
-7. Block code
+### 7. Block code
 
 
 ```bash
@@ -259,7 +259,7 @@ chmod 755 script.sh # Owner rwx, group & others r-x
 ```
 
 
-8. Gạch đầu dòng
+### 8. Gạch đầu dòng
 
 ```bash
 
@@ -267,26 +267,26 @@ chmod 755 script.sh # Owner rwx, group & others r-x
 - [x] Task 2
 
 ```
-9. Thanh ngăn cách
+### 9. Thanh ngăn cách
 ```bash
 
 ---
 
 ```
 
-10. Ký tự đặc biệt
+### 10. Ký tự đặc biệt
 ```bash
 
 \! \# \$ \% \&
 
 ```
-11. Nhấn mạnh
+### 11. Nhấn mạnh
 ```bash
 
 ==Nội dung cần nhấn mạnh==
 
 ```
-12. Chú thích
+### 12. Chú thích
 ```bash
 
 Hamlet đã nói:
@@ -294,14 +294,14 @@ Hamlet đã nói:
 > To be, or not to be, that is the question
 
 ```
-13. Emoji
+### 13. Emoji
 
 14. 
 ```bash
 :smile:
 
 ```
-14. table nâng cao
+### 14. table nâng cao
 ```bash
 <table>
   <tr>
