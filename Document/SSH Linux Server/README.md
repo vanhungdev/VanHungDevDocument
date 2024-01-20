@@ -246,8 +246,11 @@ Không cần cài thêm gì nữa, nếu trường hợp nhiều server thì ch�
  # Mở file crontab
  crontab -e
 
+ # Tạo thư mục log
+ touch log.txt
+
  # Thêm dữ liệu
- * * * * * echo "Cron job running $(date)"
+ * * * * * bash -c 'echo "$(date) - cron is running" >> /root/log.txt'
 
 # Sau khi thêm và lưu thì khởi động lại
 sudo systemctl restart crond
