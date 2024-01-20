@@ -161,8 +161,6 @@ Cấp quyền cho file
 chmod 600 /root/.ssh/authorized_keys
 chmod 700 /root/.ssh
 chmod 700 /root
-
-
 ```
 
 **Tạo xác thực ở máy local (MÁC OS)**
@@ -174,7 +172,6 @@ chmod 700 /root
 
   # Nếu không được thì thêm /root
   scp root@34.125.35.106:/root/keys/id_rsa ~/desktop/
-
 ```
 
 Chỉnh sửa cấu hình .SSH ở máy MÁC local
@@ -186,7 +183,7 @@ Chỉnh sửa cấu hình .SSH ở máy MÁC local
 
 ```
 
-Cấu hình như sau
+Cấu hình như sau (ý nghĩa của cấu hình này là để phân biệt host nào đi với file nào)
 ```bash
 
 Host 34.170.198.155 // địa chỉ ip của server centos
@@ -195,7 +192,6 @@ Host 34.170.198.155 // địa chỉ ip của server centos
  PreferredAuthentications publickey
  IdentityFile "/Users/nguyenhung/Desktop/id_rsa"  // Nơi chứa file cấu hình tải về
 
-
 ```
 
 Nếu có nhiều server thì clone ra giống vậy.
@@ -203,13 +199,21 @@ Nếu có nhiều server thì clone ra giống vậy.
 
 cuối cùng kiểm tra thử được chưa.
 
+
 ```bash
 
 # -v để xem log
 ssh -v  root@34.125.35.106
 
-
 ```
+
+
+**Tạo xác thực ở máy local (Window)**
+
+```bash
+ scp root@34.125.35.106:/root/keys/id_rsa C:\Users\vanhu\.ssh
+```
+Không cần cài thêm gì nữa, nếu trường hợp nhiều server thì chưa biết cài.
 
 ## Phần 3: Sử dụng Rsync đồng bộ thư mục trên Linux và Windows  
 
