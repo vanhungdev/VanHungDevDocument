@@ -50,9 +50,9 @@ systemctl status sshd
 
  ```bash
 pwd // xem thư mục hiện tại
-mkdir // tạo thư mục mới
-rm -r /path   // xoá thư mục
-
+mkdir <folder name> // tạo thư mục mới
+rm -r </path>   // xoá thư mục
+touch <file name> // Tạo file mới
  ```
 
 ## Phần 2: Cài đặt docker trên Centos 7  
