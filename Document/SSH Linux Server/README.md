@@ -254,6 +254,10 @@ sudo systemctl restart crond
 
  ```
 
+Đối với hệ điều hành Ubuntu thì lưu file bằng cách:  
+Nhấn tổ hợp Ctrl + X rồi nhấn phím "Y" để đồng ý
+
+
 Xem cú pháp tại https://crontab.guru/
 
 Lưu và thoát là đẫ chạy được.
