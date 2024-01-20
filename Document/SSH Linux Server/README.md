@@ -201,6 +201,16 @@ Host 34.170.198.155 // địa chỉ ip của server centos
 Nếu có nhiều server thì clone ra giống vậy.
 
 
+cuối cùng kiểm tra thử được chưa.
+
+```bash
+
+# -v để xem log
+ssh -v  root@34.125.35.106
+
+
+```
+
 ## Phần 3: Sử dụng Rsync đồng bộ thư mục trên Linux và Windows  
 
 **Sử dụng Rsync đồng bộ thư mục**
