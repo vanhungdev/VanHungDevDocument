@@ -170,7 +170,7 @@ chmod 700 /root
 ```bash
 
   # Copy từ server về máy mac (nếu có rồi thì sẽ ghi đè lên không sao)
-  cp root@34.125.35.106:/keys/id_rsa ~/desktop/
+  scp root@34.125.35.106:/keys/id_rsa ~/desktop/
 
   # Nếu không được thì thêm /root
   scp root@34.125.35.106:/root/keys/id_rsa ~/desktop/
