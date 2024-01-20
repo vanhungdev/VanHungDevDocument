@@ -257,8 +257,13 @@ sudo systemctl restart crond
 Đối với hệ điều hành Ubuntu thì lưu file bằng cách:  
 Nhấn tổ hợp Ctrl + X rồi nhấn phím "Y" để đồng ý
 
+Nếu không dùng được nano thì dùng vim phải gỡ nano  
+
+```bash
+  sudo apt update
+  sudo apt remove nano
+  sudo apt purge nano
+  rm -rf ~/.nano
+```
 
 Xem cú pháp tại https://crontab.guru/
-
-Lưu và thoát là đẫ chạy được.
-document https://xuanthulab.net/su-dung-rsync-dong-bo-thu-muc-tren-linux-va-windows.html
