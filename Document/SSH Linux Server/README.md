@@ -151,6 +151,7 @@ Nếu đã tồn tại 2 file `id_rsa`  `id_rsa.pub` là đã xong bước tạo
 Tiếp theo là coppy file id_rsa.pub` vào `.ssh/authorized_keys` như ở đầu chúng ta đã config file ssh  
 
  ```bash
+  mkdir /root/.ssh
   cp id_rsa.pub /root/.ssh/authorized_keys
  ```
 
@@ -194,11 +195,8 @@ Host 34.170.198.155 // địa chỉ ip của server centos
 
 ```
 
-Nếu có nhiều server thì clone ra giống vậy.
-
-
+Nếu có nhiều server thì clone ra giống vậy.  
 cuối cùng kiểm tra thử được chưa.
-
 
 ```bash
 
