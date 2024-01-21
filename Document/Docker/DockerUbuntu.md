@@ -113,3 +113,12 @@ Ubuntu khác với centos ở cách cài package và khởi động các dịch 
   # cài package
   apt install <tên package>
  ```
+
+
+```bash
+ # Đối với docker mới
+ docker compose up
+
+ # docker cũ
+ docker-compose up
+```
