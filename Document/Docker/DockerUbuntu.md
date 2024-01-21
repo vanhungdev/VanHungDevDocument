@@ -45,6 +45,9 @@ Start và kiểm tra trạng thái docker
    sudo service docker stop 
  ```
 
+hoặc làm theo trang chủ theo link sau:
+https://docs.docker.com/engine/install/ubuntu/
+
 **Thông tin thêm**
 
 Ubuntu khác với centos ở cách cài package và khởi động các dịch vụ  
