@@ -55,10 +55,10 @@ Start và kiểm tra trạng thái docker
 
    docker cp /root/elasticsearch.yml <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml // ghi đè
 
-    # kiểm tra thử có chưa (exec vào môi trường container)
-    docker exec -it <container_id> /bin/bash
+   # kiểm tra thử có chưa (exec vào môi trường container)
+   docker exec -it <container_id> /bin/bash
 
-    cat /usr/share/elasticsearch/config/elasticsearch.yml
+   cat /usr/share/elasticsearch/config/elasticsearch.yml
 
  ```
 
