@@ -32,18 +32,6 @@ Cài dặt docker và docker compose
    sudo chmod +x /usr/local/bin/docker-compose
  ```
 
-Start và kiểm tra trạng thái docker
-
- ```bash
-   # start docker engine 
-   sudo service docker start
-
-   # xem trạng thái 
-   sudo service docker status
-
-   # stop docker engine
-   sudo service docker stop 
- ```
 ## Cách 2: Cài đặt docker trên Ubuntu theo hướng dẫn trên trang chủ
 hoặc làm theo trang chủ theo link sau:  
 https://docs.docker.com/engine/install/ubuntu/
@@ -85,6 +73,9 @@ Cài đặt docker compose
   sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
+
+**Thông tin thêm**
+
 Start và kiểm tra trạng thái docker
 
  ```bash
@@ -98,7 +89,6 @@ Start và kiểm tra trạng thái docker
    sudo service docker stop 
  ```
 
-**Thông tin thêm**
 
 Ubuntu khác với centos ở cách cài package và khởi động các dịch vụ  
 
