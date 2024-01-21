@@ -2,7 +2,7 @@
 
 Trong phần này sẽ hướng dẫn tất tần tật về docker trên VPS Ubuntu.  
 
-## Phần 1: Cài đặt docker trên Centos 7  
+## Phần 1: Cài đặt docker trên Ubuntu 
 
 SSH vào server
 
