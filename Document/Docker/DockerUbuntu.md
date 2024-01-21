@@ -114,7 +114,7 @@ Ubuntu khác với centos ở cách cài package và khởi động các dịch 
 ```
 
 
-Portainer trene Ubuntu
+Portainer trên Ubuntu
 
 ```bash
 
