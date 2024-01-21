@@ -50,7 +50,7 @@ Start và kiểm tra trạng thái docker
    # Lênh coppy file
    docker cp <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml ~/desktop/docker2
 
-    # Lệnh chỉnh file (chú ý thêm /root/)
+   # Lệnh chỉnh file (chú ý thêm /root/)
    vim /root/elasticsearch.yml 
 
    docker cp /root/elasticsearch.yml <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml // ghi đè
