@@ -51,7 +51,7 @@ https://docs.docker.com/engine/install/ubuntu/
 gỡ bỏ docker phiên bản cũ:
 
  ```bash
-SSH root@ip_address
+ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
  ```
 
 Set up Docker's apt repository:  
