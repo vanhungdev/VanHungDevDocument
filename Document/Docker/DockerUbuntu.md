@@ -44,3 +44,19 @@ Start và kiểm tra trạng thái docker
    # stop docker engine
    sudo service docker stop 
  ```
+
+**Thông tin thêm**
+
+Ubuntu khác với centos ở cách cài package và khởi động các dịch vụ  
+
+ ```bash
+
+  # khởi động dịch vụ
+  sudo service <service>
+
+  # cập nhật package
+  apt update
+
+  # cài package
+  apt install <tên package>
+ ```
