@@ -112,3 +112,12 @@ Ubuntu khác với centos ở cách cài package và khởi động các dịch 
  # docker cũ
  docker-compose up
 ```
+
+
+Portainer trene Ubuntu
+
+```bash
+
+sudo docker run -d --restart=always -p 8000:8000 -p 9000:9000 --name portainer --volume /var/run/docker.sock:/var/run/docker.sock -v /opt/portainer/data:/data portainer/portainer-ce:latest
+
+```
