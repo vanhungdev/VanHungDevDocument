@@ -43,6 +43,24 @@ Start và kiểm tra trạng thái docker
    sudo systemctl status docker 
  ```
 
+**Coppy file từ container docker:**
+
+ ```bash
+
+   # Lênh coppy file
+   docker cp <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml ~/desktop/docker2
+
+    # Lệnh chỉnh file (chú ý thêm /root/)
+   vim /root/elasticsearch.yml 
+
+   docker cp /root/elasticsearch.yml <container_id>:/usr/share/elasticsearch/config/elasticsearch.yml // ghi đè
+
+    # kiểm tra thử có chưa (exec vào môi trường container)
+    docker exec -it <container_id> /bin/bash
+
+    cat /usr/share/elasticsearch/config/elasticsearch.yml
+
+ ```
 
 
 ## Phần 2: Cài đặt docker compose SQL Server, Kafka, Redis, MongoDB, Minio, Portainer  
