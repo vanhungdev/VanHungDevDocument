@@ -4,7 +4,7 @@
 Viết 1 cái gì đó ở đây 
 
 **Thông tin Broker Kafka đã có sẵn trên VPS có thể sử dụng.**   
-**Lưu ý:** Mạng công ty cần maphost mới truy cập được Kafdrop và Portainer - Để dùng sever có sẵn thì dùng mạng thường hoặc VPN 
+**Lưu ý:** ad
 
 
 2. Kafdrop:  
