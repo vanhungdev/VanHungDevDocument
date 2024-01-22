@@ -245,6 +245,25 @@ yum install -y yum-utils
 
  ```
 
+**Công cụ quản lý Docker Compose Dockge:**    
+
+ ```bash
+
+	# Tạo thư mục lưu trữ ngăn xếp của bạn và lưu trữ ngăn xếp của Dockge
+	mkdir -p /opt/stacks /opt/dockge
+	cd /opt/dockge
+	
+	# Download the compose.yaml file
+	curl https://raw.githubusercontent.com/louislam/dockge/master/compose.yaml --output compose.yaml
+	
+	# Chạy lệnh docker compose để cài Dockge
+	docker compose up -d
+	
+	# Nếu dùng docker phiên bản cũ thì chạy lệnh
+	# docker-compose up -d
+
+ ```
+
 
 **Elasticsearch Kibana:**    
 
