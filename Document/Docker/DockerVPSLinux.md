@@ -245,7 +245,7 @@ yum install -y yum-utils
 
  ```
 
-**Công cụ quản lý Docker Compose Dockge:**    
+**Công cụ quản lý docker compose - Dockge:**    
 
  ```bash
 
