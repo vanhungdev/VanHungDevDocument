@@ -6,19 +6,15 @@ Viết 1 cái gì đó ở đây
 **Thông tin Broker Kafka đã có sẵn trên VPS có thể sử dụng.**   
 **Lưu ý:** Mạng công ty cần maphost mới truy cập được Kafdrop và Portainer - Để dùng sever có sẵn thì dùng mạng thường hoặc VPN 
 
-1. MapHost by pass proxy (mạng công ty):  
-    ```bash
-    34.171.40.194 master-kafka-01
-	```	
 
 2. Kafdrop:  
     ```bash
-    http://34.171.40.194:9091/
+    34.125.35.106:9091
 	```	
 	
 3. Portainer:  
     ```bash
-    http://34.171.40.194:9000/
+    34.125.35.106:9000/
 	
 	Username: admin
 	Password: Provanhung77
@@ -26,7 +22,7 @@ Viết 1 cái gì đó ở đây
 
 3. BootstrapServers (mạng công ty không truy cập được, mạng thường và VPN thì có thể):  
     ```bash
-    34.171.40.194:9092
+    34.125.35.106:9092
 	```	
 	
 ## Phần 2: Cài đặt Kafka bằng docker compose:  
