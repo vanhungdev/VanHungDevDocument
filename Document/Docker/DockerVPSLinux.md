@@ -267,6 +267,8 @@ yum install -y yum-utils
 docker compose file  
 
  ```bash
+
+
 	version: "3.8"
 	services:
 	  dockge:
