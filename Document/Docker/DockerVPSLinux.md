@@ -290,7 +290,6 @@ docker compose file
 	    environment:
 	      # Tell Dockge where is your stacks directory
 	      - DOCKGE_STACKS_DIR=/opt/stacks
-
 ```
 
 
