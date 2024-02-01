@@ -47,7 +47,6 @@ Mở PowerShell với quyền Administrator (Start menu > PowerShell > right-cli
 
  ```bash
 
-   wsl.exe --install
    wsl.exe --update
 
  ```
@@ -59,6 +58,9 @@ Mở PowerShell và chạy lệnh này để đặt WSL 2 làm phiên bản mặ
  ```bash
 wsl --set-default-version 2
  ```
+
+Cần khởi động lại máy  
+
 
 ## Phần 2: Tải docker desktop:  
 
