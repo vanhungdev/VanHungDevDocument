@@ -46,7 +46,7 @@ Khởi động lại máy tính
 Mở PowerShell với quyền Administrator (Start menu > PowerShell > right-click > Run as Administrator) Và chạ cácy lệnh sau:  
 
  ```bash
-
+   wsl.exe --install
    wsl.exe --update
 
  ```
