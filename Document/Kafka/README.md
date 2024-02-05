@@ -37,47 +37,56 @@ Tạo file docker Compose có tên `docker-compose.yaml` như sau:
 
 
 ```bash
-version: '3'
-
-networks:
-  kafka-net:
-    driver: bridge
-
+version: "3"
 services:
   zookeeper:
     container_name: zookeeper
     image: wurstmeister/zookeeper
     ports:
-      - "2181:2181"
+      - 2181:2181
     networks:
       - kafka-net
-
   kafka:
     container_name: kafka
     image: wurstmeister/kafka
     ports:
-      - "9092:9092"
-      - "9093:9093"
-      - "29092:29092" 
+      - 9092:9092
+      - 9093:9093
+      - 29092:29092
+      - 9999:9999
     environment:
-      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://localhost:9092,DOCKER://host.docker.internal:29092
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://${DOCKER_HOST_IP:-127.0.0.1}:9092,DOCKER://host.docker.internal:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT,DOCKER:PLAINTEXT
-      KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092
+      KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092,DOCKER://0.0.0.0:29092
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_BROKER_ID: 1
+      KAFKA_LOG4J_LOGGERS: kafka.controller=INFO,kafka.producer.async.DefaultEventHandler=INFO,state.change.logger=INFO
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_JMX_PORT: 9999
+      KAFKA_JMX_HOSTNAME: ${DOCKER_HOST_IP:-127.0.0.1}
+      KAFKA_AUTHORIZER_CLASS_NAME: kafka.security.authorizer.AclAuthorizer
+      KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
     networks:
       - kafka-net
-
   kafdrop:
     container_name: kafdrop
     image: obsidiandynamics/kafdrop
     ports:
-      - "9091:9000"
+      - 9091:9000
     environment:
       KAFKA_BROKERCONNECT: kafka:9093
-      JVM_OPTS: "-Xms32M -Xmx64M"
+      JVM_OPTS: -Xms32M -Xmx64M
     networks:
-     - kafka-net
+      - kafka-net
+    expose:
+      - "9093" # Expose Kafka listener port to other containers
+networks:
+  kafka-net:
+    driver: bridge
+
 
 ```
 
