@@ -38,6 +38,8 @@ sudo sysctl -w vm.max_map_count=262144
 
  ```
 
+note: sau khi cài xong có thể dùng Provanhung77 để đăng nhập, chúng ta đã cấu hình ở trên
+
 **3. Lấy password của tài khoản kibana_system**  
  
  ```bash
