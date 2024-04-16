@@ -5,10 +5,10 @@
 Đảm bảo các package phải cùng version
 
 ```bash
-		<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12"/>
+<PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="5.0.12" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.12" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.12" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.12"/>
 ```
 
 ## Set as Setup Project
