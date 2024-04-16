@@ -24,3 +24,10 @@ Scaffold-DbContext ".\SQLEXPRESS;Database=ParkingSystemDB;User Id=sa;Password=12
 
 Chú ý chỗ Server= nếu `DESKTOP-HF7A88S\SQLEXPRESS` thì để `.\SQLEXPRESS`  
 Nếu trên host thì để cả host lẫn port ví dụ `172.29.28.17,1433``
+
+
+```bash
+Scaffold-DbContext "Server=34.125.122.249,1433;Database=ParkingSystemDB;User Id=sa;Password=Provanhung77;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+```
+
+Chú ý thêm -Force nếu muốn ghi đè các model đã có
