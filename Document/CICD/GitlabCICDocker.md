@@ -80,5 +80,5 @@ Chú ý:
 `deploy` Bước này đơn giản là hệ thống sẽ ssh vào server VPS centos của chúng ta để chạy các lênh để update lại image version mới nhất
 
 *Chú ý:*   
-    - Phải cấp quyền 400 cho file SSH Key khác thì hệ thống sẽ không nhận
+    - Phải cấp quyền 400 cho file SSH Key khác thì hệ thống sẽ không nhận  
     - Viết các lệnh docker gắn liền với lệnh SSH theo cú pháp.
