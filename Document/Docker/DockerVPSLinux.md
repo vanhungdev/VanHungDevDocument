@@ -214,26 +214,26 @@ docker volume rm portainer_data
 **MongoDB:**  
 
  ```bash
- docker run -d --name mongodb -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=hungnv165 -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 mongo:latest
+ docker run -d --name mongodb --restart=always -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=hungnv165 -e MONGO_INITDB_ROOT_PASSWORD=Provanhung77 mongo:latest
  ```
 
 **Minio:**  
 
  ```bash
-  docker run -d --name minio-server -p 9011:9000 -p 9001:9001 -e MINIO_ROOT_USER=hungnv165 -e MINIO_ROOT_PASSWORD=Provanhung77 minio/minio:latest server /data --console-address ":9001"
+  docker run -d --name minio-server --restart=always -p 9011:9000 -p 9001:9001 -e MINIO_ROOT_USER=hungnv165 -e MINIO_ROOT_PASSWORD=Provanhung77 minio/minio:latest server /data --console-address ":9001"
  ```
 
 **SQL Server:**   
 
  ```bash
-  docker run -d --name sql-server-container -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 mcr.microsoft.com/mssql/server:2017-latest
+  docker run -d --name sql-server-container --restart=always -p 1433:1433 -e ACCEPT_EULA=Y  -e SA_PASSWORD=Provanhung77 mcr.microsoft.com/mssql/server:2017-latest
 
  ```
 
 **Redis:**    
 
  ```bash
- docker run -d --name redis -p 6379:6379 -e REDIS_PASSWORD=Provanhung77 redis:latest
+ docker run -d --name redis --restart=always -p 6379:6379 -e REDIS_PASSWORD=Provanhung77 redis:latest
  ```
 
 **Centos:**    
@@ -319,10 +319,10 @@ Tạo Elasticsearch và Kibana container:
 docker network create elastic
 
 # Tạo Elastic Container
-docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "network.host=0.0.0.0"  -e "xpack.security.enabled=true" -e "ELASTIC_PASSWORD=Provanhung77" -e "xpack.security.http.ssl.enabled=false" -t docker.elastic.co/elasticsearch/elasticsearch:8.11.3
+docker run --name es01 --restart=always --net elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "network.host=0.0.0.0"  -e "xpack.security.enabled=true" -e "ELASTIC_PASSWORD=Provanhung77" -e "xpack.security.http.ssl.enabled=false" -t docker.elastic.co/elasticsearch/elasticsearch:8.11.3
 
 # Tạo kibana container
-docker run --name kib01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.11.3
+docker run --name kib01 --restart=always --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.11.3
 
 ```
 
@@ -338,22 +338,22 @@ Việc cài đặt Elasticsearch và Kibana tương đối phức tạp, cần x
 
 2. Zookeeper container:
     ```bash
-	docker run -d --name zookeeper --network kafka-net -p 2181:2181 wurstmeister/zookeeper
+	docker run -d --name --restart=always zookeeper --network kafka-net -p 2181:2181 wurstmeister/zookeeper
 	```	
 	2.1. Zookeeper container Đối với macbook M1:
     ```bash
-    docker run -d --name zookeeper --network kafka-net -p 2181:2181 arm64v8/zookeeper
+    docker run -d --name --restart=always zookeeper --network kafka-net -p 2181:2181 arm64v8/zookeeper
     ``` 
 
 3. Kafka container:
     ```bash
-   docker run -d --name kafka --network kafka-net -p 9092:9092 -p 9093:9093  --expose 9093  -e KAFKA_ADVERTISED_LISTENERS=INSIDE://kafka:9093,OUTSIDE://localhost:9092  -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT  -e KAFKA_LISTENERS=INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092  -e KAFKA_INTER_BROKER_LISTENER_NAME=INSIDE  -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 wurstmeister/kafka
+   docker run -d --name kafka --restart=always --network kafka-net -p 9092:9092 -p 9093:9093  --expose 9093  -e KAFKA_ADVERTISED_LISTENERS=INSIDE://kafka:9093,OUTSIDE://localhost:9092  -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT  -e KAFKA_LISTENERS=INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092  -e KAFKA_INTER_BROKER_LISTENER_NAME=INSIDE  -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 wurstmeister/kafka
     
     ```
 	
 4. Kafdrop container:
     ```bash
-	docker run -d --name kafdrop --network kafka-net -p 9091:9000 -e KAFKA_BROKERCONNECT=kafka:9093 -e JVM_OPTS="-Xms32M -Xmx64M" obsidiandynamics/kafdrop
+	docker run -d --name kafdrop --network --restart=always kafka-net -p 9091:9000 -e KAFKA_BROKERCONNECT=kafka:9093 -e JVM_OPTS="-Xms32M -Xmx64M" obsidiandynamics/kafdrop
     ```
 	Kafdrop chưa có cho macbook m1 (arm64v8)
 
