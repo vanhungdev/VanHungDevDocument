@@ -163,22 +163,22 @@ Mở terminal và di chuyển đến thư mục chứa tệp docker-compose.yml,
 
 1. Zookeeper container:
     ```bash
-	docker run -d --name zookeeper --network kafka-net -p 2181:2181 wurstmeister/zookeeper
+	docker run -d --name  zookeeper --restart=always --network kafka-net -p 2181:2181 wurstmeister/zookeeper
 	```	
 	1.1. Zookeeper container Đối với macbook M1:
     ```bash
-    docker run -d --name zookeeper --network kafka-net -p 2181:2181 arm64v8/zookeeper
+    docker run -d --name zookeeper --restart=always --network kafka-net -p 2181:2181 arm64v8/zookeeper
     ``` 
 
 1. Kafka container:
     ```bash
-   docker run -d --name kafka --network kafka-net -p 9092:9092 -p 9093:9093  --expose 9093  -e KAFKA_ADVERTISED_LISTENERS=INSIDE://kafka:9093,OUTSIDE://localhost:9092  -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT  -e KAFKA_LISTENERS=INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092  -e KAFKA_INTER_BROKER_LISTENER_NAME=INSIDE  -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 wurstmeister/kafka
+   docker run -d --name kafka --restart=always --network kafka-net -p 9092:9092 -p 9093:9093  --expose 9093  -e KAFKA_ADVERTISED_LISTENERS=INSIDE://kafka:9093,OUTSIDE://localhost:9092  -e KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT  -e KAFKA_LISTENERS=INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092  -e KAFKA_INTER_BROKER_LISTENER_NAME=INSIDE  -e KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 wurstmeister/kafka
     
     ```
 	
 1. Kafdrop container:
     ```bash
-	docker run -d --name kafdrop --network kafka-net -p 9091:9000 -e KAFKA_BROKERCONNECT=kafka:9093 -e JVM_OPTS="-Xms32M -Xmx64M" obsidiandynamics/kafdrop
+	docker run -d --name kafdrop --restart=always --network kafka-net -p 9091:9000 -e KAFKA_BROKERCONNECT=kafka:9093 -e JVM_OPTS="-Xms32M -Xmx64M" obsidiandynamics/kafdrop
     ```
 	Kafdrop chưa có cho macbook m1 (arm64v8)
 	
