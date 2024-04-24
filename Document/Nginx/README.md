@@ -5,7 +5,7 @@
 ## Phần 1: Cài đặt nginx:  
  **Cài đặt nginx container:**  
  ```bash
-   docker run -d -p 80:80 -p 443:443 --name nginx nginx
+   docker run -d -p 80:80 -p 443:443 --restart=always --name nginx  nginx
 
  ```
 
@@ -153,7 +153,7 @@ Tham khảo thêm ở https://www.nginx.com/blog/rate-limiting-nginx/
  **Cài đặt nginx proxy:**  
 
  ```bash
-    docker run -d -p 80:80 -p 443:443 --name nginx-proxy --privileged=true \
+    docker run -d -p 80:80 -p 443:443 --name nginx-proxy --restart=always --privileged=true \
 	-e ENABLE_IPV6=true \
 	-v ~/nginx/vhost.d:/etc/nginx/vhost.d \
 	-v ~/nginx-certs:/etc/nginx/certs:ro \
@@ -167,7 +167,7 @@ Tham khảo thêm ở https://www.nginx.com/blog/rate-limiting-nginx/
   
 
  ```bash
-   docker run -d --privileged=true \
+   docker run -d --restart=always --privileged=true \
 	-v ~/nginx/vhost.d:/etc/nginx/vhost.d \
 	-v ~/nginx-certs:/etc/nginx/certs:rw \
 	-v /var/run/docker.sock:/var/run/docker.sock:ro \
@@ -178,7 +178,7 @@ Chú ý: volumes-from cho đúng với server nginx
 
 **Chạy web container lên nhớ gắn các thông số chứng chỉ SSL:**  
  ```bash
-   docker run -it -d --name containerName \
+   docker run -it -d --name containerName --restart=always \
 	-e VIRTUAL_HOST="your-domain.vn" \
 	-e VIRTUAL_PORT=80 \
 	-e LETSENCRYPT_HOST="your-domain.vn" \
@@ -192,7 +192,7 @@ Lưu ý: nếu muốn chạy 2 host độc lập thì chạy lại server api gi
 **Cấu hình cho web số 2:**  
 
  ```bash
-   docker run -it -d --name containerName-2 \
+   docker run -it -d --name containerName-2 --restart=always \
 	-e VIRTUAL_HOST="your-domain-2.vn" \
 	-e VIRTUAL_PORT=80 \
 	-e LETSENCRYPT_HOST="your-domain-2.vn" \
