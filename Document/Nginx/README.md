@@ -182,7 +182,7 @@ Chú ý: volumes-from cho đúng với server nginx
  ```bash
 
 # VIRTUAL_PORT là port của website
-# ví dụ http://35.222.111.241:5004 thì để
+# ví dụ web đang chạy http://35.222.111.241:5004 thì để VIRTUAL_PORT=5004
 # VIRTUAL_HOST không để http hoặc https
 
    docker run -it -d --name containerName --restart=always \
