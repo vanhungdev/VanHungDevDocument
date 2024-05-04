@@ -24,6 +24,8 @@ Truy cập vào file config
    nano /etc/nginx/conf.d/default.conf
    vi /etc/nginx/conf.d/default.conf
 
+   # Sau khi cấu hình xong
+   nginx -s reload
  ```
 
 ## Phần 2: Reverse proxy:  
@@ -178,9 +180,14 @@ Chú ý: volumes-from cho đúng với server nginx
 
 **Chạy web container lên nhớ gắn các thông số chứng chỉ SSL:**  
  ```bash
+
+# VIRTUAL_PORT là port của website
+# ví dụ http://35.222.111.241:5004 thì để
+# VIRTUAL_HOST không để http hoặc https
+
    docker run -it -d --name containerName --restart=always \
 	-e VIRTUAL_HOST="your-domain.vn" \
-	-e VIRTUAL_PORT=80 \
+	-e VIRTUAL_PORT=5004 \
 	-e LETSENCRYPT_HOST="your-domain.vn" \
 	-e LETSENCRYPT_EMAIL="vanhungdev@fpt.com.vn" \
 	vanhungdev/imageName:v.1.1
