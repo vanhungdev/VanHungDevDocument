@@ -82,3 +82,16 @@ Chú ý:
 *Chú ý:*   
     - Phải cấp quyền 400 cho file SSH Key khác thì hệ thống sẽ không nhận  
     - Viết các lệnh docker gắn liền với lệnh SSH theo cú pháp.
+
+## Gitlab Runner
+
+```bash
+
+ 134  docker run -d --name gitlab-runner --restart always     -v /srv/gitlab-runner/config:/etc/gitlab-runner     -v /var/run/docker.sock:/var/run/docker.sock     gitlab/gitlab-runner:v15.8.2
+  135  docker exec -it gitlab-runner gitlab-runner register
+  136  clear
+  137  docker restart gitlab-runner
+  138  history
+
+
+```
