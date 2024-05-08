@@ -28,7 +28,7 @@ variables:
   DOCKER_USERNAME: vanhungdev
   DOCKER_PASSWORD: Provanhung77
   SSH_USER: root
-  SSH_HOST: 34.125.122.249
+  SSH_HOST: 35.222.111.241
   SSH_PORT: 22
   SSH_PASSWORD: Provanhung77
 
@@ -37,9 +37,9 @@ before_script:
 
 build:
   stage: build
-  image: docker:latest
+  image: docker:20.10.16
   services:
-    - docker:dind
+    - docker:20.10.16-dind
   script:
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - docker build -t $DOCKER_IMAGE --build-arg BUILD_CONFIGURATION=Release .
@@ -60,10 +60,22 @@ deploy:
       ssh -o StrictHostKeyChecking=no -p $SSH_PORT -i $SSH_KEY $SSH_USER@$SSH_HOST << EOF
       docker ps
       docker pull $DOCKER_IMAGE
-      docker stop ParkingSystemClient || true
-      docker rm ParkingSystemClient || true
-      docker run -p 5005:5005 -d --name ParkingSystemClient $DOCKER_IMAGE
+      docker stop ParkingSystemScanner || true
+      docker rm ParkingSystemScanner || true
+      docker run -p 5004:5004 -d --name ParkingSystemScanner $DOCKER_IMAGE
+
+      docker stop systemscannerssl || true
+      docker rm systemscannerssl || true
+
+      docker run -d --name systemscannerssl \
+          --restart=always \
+          -e VIRTUAL_HOST="hi-static-spf.site" \
+          -e VIRTUAL_PORT=5004 \
+          -e LETSENCRYPT_HOST="hi-static-spf.site" \
+          -e LETSENCRYPT_EMAIL="vanhungdev@fpt.com.vn" \
+          $DOCKER_IMAGE
       EOF
+
 
 ```
 
