@@ -98,9 +98,52 @@ docker exec -it gitlab-runner gitlab-runner register
 
 ```
 
-3. Khởi tạo một runner mới
+
+3. Nhập các thông tin cần thiết
+
 ```bash
 
-docker exec -it gitlab-runner gitlab-runner register
+Các thông tin cần nhập vào như sau:
+
+        3.1 Nhập URL https://gitlab.com/
+        3.2 Nhập token ở runner trong project set (setting > CICD > Runner).
+        3.3 Nhập mô tả runner.
+        3.4 Gắn tags cho runner có thể để trống
+        3.5 Nhập docker.
+        3.6 Nhập một image mặc định cho Docker image
+
+```
+
+
+4. docker restart gitlab-runner
+```bash
+
+docker restart gitlab-runner
+
+```
+
+5. Hiển thị các runner
+```bash
+
+docker exec -it gitlab-runner gitlab-runner list
+
+```
+
+6. Stopping, Starting và Restarting Runners
+```bash
+
+docker exec -it gitlab-runner gitlab-runner stop
+
+docker exec -it gitlab-runner gitlab-runner start
+
+docker exec -it gitlab-runner gitlab-runner restart
+```
+
+7. Huỷ, Xoá Runner
+```bash
+
+docker exec -it gitlab-runner gitlab-runner unregister --name a9a3dd7b82bd
+
+docker exec -it gitlab-runner gitlab-runner verify --delete
 
 ```
