@@ -182,7 +182,7 @@ docker exec -it gitlab-runner gitlab-runner verify --delete
 
 Có hai loại Gitlab Runner chính được phân loại dựa trên cách thức quản lý:
 
-1. Shared Runners:
+#### 1. Shared Runners:
 
 Cung cấp bởi GitLab:  
 Miễn phí cho dự án Public và giới hạn 400 phút/tháng cho Private. (Nếu cần dùng thêm cần mua thêm)
@@ -192,7 +192,7 @@ Hạn chế:
 Ít tùy chỉnh, ít linh hoạt, không phù hợp cho nhu cầu cao.
 Có thể quá tải vào giờ cao điểm.  
 
-2. Self-Managed Runners:
+#### 2. Self-Managed Runners:
 
 Do người dùng cài đặt và quản lý:  
 Cài đặt trên server riêng hoặc cloud instance.
