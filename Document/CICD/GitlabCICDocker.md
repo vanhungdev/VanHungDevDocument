@@ -85,13 +85,22 @@ Chú ý:
 
 ## Gitlab Runner
 
+1. Cài đặt runner
+```bash
+docker run -d --name gitlab-runner --restart always     -v /srv/gitlab-runner/config:/etc/gitlab-runner     -v /var/run/docker.sock:/var/run/docker.sock     gitlab/gitlab-runner:v15.8.2
+
+```
+
+2. Khởi tạo một runner mới
 ```bash
 
- 134  docker run -d --name gitlab-runner --restart always     -v /srv/gitlab-runner/config:/etc/gitlab-runner     -v /var/run/docker.sock:/var/run/docker.sock     gitlab/gitlab-runner:v15.8.2
-  135  docker exec -it gitlab-runner gitlab-runner register
-  136  clear
-  137  docker restart gitlab-runner
-  138  history
+docker exec -it gitlab-runner gitlab-runner register
 
+```
+
+3. Khởi tạo một runner mới
+```bash
+
+docker exec -it gitlab-runner gitlab-runner register
 
 ```
