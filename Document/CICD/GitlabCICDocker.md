@@ -85,6 +85,21 @@ Chú ý:
   - test
   - deploy
 
+Có thể chỉ định các stage chạy branch nào  
+Ví dụ stage `test` chỉ chạy với branch developer
+
+```bahs
+
+test:
+  stage: test
+  only:  # Chỉ chạy job này trên các branch phát triển
+    - develop
+    - /^feature-.*/  # Regex để match các branch bắt đầu với 'feature-'
+  script:
+    - ls
+
+```
+
 `build` Là bước mà hệ thống CI/CD sẽ build `IMAGE` từ docker file. Bước này yêu cầu có docker và phải login vào docker hub cá nhân.
 
 `test` Bước này test code. Tàm thời bypass
