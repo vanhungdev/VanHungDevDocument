@@ -187,18 +187,18 @@ Có hai loại Gitlab Runner chính được phân loại dựa trên cách th�
 Cung cấp bởi GitLab:  
 Miễn phí cho dự án Public và giới hạn 400 phút/tháng cho Private. (Nếu cần dùng thêm cần mua thêm)
 Dễ sử dụng, không cần cài đặt hay cấu hình.
-Phù hợp cho các dự án nhỏ, cá nhân hoặc mới bắt đầu.
-Hạn chế:
+Phù hợp cho các dự án nhỏ, cá nhân hoặc mới bắt đầu.  
+
+Hạn chế:  
 Ít tùy chỉnh, ít linh hoạt, không phù hợp cho nhu cầu cao.
 Có thể quá tải vào giờ cao điểm.  
 
 #### 2. Self-Managed Runners:
 
-Do người dùng cài đặt và quản lý:  
-Cài đặt trên server riêng hoặc cloud instance.
-Tùy chỉnh cao, linh hoạt, đáp ứng mọi nhu cầu.
-Miễn phí hoàn toàn.
-Yêu cầu:
+#### Do người dùng cài đặt và quản lý:  
+Cài đặt trên server riêng hoặc cloud instance.  Tùy chỉnh cao, linh hoạt, đáp ứng mọi nhu cầu.  Miễn phí hoàn toàn. 
+
+#### Yêu cầu:  
 Kiến thức quản trị hệ thống, cài đặt, cấu hình.
 Chịu trách nhiệm bảo trì, cập nhật.
 Phù hợp cho dự án lớn, có đội ngũ DevOps.
