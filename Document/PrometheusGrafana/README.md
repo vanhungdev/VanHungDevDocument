@@ -191,7 +191,36 @@ sau khi chạy xong sẽ thấy 4 container
  `cadvitor`, `grafana`, `node_exporter`, `prometheus`
 
 Sẽ chạy port 3000
+
 ```bash
 http://yor-ip:3000 
 ```
 
+
+Thông tin đăng nhập lần đầu
+```bash
+usename : admin
+password: admin
+
+```
+
+Tạo data source
+
+Với thông tin url
+
+```bash
+
+http://prometheus:9090
+#hoặc ip của container
+
+```
+
+Inport 1 dashboard 
+
+Sau khi cấu hình xong chúng ta sẽ input 1 dashboard với id là:
+
+```bash
+1860
+```
+
+Xong.
