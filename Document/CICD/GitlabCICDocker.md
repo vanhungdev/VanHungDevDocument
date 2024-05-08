@@ -195,17 +195,17 @@ Có thể quá tải vào giờ cao điểm.
 
 #### 2. Self-Managed Runners:
 
-#### Do người dùng cài đặt và quản lý:  
+Do người dùng cài đặt và quản lý:  
 Cài đặt trên server riêng hoặc cloud instance.  Tùy chỉnh cao, linh hoạt, đáp ứng mọi nhu cầu.  Miễn phí hoàn toàn. 
 
-#### Yêu cầu:  
+Yêu cầu:  
 Kiến thức quản trị hệ thống, cài đặt, cấu hình.
 Chịu trách nhiệm bảo trì, cập nhật.
 Phù hợp cho dự án lớn, có đội ngũ DevOps.
 Ngoài ra, Gitlab Runner còn được phân loại theo executor 
 
 
-#### Cách thức thực thi các job:  
+Cách thức thực thi các job:  
 
 `Shell:` Chạy lệnh shell trên môi trường runner.  
 `SSH:` Chạy lệnh shell trên máy chủ khác qua SSH.  
