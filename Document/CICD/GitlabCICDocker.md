@@ -176,7 +176,7 @@ docker exec -it gitlab-runner gitlab-runner verify --delete
 ```
 
 
-## Gitlab Runner
+## Phân Loại Gitlab Runner
 
 ### Các loại gitlab runner
 
