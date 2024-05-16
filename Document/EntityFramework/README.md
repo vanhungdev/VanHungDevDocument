@@ -18,7 +18,7 @@
 ## Script chạy gen model
 
 ```bash
-Scaffold-DbContext ".\SQLEXPRESS;Database=ParkingSystemDB;User Id=sa;Password=123456;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+Scaffold-DbContext "Server=.\SQLExpress;Database=MedicalExaminationDB;User Id=sa;Password=123456;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
 ```
 
