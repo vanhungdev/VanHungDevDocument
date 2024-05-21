@@ -23,3 +23,10 @@ Bài chia sẻ nói về quan điểm: "**Người phải chạy hết sức đ�
 5. **Tự tin**: Luôn tin tưởng vào khả năng của bản thân.
 
 **Kết luận**: Thành công đến từ sự nỗ lực, kiến thức, và sự kiên trì, và không phải ai cũng đạt được dễ dàng. 
+
+
+```bash
+
+Video
+https://www.youtube.com/watch?v=vkVkQjDrc28
+```
