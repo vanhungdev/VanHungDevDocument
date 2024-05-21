@@ -123,7 +123,10 @@ Nếu báo lỗi không có quyền thì làm bước sau:
       AuthorizedKeysFile .ssh/authorized_keys
     
      ```
-     
+
+     ```bash
+     systemctl restart sshd
+     ```
 
 ## Gitlab Runner
 
