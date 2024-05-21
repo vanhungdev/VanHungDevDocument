@@ -34,7 +34,8 @@ sudo sysctl -w vm.max_map_count=262144
   Tạo elastic-server container:  
  
  ```bash
-  docker run --name es01 --net elastic -p 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "network.host=0.0.0.0"  -e "xpack.security.enabled=true" -e "ELASTIC_PASSWORD=Provanhung77" -e "xpack.security.http.ssl.enabled=false" -t docker.elastic.co/elasticsearch/elasticsearch:8.11.3 --restart=always 
+ docker run --name es01 --restart=always --net elastic -p 9200:9200 -p 9300:9300  -e "discovery.type=single-node" -e "network.host=0.0.0.0"  -e "xpack.security.enabled=true" -e "ELASTIC_PASSWORD=Provanhung77" -e "xpack.security.http.ssl.enabled=false" -t docker.elastic.co/elasticsearch/elasticsearch:8.11.3
+
 
  ```
 
@@ -56,7 +57,7 @@ docker exec -it es01 /usr/share/elasticsearch/bin/elasticsearch-reset-password -
 **4. Chạy kibna container**  
  
  ```bash
-  docker run --name kib01 --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.11.3 --restart=always 
+  docker run --name kib01 --restart=always --net elastic -p 5601:5601 docker.elastic.co/kibana/kibana:8.11.3 
  ```
 
 **5. Lấy code từ log kibana và kết nối với elasticsearch**  
