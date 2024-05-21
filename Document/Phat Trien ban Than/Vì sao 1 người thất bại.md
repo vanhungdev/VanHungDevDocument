@@ -1,27 +1,15 @@
-## Upgrade Cuộc đời:
+## Tóm tắt:
 
-Sự khác biệt giữa **"Upgrade"** và **"Update"** trong cuộc sống.
+Video này bàn luận về chủ đề "Tại sao một người thất bại?". Người nói đưa ra ý kiến rằng nhiều người thất bại vì họ không ưu tiên thứ họ muốn thành công, họ cứ nói rằng mình cố gắng, chăm chỉ nhưng lại không có hành động cụ thể nào, dẫn đến việc không đạt được kết quả.  
 
-* **Update:** Cập nhật thông tin, bổ sung thêm dữ liệu mới, nhẹ nhàng, đơn giản, chưa có "phê".
-* **Upgrade:** Nâng cấp, có rất nhiều "update" bên trong, mang đến bản mới khác biệt, "phê" hơn.
+## Phân tích:
 
-Trở thành một phiên bản tốt hơn mỗi năm, mỗi tháng.
+Video này sử dụng các ví dụ cụ thể và lối dẫn chuyện dí dỏm để minh họa cho ý kiến của người nói.  
 
-**Công thức 80/20:**  Công thức 80/20: 80% kết quả đến từ 20% những điều chúng ta làm. Nên tập trung vào 20% điều mang lại hiệu quả, loại bỏ 80% những điều không hiệu quả, hay nói cách khác, 20% những "tật xấu" là nguyên nhân gây ra 80% thất bại.
+* Ví dụ về học tiếng Anh, người nói đưa ra tình huống người học rất cố gắng nhưng không ưu tiên, dẫn đến việc không giỏi tiếng Anh và thất bại.
+* Ví dụ về việc đọc sách, người nói chỉ ra rằng nếu chỉ đọc nhanh mà không ghi chú, không highlight, không đặt câu hỏi thì người đọc sẽ không hiểu sâu, không thể áp dụng vào thực tế,  và thất bại trong việc học hỏi.
+* Ví dụ về việc tập thể thao, người nói cũng cho rằng nếu bạn không ưu tiên tập luyện thường xuyên thì bạn sẽ không có kết quả tốt, dù bạn có cố gắng trong một khoảng thời gian ngắn.
 
-**Ba bước nâng cấp cuộc sống:**
-1. **Scan & Liệt kê:**  Nhớ lại tất cả các "tật xấu" từ trước đến giờ, liệt kê ra, ví dụ: ngủ nướng, mau chán nản, bạn bè không có chọn lọc, thức khuya, lãng phí thời gian...
-2. **Tìm "Thói quen 80/20":**  Trong danh sách "tật xấu" đó, tìm ra 1-2 thói quen xấu  mang lại 80% "hậu quả xấu" cho cuộc sống.
-3. **Hỗ trợ & Thay đổi:**  Dùng một chương trình huấn luyện mỗi ngày, tập trung vào 1-2 thói quen xấu đó. Ví dụ: 
-    * Tập trung 10 phút mỗi ngày để cải thiện thói quen tập trung lâu.
-    * Tập trung 12 phút mỗi ngày để cải thiện thói quen ngủ sớm. 
+## Việc cần làm: 
 
-**Kết luận:** Nâng cấp bản thân giống như nâng cấp phần mềm, việc nhận thức được những "tật xấu" và tập trung thay đổi, upgrade từng mốc nhỏ mỗi ngày sẽ giúp chúng ta có được một phiên bản tốt hơn, thành công hơn.
-
-## Những việc cần luyện tập:
-
-1. **Nhớ lại và liệt kê các thói quen xấu của bạn:**  Lưu ý liệt kê chi tiết và trung thực để có thể xác định được 20% thói quen xấu gây ra 80% hậu quả xấu.
-2. **Chọn 1-2 thói quen xấu có tác động lớn:**   Ưu tiên những thói quen xấu có thể gây ảnh hưởng nhiều đến cuộc sống, công việc, mối quan hệ của bạn.
-3. **Tạo chương trình huấn luyện cho bản thân:**   Thiết lập thời gian tập trung mỗi ngày cho mỗi thói quen xấu. Hãy bắt đầu từ 10-15 phút mỗi ngày và tăng dần theo thời gian.
-
-Chúc bạn có được một phiên bản upgrade tuyệt vời! 
+Video này muốn người xem nhận ra điều quan trọng nhất để thành công là phải ưu tiên, phải tập trung vào những việc mình muốn,  dành thời gian và nỗ lực thực sự cho nó, thay vì chỉ nói suông. 
