@@ -88,7 +88,7 @@ Chú ý:
 Có thể chỉ định các stage chạy branch nào  
 Ví dụ stage `test` chỉ chạy với branch developer
 
-```bahs
+``bash
 
 test:
   stage: test
@@ -115,6 +115,7 @@ Nếu báo lỗi không có quyền thì làm bước sau:
      ```bash
        vi /etc/ssh/sshd_config
      ```
+
     
     Diều chỉnh 2 dòng config
     
