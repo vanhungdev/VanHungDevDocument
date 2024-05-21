@@ -27,7 +27,8 @@ docker commit sql-server-container sql-server-container_backup:v.16.01.2024
 docker login 
  ```
 
-Step 2. Tạo file trên server đích.  
+
+Step 2. Tạo file trên server đích (bỏ qua nếu dùng luôn bước 3).  
 
  ```bash
    # Trên máy chủ đích
