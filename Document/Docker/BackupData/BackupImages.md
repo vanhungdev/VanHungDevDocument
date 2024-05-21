@@ -81,6 +81,8 @@ echo "Thời gian hiện tại (UTC+7): $TIMESTAMP"
 CONTAINERS=(
     "es01" # Elasticsearch
     "mongodb" # MongoDB
+	"minio-server" # Minio
+	"redis" # Redis
 )
 
 # Tên image trên Docker Hub (thay đổi nếu cần)
