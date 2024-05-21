@@ -130,3 +130,17 @@ echo "$(date) - Hoàn thành backup tất cả container!" >> "$LOG_FILE"
 
 ```
 
+
+Cấp quyền.    
+
+ ```bas
+sudo chmod +x ./backup-container.sh
+
+ ```
+
+ Chạy file.    
+
+ ```bas
+ sudo ./backup-container.sh
+
+ ```
