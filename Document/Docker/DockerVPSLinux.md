@@ -36,6 +36,9 @@ Start và kiểm tra trạng thái docker
    # start docker engine 
    sudo systemctl start docker
 
+   # Bật docker chạy cùng hệ thống
+   sudo systemctl enable docker
+
    # stop docker engine 
    sudo systemctl stop docker
 
