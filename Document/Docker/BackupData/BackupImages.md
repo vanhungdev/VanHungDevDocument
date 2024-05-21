@@ -83,6 +83,7 @@ CONTAINERS=(
     "mongodb" # MongoDB
 	"minio-server" # Minio
 	"redis" # Redis
+	"kib01"
 )
 
 # Tên image trên Docker Hub (thay đổi nếu cần)
