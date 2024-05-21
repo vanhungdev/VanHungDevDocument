@@ -9,20 +9,7 @@
 2: Tạo một server VPS
     - Chúng ta deploy bằng cách cài docker nên server phải có docker  
     - Có thể SSH bằng SSH key  
-    Truy cập vào file config của ssh trên server chỉnh cấu hình như sau  
-     ```bash
-       vi /etc/ssh/sshd_config
-     ```
     
-    Diều chỉnh 2 dòng config
-    
-     ```bash
-      PubkeyAuthentication yes
-      AuthorizedKeysFile .ssh/authorized_keys
-    
-     ```
-
-
 3: Thêm biến môi trường ở Settings > CI/CD
     -  sau khi config server có thể SSH băng Key thì cần tạo biến lưu giá trị của public key
 
@@ -122,6 +109,21 @@ test:
 *Chú ý:*   
     - Phải cấp quyền 400 cho file SSH Key khác thì hệ thống sẽ không nhận  
     - Viết các lệnh docker gắn liền với lệnh SSH theo cú pháp.
+
+Nếu báo lỗi không có quyền thì làm bước sau:  
+ Truy cập vào file config của ssh trên server chỉnh cấu hình  
+     ```bash
+       vi /etc/ssh/sshd_config
+     ```
+    
+    Diều chỉnh 2 dòng config
+    
+     ```bash
+      PubkeyAuthentication yes
+      AuthorizedKeysFile .ssh/authorized_keys
+    
+     ```
+     
 
 ## Gitlab Runner
 
