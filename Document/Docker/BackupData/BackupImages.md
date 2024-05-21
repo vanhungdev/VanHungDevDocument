@@ -52,7 +52,7 @@ docker push vanhungdev/sql-server-container_backup:v.16.01.2024
 
 Step 4. Run trên server mới như bình thường.  
 
- ```bas
+ ```bash
 
 # lưu ý nó dùng password của container cũ
 docker run -d --name sql-server-container -p 1433:1433 vanhungdev/sql-server-container_backup:v.16.01.2024
@@ -60,4 +60,70 @@ docker run -d --name sql-server-container -p 1433:1433 vanhungdev/sql-server-con
  ```
 
 ## Phần 2: Backup và chuyển tất cả các container cũ
+### backup với bash script và cronjob
+
+
+```bash
+
+
+#!/bin/bash
+
+# Thiết lập múi giờ UTC+7
+export TZ="Asia/Ho_Chi_Minh"
+
+# Lấy ngày giờ hiện tại (đã điều chỉnh về UTC+7)
+TIMESTAMP=$(date +%Y.%m.%d-%H.%M.%S)
+
+# In ra thời gian để kiểm tra
+echo "Thời gian hiện tại (UTC+7): $TIMESTAMP"
+
+# Danh sách các container cần backup
+CONTAINERS=(
+    "es01" # Elasticsearch
+    "mongodb" # MongoDB
+)
+
+# Tên image trên Docker Hub (thay đổi nếu cần)
+DOCKER_IMAGE_PREFIX="vanhungdev"
+
+# Thông tin đăng nhập Docker Hub (thay đổi thông tin của bạn)
+DOCKER_USERNAME="vanhungdev"
+DOCKER_PASSWORD="Provanhung77"
+
+# Tên file log
+LOG_FILE="backup_log.txt"
+
+# Hàm backup một container
+backup_container() {
+    CONTAINER_NAME=$1
+    IMAGE_NAME="$DOCKER_IMAGE_PREFIX/$CONTAINER_NAME"
+
+    # Commit container
+    docker commit "$CONTAINER_NAME" "$IMAGE_NAME:$TIMESTAMP"
+    echo "$(date) - Backup $CONTAINER_NAME thành công: $IMAGE_NAME:$TIMESTAMP" >> "$LOG_FILE"
+
+    # Tag image (nếu cần)
+    docker tag "$IMAGE_NAME:$TIMESTAMP" "$IMAGE_NAME:latest"
+    echo "$(date) - Tag $IMAGE_NAME:latest thành công" >> "$LOG_FILE"
+
+    # Push image lên Docker Hub
+    docker push "$IMAGE_NAME:$TIMESTAMP"
+    echo "$(date) - Push $IMAGE_NAME:$TIMESTAMP thành công" >> "$LOG_FILE"
+    docker push "$IMAGE_NAME:latest"
+    echo "$(date) - Push $IMAGE_NAME:latest thành công" >> "$LOG_FILE"
+}
+
+# Đăng nhập vào Docker Hub
+echo "$(date) - Đang đăng nhập vào Docker Hub..." >> "$LOG_FILE"
+docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
+
+# Backup từng container
+for CONTAINER_NAME in "${CONTAINERS[@]}"; do
+    echo "$(date) - Đang backup $CONTAINER_NAME..." >> "$LOG_FILE"
+    backup_container "$CONTAINER_NAME"
+done
+
+echo "$(date) - Hoàn thành backup tất cả container!" >> "$LOG_FILE"
+
+```
 
