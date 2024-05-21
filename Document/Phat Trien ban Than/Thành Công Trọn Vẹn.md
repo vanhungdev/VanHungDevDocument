@@ -25,3 +25,11 @@ Video này mang tính truyền động viên và khích lệ người xem hướ
 - **Tự phản tỉnh:** Suy ngẫm về những thói quen của bản thân, nhận diện những thói quen xấu cần loại bỏ và những thói quen tốt cần phát triển.
 - **Lập kế hoạch:** Xây dựng kế hoạch cụ thể để thay đổi những thói quen xấu và phát triển những thói quen tốt hơn. 
 - **Hành động:** Bắt đầu thay đổi từ những việc nhỏ nhất, từng bước một để hướng tới một cuộc sống trọn vẹn.
+
+
+```bash
+Video
+
+https://www.youtube.com/watch?v=Uuqbs78BtK8&t=3s
+
+```

@@ -13,3 +13,7 @@ Video này sử dụng các ví dụ cụ thể và lối dẫn chuyện dí d�
 ## Việc cần làm: 
 
 Video này muốn người xem nhận ra điều quan trọng nhất để thành công là phải ưu tiên, phải tập trung vào những việc mình muốn,  dành thời gian và nỗ lực thực sự cho nó, thay vì chỉ nói suông. 
+
+```bash
+https://www.youtube.com/watch?v=fbiOpUhXKYM&t=729s
+```

@@ -25,3 +25,9 @@ Trở thành một phiên bản tốt hơn mỗi năm, mỗi tháng.
 3. **Tạo chương trình huấn luyện cho bản thân:**   Thiết lập thời gian tập trung mỗi ngày cho mỗi thói quen xấu. Hãy bắt đầu từ 10-15 phút mỗi ngày và tăng dần theo thời gian.
 
 Chúc bạn có được một phiên bản upgrade tuyệt vời! 
+
+
+
+```bash
+https://www.youtube.com/watch?v=vKk9fBdxX6A&t=430s
+```
