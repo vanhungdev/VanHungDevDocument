@@ -7,9 +7,9 @@
     - File docker trong project phải đúng có thể build được image không lỗi ở local
 
 2: Tạo một server VPS
-    - Chúng ta deploy bằng cách cài docker nên server phải có docker
-    - Có thể SSH bằng SSH key
-    Truy cập vào file config của ssh trên server chỉnh cấu hình như sau
+    - Chúng ta deploy bằng cách cài docker nên server phải có docker  
+    - Có thể SSH bằng SSH key  
+    Truy cập vào file config của ssh trên server chỉnh cấu hình như sau  
      ```bash
        vi /etc/ssh/sshd_config
      ```
