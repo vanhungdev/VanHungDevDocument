@@ -215,7 +215,8 @@ http://prometheus:9090
 
 ```
 
-Inport 1 dashboard 
+**Sau khi tạo Data source thì import một dashboadrd**  
+**Inport 1 dashboard**
 
 Sau khi cấu hình xong chúng ta sẽ input 1 dashboard với id là:
 
