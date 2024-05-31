@@ -54,7 +54,7 @@ http://34.29.18.204:8001/api/v1/namespaces/kubernetes-dashboard/services/http:ku
 Truy cập Dashboard bằng service node port
 ```bash
   # Xem thấy cả service
-  k get service -A
+  k get service -n kubernetes-dashboard
 
 
   # Kết quả
