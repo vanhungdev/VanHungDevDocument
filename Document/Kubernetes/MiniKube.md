@@ -29,7 +29,10 @@ curl -Lo minikube https://storage.googleapis.com/minikube/releases/latest/miniku
   minikube status
 
   kubectl get nodes
-  
+
+  # Cài đặt Xem CPU, RAM
+  minikube addons enable metrics-server
+   
   minikube dashboard
 
   kubectl proxy --address=0.0.0.0 --accept-hosts='.*'
