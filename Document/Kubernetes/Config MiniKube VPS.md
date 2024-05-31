@@ -109,7 +109,7 @@ Date: Fri, 31 May 2024 15:32:09 GMT
 
 Như vậy là đã public được minikube dashboard. Nhưng làm sau có thể truy cập được từ Extenal IP của VPS:
 
-Bây giờ chung ta fw port 
+Bây giờ chúng ta fw port.
 ```bash
 sudo iptables -t nat -A PREROUTING -p tcp --dport 32507 -j DNAT --to-destination <Minikube IP>:32507
 
