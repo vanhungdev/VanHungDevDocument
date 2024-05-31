@@ -88,7 +88,7 @@ Chú ý:
 Có thể chỉ định các stage chạy branch nào  
 Ví dụ stage `test` chỉ chạy với branch developer
 
-``bash
+```bash
 
 test:
   stage: test
