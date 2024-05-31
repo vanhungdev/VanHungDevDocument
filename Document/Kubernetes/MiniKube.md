@@ -59,9 +59,9 @@ Truy cập Dashboard bằng service node port
 
   # Kết quả
 [root@instance-20240521-043352 ~]# k get service -n kubernetes-dashboard
-NAME                        TYPE        CLUSTER-IP      
-dashboard-metrics-scraper   ClusterIP   10.109.109.3
-kubernetes-dashboard        ClusterIP    10.101.16.230
+NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+dashboard-metrics-scraper   ClusterIP   10.109.109.3    <none>        8000/TCP       12m
+kubernetes-dashboard        NodePort    10.101.16.230   <none>        80:32507/TCP   12m
 ```
 
 Bây giờ chúng ta cần chỉnh Service có tên kubernetes-dashboard từ `ClusterIP` thành `NodePort` là có thể truy cập được.
