@@ -130,3 +130,10 @@ Như vậy là từ IP của VPS chúng ta có thể truy cập được Dashboa
 http://<VPS IP>:32507
 
 ```
+
+Update Image của một file deployment (Có thể dùng để CICD)
+
+```Bash
+[root@instance-20240524-042138 ~]# kubectl set image deployment/medical-examination-api medical-examination-api=vanhungdev/bloghung:5f5edeea
+deployment.apps/medical-examination-api image updated
+```
