@@ -66,6 +66,12 @@ kubernetes-dashboard        NodePort    10.101.16.230   <none>        80:32507/T
 
 Bây giờ chúng ta cần chỉnh Service có tên kubernetes-dashboard từ `ClusterIP` thành `NodePort` là có thể truy cập được.
 
+```bash
+# Edit một service có sẵn
+kubectl edit svc kubernetes-dashboard -n kubernetes-dashboard
+```
+  Bấm `i` để có thể chỉnh sửa, bấm `Esc` rồi `wq` để lư và thoát. Vậy là service đã được chỉnh sửa
+
 Kiểm tra ip của `minikube`
 ```bash
 minikube ip
