@@ -153,8 +153,12 @@ CICD với deployment:
 
 CICD với StatefulSets:
 ```bash
+      echo "======================================================================================"
       kubectl get pods
+      echo "--------------------------------------------------------------------------------------"
       kubectl set image statefulset.apps/blog-hung-mvc blog-hung-mvc=$DOCKER_IMAGE
+      echo "--------------------------------------------------------------------------------------"
       kubectl describe statefulset.apps/blog-hung-mvc
+      echo "--------------------------------------------------------------------------------------"
       kubectl get pods
 ```
