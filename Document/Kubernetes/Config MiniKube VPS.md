@@ -140,3 +140,21 @@ Update Image của một file deployment (Có thể dùng để CICD)
 [root@instance-20240524-042138 ~]# kubectl set image deployment/medical-examination-api medical-examination-api=vanhungdev/bloghung:5f5edeea
 deployment.apps/medical-examination-api image updated
 ```
+
+
+### CICD
+CICD với deployment:  
+```bash
+      kubectl get podso
+      kubectl set image deplyment/medical-examination-api medical-examination-api=$DOCKER_IMAGE
+      kubectl describe deployment/medical-examination-api
+      kubectl get pods
+```
+
+CICD với StatefulSets:
+```bash
+      kubectl get pods
+      kubectl set image statefulset.apps/blog-hung-mvc blog-hung-mvc=$DOCKER_IMAGE
+      kubectl describe statefulset.apps/blog-hung-mvc
+      kubectl get pods
+```
