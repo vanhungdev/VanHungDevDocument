@@ -119,6 +119,9 @@ Bây giờ chúng ta fw port.
 ```bash
 sudo iptables -t nat -A PREROUTING -p tcp --dport 32507 -j DNAT --to-destination <Minikube IP>:32507
 
+
+sudo iptables -t nat -A PREROUTING -p tcp --dport 8001 -j DNAT --to-destination 192.168.49.2:32603
+sudo iptables -t nat -A PREROUTING -p tcp --dport 30088 -j DNAT --to-destination 192.168.49.2:30088
 ```
 
  Thực hiện chức năng DNAT (Destination Network Address Translation) trong iptables, một công cụ tường lửa phổ biến trên Linux. Cụ thể, lệnh này sẽ chuyển hướng lưu lượng truy cập TCP đến trên cổng 32507 của máy chủ (VPS) của bạn đến cổng 32507 của một máy chủ khác có địa chỉ IP là 192.168.49.2.
