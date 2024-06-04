@@ -207,3 +207,5 @@ Lưu ý: nếu muốn chạy 2 host độc lập thì chạy lại server api gi
 	vanhungdev/imageName:v.1.1
 
  ```
+
+## Coi kỹ file /etc/nginx/conf.d/default.conf tránh trường hợp login Loadbalancer
