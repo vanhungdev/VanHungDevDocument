@@ -224,6 +224,30 @@ docker volume rm portainer_data
 
  ```bash
   docker run -d --name minio-server --restart=always -p 9011:9000 -p 9001:9001 -e MINIO_ROOT_USER=hungnv165 -e MINIO_ROOT_PASSWORD=Provanhung77 minio/minio:latest server /data --console-address ":9001"
+
+# Hoặc
+
+version: "3"
+services:
+  minio:
+    image: minio/minio
+    container_name: minio
+    ports:
+      - "9111:9000"
+      - "9222:9001"
+    volumes:
+      - ./storage:/data
+    environment:
+      MINIO_ROOT_USER: hungnv165
+      MINIO_ROOT_PASSWORD: Provanhung77
+    command: server --console-address ":9001" /data
+
+
+# public Image hoặc update bằng server thì dùng host này
+http://34.170.212.251:9111/bloghung/mobisalevn/dev/images/posts/wepik-fox-coder-logo-20240528151349HHQz (1).jpeg
+
+# Console port (dùng để vào console dashboard)
+http://34.170.212.251:9222
  ```
 
 **SQL Server:**   
