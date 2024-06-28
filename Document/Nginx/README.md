@@ -20,6 +20,7 @@ Cài đặt vi hoặc nano để chỉnh sửa file
 Truy cập vào file config
 ```bash
    docker exec -it nginx /bin/bash
+   docker exec -it nginx-proxy /bin/bash
 
    nano /etc/nginx/conf.d/default.conf
    vi /etc/nginx/conf.d/default.conf
