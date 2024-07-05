@@ -145,7 +145,6 @@ deployment.apps/medical-examination-api image updated
 ### CICD
 CICD với deployment:  
 ```bash
-      kubectl get podso
       kubectl set image deplyment/medical-examination-api medical-examination-api=$DOCKER_IMAGE
       kubectl describe deployment/medical-examination-api
       kubectl get pods
@@ -161,4 +160,157 @@ CICD với StatefulSets:
       kubectl describe statefulset.apps/blog-hung-mvc
       echo "--------------------------------------------------------------------------------------"
       kubectl get pods
+```
+
+
+
+```bash
+    1  gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project coastal-campus-428405-c4
+    2  kubectl get pods
+    3  kubectl get node
+    4  kubectl get nodes
+    5  kubectl version
+    6  kubectl create deployment hello-world-rest-api --image=in28min/hello-world-rest-api:0.0.1.RELEASE
+    7  kubectl expose deployment hello-world-rest-api --type=LoadBalancer --port=8080
+    8  kubectl scale deployment hello-world-rest-api --replicas=3
+    9  kubectl get pods
+   10  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+   11  vim dashboard-adminuser.yaml
+   12  kubectl apply -f   dashboard-adminuser.yaml
+   13  vim ClusterRoleBinding.yml
+   14  k apply -f  ClusterRoleBinding.yml
+   15  kubectl apply -f  ClusterRoleBinding.yml
+   16  vim ClusterRoleBinding.yml
+   17  kubectl apply -f  ClusterRoleBinding.yml
+   18  kubectl -n kubernetes-dashboard create token admin-user
+   19  kubectl get all
+   20  kubectl -n kubernetes-dashboard create token admin-user
+   21  dashboard-adminuser.yaml
+   22  vim dashboard-adminuser.yaml
+   23  kubectl apply -f   dashboard-adminuser.yaml
+   24  kubectl -n kubernetes-dashboard create token admin-user
+   25  gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project coastal-campus-428405-c4
+   26  kubectl get node
+   27  gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project coastal-campus-428405-c4
+   28  kubectl get ndoe
+   29  kubectl get node
+   30  k get all -n kubernetes-dashboard
+   31  clear
+   32  kubectl get services -n kubernetes-dashboard
+   33  kubectl get pods -n kubernetes-dashboard
+   34  kubectl get deployment -n kubernetes-dashboard
+   35  kubectl get replicaset -n kubernetes-dashboard
+   36  clear
+   37  kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
+   38  k get service
+   39  kubectl get servioce
+   40  kubectl get service
+   41  kubectl get service  -n kubernetes-dashboard
+   42  kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
+   43  gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project coastal-campus-428405-c4
+   44  kubectl get svc
+   45  kubectl edit service hello-world-rest-api
+   46  kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
+   47  k get pods -n kubernetes-dashboard
+   48  kubectl  get pods -n kubernetes-dashboard
+   49  kubectl describe kubernetes-dashboard-7b67d5ddb7-lc2gx
+   50  kubectl describe kubernetes-dashboard-7b67d5ddb7-lc2gx -n kubernetes-dashboard
+   51  kubectl describe pods kubernetes-dashboard-7b67d5ddb7-lc2gx -n kubernetes-dashboard
+   52  Dựa vào thông tin bạn cung cấp, tôi thấy Kubernetes Dashboard đang chạy với port 8443. Để thay đổi port này, bạn cần thực hiện một số bước:
+   53  Chỉnh sửa Deployment:
+   54  Bạn cần chỉnh sửa Deployment của Kubernetes Dashboard để thay đổi port mà container lắng nghe. Tuy nhiên, việc này có thể gây ra vấn đề với cấu hình hiện tại và chứng chỉ SSL.
+   55  Thay đổi Service:
+   56  Thay vì thay đổi port trong Deployment, bạn có thể giữ nguyên port 8443 của container và chỉ thay đổi port trong Service. Đây là cách an toàn hơn.
+   57  Để thay đổi port trong Service, hãy thực hiện các bước sau:
+   58  Copykubectl edit service kubernetes-dashboard -n kubernetes-dashboard
+   59  kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
+   60  kubectl edit pods kubernetes-dashboard -n kubernetes-dashboard
+   61  clear
+   62  kubectl edit pods kubernetes-dashboard-7b67d5ddb7-lc2gx -n kubernetes-dashboard
+   63  kubectl edit pods kubernetes-dashboard -n kubernetes-dashboard
+   64  kubectl edit pods kubernetes-dashboard-7b67d5ddb7-lc2gx -n kubernetes-dashboard
+   65  gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project coastal-campus-428405-c4
+   66  kubectl edit pods kubernetes-dashboard-7b67d5ddb7-lc2gx -n kubernetes-dashboard
+   67  kubectl get all -kubernetes-dashboard
+   68  kubectl get all -n kubernetes-dashboard
+   69  kubectl describe deployment.apps/kubernetes-dashboard
+   70  kubectl describe deployment.apps/kubernetes-dashboard -n kubernetes-dashboard
+   71  period=10s
+   72  kubectl get deployment kubernetes-dashboard -n kubernetes-dashboard -o yaml > dashboard-deployment.yaml
+   73  vi dashboard-deployment.yaml
+   74  kubectl delete namespace kubernetes-dashboard
+   75  vi dashboard-http.yaml
+   76  clear
+   77  kubectl get all -n kubernetes-dashboard
+   78  clear
+   79  kubectl -n kubernetes-dashboard create token admin-user
+   80  git clone
+   81  clear
+   82  git clone https://github.com/vanhungdev/KubernetesYAMLFile.git
+   83  ls
+   84  cd KubernetesYAMLFile
+   85  ls
+   86  git pull
+   87  ls
+   88  cd Dashboard
+   89  ls
+   90  vi dashboard.yaml
+   91  kubectl apply -f dashboard.yaml 
+   92  kubectl get all -n kubernetes-dashboard
+   93  alias k=kubectl
+   94  k get pods
+   95  k describe pod/kubernetes-dashboard-ddc74bc-jqg5f
+   96  k describe pod/kubernetes-dashboard-ddc74bc-jqg5f -n kubernetes-dashboard
+   97  kubectl get all -n kubernetes-dashboard
+   98  k describe service/kubernetes-dashboard
+   99  k describe service/kubernetes-dashboard -n kubernetes-dashboard
+  100  clear
+  101  kubectl edit service kubernetes-dashboard -n kubernetes-dashboard
+  102  clear
+  103  git pull
+  104  ls
+  105  kubectl -n kubernetes-dashboard create token admin-user
+  106  k apply -f dashboard-adminuser.yaml
+  107  kubectl -n kubernetes-dashboard create token admin-user
+  108  gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project coastal-campus-428405-c4
+  109  kubectl -n kubernetes-dashboard create token kubernetes-dashboard
+  110  kubectl get all -n kubernetes-dashboard
+  111  k get Secret
+  112  kubectl get Secret -kubernetes-dashboard
+  113  kubectl get Secret -n kubernetes-dashboard
+  114  kubectl -n kubernetes-dashboard delete serviceaccount admin-user
+  115  kubectl -n kubernetes-dashboard delete clusterrolebinding admin-user
+  116  clear
+  117  kubectl delete -n kubernetes-dashboard
+  118  kubectl delete namespace kubernetes-dashboard
+  119  kubectl delete -n kubernetes-dashboard
+  120  kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.6.1/aio/deploy/recommended.yaml
+  121  kubectl get all -n kubernetes-dashboard
+  122  kubectl get pods
+  123  kubectl get secret -n kubernetes-dashboard $(kubectl get serviceaccount kubernetes-dashboard -n kubernetes-dashboard -o jsonpath="{.secrets[0].name}") -o jsonpath="{.data.token}" | base64 --decode
+  124  kubectl -n kubernetes-dashboard create token kubernetes-dashboard
+  125  kubectl get pods
+  126  ls
+  127  cd d KubernetesYAMLFile
+  128  cd KubernetesYAMLFile
+  129  ls
+  130  cdDashboard
+  131  cd Dashboard
+  132  ls
+  133  kubectl apply -f dashboard-adminuser.yaml
+  134  kubectl -n kubernetes-dashboard create token admin-user
+  135  gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project coastal-campus-428405-c4
+  136  clear
+  137* kubectl de
+  138  kubectl get podss
+  139  kubectl get pods
+  140  git pull
+  141  ls
+  142  cd KubernetesYAMLFile
+  143  git pull
+  144  ls
+  145  cd Dashboard
+  146  ls
+  147  history
+
 ```
