@@ -122,3 +122,14 @@ sudo docker run -d --restart=always -p 8000:8000 -p 9000:9000 --name portainer -
 
 
 ```
+
+
+```bash
+    7  sudo apt install net-tools
+    8  sudo apt install vim
+    9  clear
+   10  sudo apt install gedit
+   11  sudo apt install nautilus
+   12  sudo apt install open-vm-tools
+
+```
