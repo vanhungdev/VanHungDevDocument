@@ -135,6 +135,11 @@ sudo docker run -d --restart=always -p 8000:8000 -p 9000:9000 --name portainer -
 ```
 
 
+Enable proxy trên ubuntu
+```bash
 export http_proxy=http://proxy.fpt.vn:80  
 sudo nano /etc/apt/apt.conf  
 Acquire::http::Proxy "http://proxy.fpt.vn:80";
+
+```
+
