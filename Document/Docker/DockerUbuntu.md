@@ -143,3 +143,58 @@ Acquire::http::Proxy "http://proxy.fpt.vn:80";
 
 ```
 
+
+
+
+Để áp dụng proxy cho tất cả các lệnh trong Ubuntu terminal, bạn có thể thực hiện các bước sau:
+
+1. Chỉnh sửa file ~/.bashrc:
+
+```bash
+nano ~/.bashrc
+```
+
+2. Thêm các dòng sau vào cuối file:
+
+```bash
+export http_proxy=http://proxy_ip:proxy_port
+export https_proxy=http://proxy_ip:proxy_port
+export ftp_proxy=http://proxy_ip:proxy_port
+export no_proxy="localhost,127.0.0.1,::1"
+```
+
+Thay thế proxy_ip và proxy_port bằng thông tin proxy của bạn.
+
+3. Nếu proxy yêu cầu xác thực, sử dụng định dạng:
+
+```bash
+export http_proxy=http://username:password@proxy_ip:proxy_port
+export https_proxy=http://username:password@proxy_ip:proxy_port
+export ftp_proxy=http://username:password@proxy_ip:proxy_port
+```
+
+4. Lưu file và thoát.
+
+5. Áp dụng các thay đổi:
+
+```bash
+source ~/.bashrc
+```
+
+6. Để áp dụng proxy cho sudo, chỉnh sửa file sudoers:
+
+```bash
+sudo visudo
+```
+
+7. Thêm dòng sau vào file:
+
+```
+Defaults env_keep += "http_proxy https_proxy ftp_proxy no_proxy"
+```
+
+8. Lưu file và thoát.
+
+Bây giờ, proxy sẽ được áp dụng cho tất cả các lệnh trong terminal, kể cả những lệnh sử dụng sudo.
+
+Bạn có muốn tôi giải thích thêm về bất kỳ bước nào không?
