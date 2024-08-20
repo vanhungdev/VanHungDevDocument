@@ -234,3 +234,13 @@ spec:
       targetPort: 5002
 
 ```
+
+
+Chạy script
+
+```bash
+sudo nao spf-clean-deployment.yaml
+
+
+sudo kubectl apply -f spf-clean-deployment.yaml
+```
