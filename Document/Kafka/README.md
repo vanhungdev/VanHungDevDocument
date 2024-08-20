@@ -182,25 +182,6 @@ Mở terminal và di chuyển đến thư mục chứa tệp docker-compose.yml,
     ```
 	Kafdrop chưa có cho macbook m1 (arm64v8)
 	
-## Phần 4: Công cụ quản lý container (option):  
-
-Portainer là một công cụ quản lý Docker dựa trên giao diện web, giúp bạn dễ dàng quản lý và giám sát các container Docker trên một hoặc nhiều máy chủ. 
-Portainer cung cấp một giao diện người dùng đồ họa thân thiện, 
-cho phép người quản trị và người phát triển tương tác với Docker mà không cần sử dụng các lệnh dòng lệnh phức tạp.
-
-**Portainer:**  
-
-1. Cài đặt Portainer:
-    ```bash
-    docker run -d -p 9000:9000 --name=portainer --restart=always -v \
-	/var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
-    ```
-	
-2. chạy Portainer:
-    ```bash
-    http://localhost:9000
-    ```
-	
 ## Phần 5: Truy cập và quản lý topic Kafka:  
  
  Để sử dụng được kafka cũng ta cần kiểm tra xem container đã run chưa và cấu hình thêm topic cho nó. Cấu hình các partitions để xử linh hoạt hơn.
