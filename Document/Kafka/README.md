@@ -392,3 +392,9 @@ curl -X GET http://localhost:8083/connectors/my-elasticsearch-connector/status
 
 curl -X GET http://localhost:8083/connectors/my-elasticsearch-connector/config
 ```
+
+
+Xem dữ liệu kafka
+```bash
+http://34.135.32.57:9200/spf-clean-log-all/_search
+```
