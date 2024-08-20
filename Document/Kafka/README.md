@@ -386,6 +386,8 @@ http://0.0.0.0:8083/connectors/elasticsearch-sink-connector/status
 
 curl -X GET http://localhost:8083/connector-plugins
 
+curl --location --request DELETE 'http://34.135.32.57:8083/connectors/elasticsearch-sink-connector'
+
 curl -X GET http://localhost:8083/connectors/my-elasticsearch-connector/status
 
 curl -X GET http://localhost:8083/connectors/my-elasticsearch-connector/config
