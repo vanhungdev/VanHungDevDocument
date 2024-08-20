@@ -55,7 +55,7 @@ services:
       - 29092:29092
       - 9999:9999
     environment:
-      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://${DOCKER_HOST_IP:-127.0.0.1}:9092,DOCKER://host.docker.internal:29092
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://  <your-ip>    :9092,DOCKER://host.docker.internal:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT,DOCKER:PLAINTEXT
       KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092,DOCKER://0.0.0.0:29092
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
@@ -272,7 +272,7 @@ services:
       - 29092:29092
       - 9999:9999
     environment:
-      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://34.135.32.57:9092,DOCKER://host.docker.internal:29092
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://192.168.18.128:9092,DOCKER://host.docker.internal:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT,DOCKER:PLAINTEXT
       KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092,DOCKER://0.0.0.0:29092
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
@@ -337,9 +337,7 @@ services:
       - >
         echo "Installing Connector"
 
-        confluent-hub install --no-prompt debezium/debezium-connector-mysql:1.7.0
-
-        confluent-hub install --no-prompt confluentinc/kafka-connect-elasticsearch:11.1.3
+        confluent-hub install --no-prompt confluentinc/kafka-connect-elasticsearch:14.1.0
 
         confluent-hub install --no-prompt neo4j/kafka-connect-neo4j:2.0.0
 
@@ -352,6 +350,17 @@ services:
         #
 
         sleep infinity
+  neo4j:
+    image: neo4j:4.2.3
+    container_name: neo4j
+    ports:
+    - "7474:7474"
+    - "7687:7687"
+    environment:
+      NEO4J_AUTH: neo4j/connect
+      NEO4J_dbms_memory_heap_max__size: 8G
+      NEO4J_ACCEPT_LICENSE_AGREEMENT: 'yes'
+      
     volumes:
       - ./kafka-connect-plugins:/etc/kafka-connect/jars
     networks:
@@ -360,7 +369,50 @@ networks:
   kafka-net:
     driver: bridge
 
+
+```
+
+```bash
+#Lưu ý cài package mới nhất
+confluent-hub install --no-prompt confluentinc/kafka-connect-elasticsearch:14.1.0
 ```
 
 
+
+Tạo connect
 ```bash
+curl --location 'http://192.168.18.128:8083/connectors' \
+--header 'Content-Type: application/json' \
+--data '{
+  "name": "elasticsearch-sink-connector",
+  "config": {
+    "connector.class": "io.confluent.connect.elasticsearch.ElasticsearchSinkConnector",
+    "tasks.max": "1",
+    "topics": "topic-log-1",
+    "connection.url": "http://192.168.18.128:9200",
+    "connection.username": "elastic",
+    "connection.password": "Provanhung77",
+    "type.name": "_doc",
+    "key.ignore": "true",
+    "schema.ignore": "true",
+    "transforms.key.type": "org.apache.kafka.connect.transforms.ExtractField$Key",
+    "transforms.key.field": "id",
+    "key.converter": "org.apache.kafka.connect.storage.StringConverter",
+    "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+    "value.converter.schemas.enable": "false"
+  }
+}'
+```
+
+Xem connect status
+
+```bash
+
+http://0.0.0.0:8083/connectors/elasticsearch-sink-connector/status
+
+curl -X GET http://localhost:8083/connector-plugins
+
+curl -X GET http://localhost:8083/connectors/my-elasticsearch-connector/status
+
+curl -X GET http://localhost:8083/connectors/my-elasticsearch-connector/config
+```
