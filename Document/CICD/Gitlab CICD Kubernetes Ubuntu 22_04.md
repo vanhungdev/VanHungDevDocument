@@ -1,4 +1,4 @@
-### Cấu hình CICD sorce với .NET 8 k8s
+## Cấu hình CICD sorce với .NET 8 k8s
 
 Cấu hình file `.gitlab-ci.yml` như sau:
 ```bash
@@ -125,7 +125,7 @@ Tìm trên GG: SSH_KEY error in libcrypto
 https://unix.stackexchange.com/questions/577402/ssh-error-while-logging-in-using-private-key-loaded-pubkey-invalid-format-and
 ```
 
-Tạo docker file như sau:
+## Tạo docker file:
 
 ```bash
 
@@ -171,7 +171,7 @@ COPY --from=publish /app/publish .
 ENTRYPOINT ["dotnet", "client-web-api.dll"]
 ```
 
-Cấu hình file deployment
+## Cấu hình file deployment
 
 ```bash
 ---
