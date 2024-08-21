@@ -135,6 +135,84 @@ sudo ufw status
 
 ```
 
+Tạo minikube khởi động cùng server
+```bash
+sudo nano /usr/local/bin/start-minikube.sh
+
+
+```
+
+
+Nội dung file:
+```bash
+#!/bin/bash
+
+# Kiểm tra xem Minikube đã chạy chưa
+if ! minikube status >/dev/null 2>&1; then
+    # Nếu chưa chạy, khởi động Minikube
+    minikube start --driver=docker
+else
+    echo "Minikube đã đang chạy."
+fi
+```
+
+
+
+
+Xem log minikube start cùng server
+
+```bash
+# Xem trạng thái dịch vụ
+sudo systemctl status minikube.service
+
+# Xem log
+sudo journalctl -u minikube.service
+```
+
+```bash
+sudo chmod +x /usr/local/bin/start-minikube.sh
+
+sudo nano /etc/systemd/system/minikube.service
+```
+
+```bash
+[Unit]
+Description=Start Minikube
+After=docker.service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/start-minikube.sh
+RemainAfterExit=true
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+
+
+```
+
+
+```bash
+sudo usermod -aG docker
+```
+
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable minikube.service
+
+minikube stop
+
+# Xem thử đã chạy được chưa
+sudo systemctl start minikube.service
+
+
+minikube status
+```
 
 
  Thực hiện chức năng DNAT (Destination Network Address Translation) trong iptables, một công cụ tường lửa phổ biến trên Linux. Cụ thể, lệnh này sẽ chuyển hướng lưu lượng truy cập TCP đến trên cổng 32507 của máy chủ (VPS) của bạn đến cổng 32507 của một máy chủ khác có địa chỉ IP là 192.168.49.2.
