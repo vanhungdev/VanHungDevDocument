@@ -28,6 +28,11 @@ MiniKube
   # Start minikube node
   minikube start --driver=docker --force
 
+  # Nếu lỗi không có quyền
+  rm /tmp/juju-*
+  minikube delete
+  sudo usermod -aG docker root
+
   # Kiểm tra trạng thái
   minikube status
 
