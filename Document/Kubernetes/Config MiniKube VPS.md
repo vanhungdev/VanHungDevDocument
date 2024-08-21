@@ -52,7 +52,7 @@ Truy cập Dashboard bằng proxy
   # Nếu chỉ xem một chút thì allow proxy cho nó
   kubectl proxy --address=0.0.0.0 --accept-hosts='.*'
 
-http://34.29.18.204:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/about?namespace=default
+  http://34.29.18.204:8001/api/v1/namespaces/kubernetes-dashboard/services/http:kubernetes-dashboard:/proxy/#/about?namespace=default
 
 ```
 
@@ -63,10 +63,10 @@ Truy cập Dashboard bằng service node port
 
 
   # Kết quả
-[root@instance-20240521-043352 ~]# k get service -n kubernetes-dashboard
-NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
-dashboard-metrics-scraper   ClusterIP   10.109.109.3    <none>        8000/TCP       12m
-kubernetes-dashboard        NodePort    10.101.16.230   <none>        80:32507/TCP   12m
+  [root@instance-20240521-043352 ~]# k get service -n kubernetes-dashboard
+  NAME                        TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)        AGE
+  dashboard-metrics-scraper   ClusterIP   10.109.109.3    <none>        8000/TCP       12m
+  kubernetes-dashboard        NodePort    10.101.16.230   <none>        80:32507/TCP   12m
 ```
 
 Bây giờ chúng ta cần chỉnh Service có tên kubernetes-dashboard từ `ClusterIP` thành `NodePort` là có thể truy cập được.
@@ -120,7 +120,7 @@ Date: Fri, 31 May 2024 15:32:09 GMT
 
 Như vậy là đã public được minikube dashboard. Nhưng làm sau có thể truy cập được từ Extenal IP của VPS:
 
-Bây giờ chúng ta fw port.
+Bây giờ chúng ta fw port như sau:
 ```bash
 sudo iptables -t nat -A PREROUTING -p tcp --dport 32507 -j DNAT --to-destination <Minikube IP>:32507
 
@@ -135,46 +135,43 @@ sudo ufw status
 
 ```
 
-Tạo minikube khởi động cùng server
+Tạo minikube khởi động cùng server:
 ```bash
-sudo nano /usr/local/bin/start-minikube.sh
 
+# Allow quyền chạy minikube
+sudo usermod -aG docker
+
+# Tạo file bash script
+sudo nano /usr/local/bin/start-minikube.sh
 
 ```
 
 
-Nội dung file:
+Điền vào nội dung file:
 ```bash
 #!/bin/bash
 
-# Kiểm tra xem Minikube đã chạy chưa
-if ! minikube status >/dev/null 2>&1; then
-    # Nếu chưa chạy, khởi động Minikube
-    minikube start --driver=docker
-else
-    echo "Minikube đã đang chạy."
-fi
+sudo minikube start --driver=docker
+
+# Vô hiệu hóa UFW
+sudo ufw disable
+
+# Thêm quy tắc NAT với iptables
+# Minikube Dashboard khởi động với nodePort 3000
+sudo iptables -t nat -A PREROUTING -p tcp --dport 8001 -j DNAT --to-destination 192.168.49.2:30000
+
+# Application khởi động với bắt đầu từ số 1
+sudo iptables -t nat -A PREROUTING -p tcp --dport 30001 -j DNAT --to-destination 192.168.49.2:30001
+
+# More application
 ```
-
-
-
-
-Xem log minikube start cùng server
-
+Cấu hình service cho minikube:
 ```bash
-# Xem trạng thái dịch vụ
-sudo systemctl status minikube.service
-
-# Xem log
-sudo journalctl -u minikube.service
-```
-
-```bash
-sudo chmod +x /usr/local/bin/start-minikube.sh
-
 sudo nano /etc/systemd/system/minikube.service
 ```
 
+
+Bỏ nội dung vào file:
 ```bash
 [Unit]
 Description=Start Minikube
@@ -192,26 +189,36 @@ User=root
 WantedBy=multi-user.target
 
 
-
 ```
 
 
 ```bash
-sudo usermod -aG docker
-```
 
+# Stop minikube hiện tại đang chạy để test script
+minikube stop
 
-```bash
+# Khởi tạo
 sudo systemctl daemon-reload
 sudo systemctl enable minikube.service
-
-minikube stop
 
 # Xem thử đã chạy được chưa
 sudo systemctl start minikube.service
 
 
+# Kiểm tra trạng thái minikube
 minikube status
+```
+
+
+
+Xem log minikube start cùng server:
+
+```bash
+# Xem trạng thái dịch vụ
+sudo systemctl status minikube.service
+
+# Xem log
+sudo journalctl -u minikube.service
 ```
 
 
@@ -254,6 +261,8 @@ CICD với StatefulSets:
 ```
 
 
+
+History thao tác với CKE Goole Kubernetes Engine:
 
 ```bash
     1  gcloud container clusters get-credentials autopilot-cluster-1 --region us-central1 --project coastal-campus-428405-c4
