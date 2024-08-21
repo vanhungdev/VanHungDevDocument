@@ -139,7 +139,7 @@ Tạo minikube khởi động cùng server:
 ```bash
 
 # Allow quyền chạy minikube
-sudo usermod -aG docker
+sudo usermod -aG docker root
 
 # Tạo file bash script
 sudo nano /usr/local/bin/start-minikube.sh
