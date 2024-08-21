@@ -243,6 +243,7 @@ services:
   zookeeper:
     container_name: zookeeper
     image: wurstmeister/zookeeper
+    restart: always
     ports:
       - 2181:2181
     networks:
@@ -250,6 +251,7 @@ services:
   kafka:
     container_name: kafka
     image: wurstmeister/kafka
+    restart: always
     ports:
       - 9092:9092
       - 9093:9093
@@ -274,6 +276,7 @@ services:
       - kafka-net
   kafdrop:
     container_name: kafdrop
+    restart: always
     image: obsidiandynamics/kafdrop
     ports:
       - 9091:9000
@@ -287,6 +290,7 @@ services:
   schema-registry:
     container_name: schema-registry
     image: confluentinc/cp-schema-registry:6.2.0
+    restart: always
     ports:
       - 8081:8081
     environment:
@@ -295,6 +299,7 @@ services:
   kafka-connect:
     container_name: kafka-connect
     image: confluentinc/cp-kafka-connect:latest
+    restart: always
     ports:
       - 8083:8083
     environment:
@@ -343,6 +348,7 @@ services:
 networks:
   kafka-net:
     driver: bridge
+
 
 ```
 
