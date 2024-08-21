@@ -280,7 +280,14 @@ Chạy bằng lệnh
 
 ```bash
 
-docker run -d --name dockge -p 5001:5001 -v dockge-data:/app/data -v dockge-stacks:/opt/stacks -v /var/run/docker.sock:/var/run/docker.sock -e DOCKGE_STACKS_DIR=/opt/stacks louislam/dockge:1
+sudo docker run -d --name dockge \
+  --restart always \
+  -p 5001:5001 \
+  -v dockge-data:/app/data \
+  -v dockge-stacks:/opt/stacks \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -e DOCKGE_STACKS_DIR=/opt/stacks \
+  louislam/dockge:1
 
 
 ```
