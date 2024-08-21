@@ -192,13 +192,17 @@ WantedBy=multi-user.target
 ```
 
 
+Chạy các script sau
+
 ```bash
 
 # Stop minikube hiện tại đang chạy để test script
 minikube stop
 
 # Khởi tạo
+# Sau khi sửa file cần chạy lại lệnh này
 sudo systemctl daemon-reload
+
 sudo systemctl enable minikube.service
 
 # Xem thử đã chạy được chưa
@@ -220,7 +224,6 @@ sudo systemctl status minikube.service
 # Xem log
 sudo journalctl -u minikube.service
 ```
-
 
  Thực hiện chức năng DNAT (Destination Network Address Translation) trong iptables, một công cụ tường lửa phổ biến trên Linux. Cụ thể, lệnh này sẽ chuyển hướng lưu lượng truy cập TCP đến trên cổng 32507 của máy chủ (VPS) của bạn đến cổng 32507 của một máy chủ khác có địa chỉ IP là 192.168.49.2.
 
