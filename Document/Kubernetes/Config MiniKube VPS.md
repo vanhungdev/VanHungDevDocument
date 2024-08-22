@@ -211,6 +211,9 @@ sudo systemctl start minikube.service
 
 # Kiểm tra trạng thái minikube
 minikube status
+
+# Xem log
+sudo nano /usr/local/bin/start-minikube.sh
 ```
 
 
