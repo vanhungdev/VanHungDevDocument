@@ -151,19 +151,43 @@ sudo nano /usr/local/bin/start-minikube.sh
 ```bash
 #!/bin/bash
 
-sudo minikube start --driver=docker
+# Định nghĩa file log
+LOG_FILE="/var/log/minikube_setup.log"
+
+# Hàm ghi log
+log_command() {
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Lệnh: $1" >> "$LOG_FILE"
+    output=$($1 2>&1)
+    echo "Kết quả:" >> "$LOG_FILE"
+    echo "$output" >> "$LOG_FILE"
+    echo "---" >> "$LOG_FILE"
+}
+
+# Bắt đầu script
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Bắt đầu cài đặt Minikube" >> "$LOG_FILE"
+
+# Cấp quyền docker root
+
+log_command "sudo usermod -aG docker root"
+
+# Khởi động Minikube
+log_command "minikube start --driver=docker --force"
 
 # Vô hiệu hóa UFW
-sudo ufw disable
+log_command "sudo ufw disable"
 
 # Thêm quy tắc NAT với iptables
-# Minikube Dashboard khởi động với nodePort 3000
-sudo iptables -t nat -A PREROUTING -p tcp --dport 8001 -j DNAT --to-destination 192.168.49.2:30000
+# Minikube Dashboard khởi động với nodePort 30000
+log_command "sudo iptables -t nat -A PREROUTING -p tcp --dport 8001 -j DNAT --to-destination 192.168.49.2:30000"
 
 # Application khởi động với bắt đầu từ số 1
-sudo iptables -t nat -A PREROUTING -p tcp --dport 30001 -j DNAT --to-destination 192.168.49.2:30001
+log_command "sudo iptables -t nat -A PREROUTING -p tcp --dport 30001 -j DNAT --to-destination 192.168.49.2:30001"
 
 # More application
+# Thêm các lệnh khác ở đây và sử dụng log_command để ghi log
+
+echo "$(date '+%Y-%m-%d %H:%M:%S') - Cài đặt hoàn tất" >> "$LOG_FILE"
+
 ```
 Cấu hình service cho minikube:
 ```bash
