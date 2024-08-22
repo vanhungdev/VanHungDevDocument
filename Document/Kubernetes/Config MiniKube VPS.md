@@ -213,7 +213,7 @@ sudo systemctl start minikube.service
 minikube status
 
 # Xem log
-sudo nano /usr/local/bin/start-minikube.sh
+sudo cat /var/log/minikube_setup.log
 ```
 
 
