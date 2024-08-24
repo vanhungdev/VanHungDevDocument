@@ -56,7 +56,7 @@ Truy cập Dashboard bằng proxy
 
 ```
 
-Truy cập Dashboard bằng service node port
+### Truy cập Dashboard bằng service node port
 ```bash
   # Xem thấy cả service
   k get service -n kubernetes-dashboard
@@ -135,7 +135,51 @@ sudo ufw status
 
 ```
 
-Tạo minikube khởi động cùng server:
+### Cài đặt rancher:
+Chạy docker compose như sau:
+
+ ```bash
+
+version: '3'
+services:
+  rancher:
+    image: rancher/rancher:latest
+    container_name: rancher
+    restart: unless-stopped
+    privileged: true
+    ports:
+      - "8080:80"   # Thay đổi 8080 thành port bạn muốn sử dụng cho HTTP
+      - "8443:443"  # Thay đổi 8443 thành port bạn muốn sử dụng cho HTTPS
+    volumes:
+      - rancher-data:/var/lib/rancher
+
+volumes:
+  rancher-data:
+
+ ```
+Xem cấu hình minikube 
+
+```bash
+# Xem cấu hình và IP minikube
+minikube kubectl -- config view --raw
+
+# Vào link sau
+https://34.135.32.57:8443/dashboard/c/_/manager/provisioning.cattle.io.cluster/create?mode=import
+
+
+chọn Inport any.kubernetes cluter > Generic
+
+# chạy script sau:
+curl --insecure -sfL https://34.135.32.57:8443/v3/import/hdd2pn88tb7bn87bql7tffvj2bdpfhsfxltdnm5ghvxhbzs5t469hf_c-m-fssj6jdw.yaml | kubectl apply -f - --debug
+
+
+```
+
+Chỉ là mẫu cài theo link của rancher mới đúng
+
+
+
+### Tạo minikube khởi động cùng server:
 ```bash
 
 # Allow quyền chạy minikube
