@@ -161,4 +161,23 @@ kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboar
 # Hoặc
 kubectl get secret admin-user -n kubernetes-dashboard -o jsonpath={".data.token"} | base64 -d
 
+
+```
+
+Sau khi triển khai ứng dụng dùng nodeport của service và External IP của service luôn:
+
+```bash
+root@instance-20240825-055816:~# kubectl get service
+NAME                TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)        AGE
+kubernetes          ClusterIP   10.96.0.1        <none>        443/TCP        172m
+nginx-service       NodePort    10.103.177.161   <none>        80:32000/TCP   136m
+spf-clean-service   NodePort    10.103.42.127    <none>        80:30213/TCP   4m26s
+
+# Ví dụ VPS có IP như sau:
+
+Internal IP           External IP
+10.128.0.19           34.135.32.57
+
+# Truy cập sẽ có url sau
+http://35.239.213.160:30213/web-api/docs/index.html
 ```
