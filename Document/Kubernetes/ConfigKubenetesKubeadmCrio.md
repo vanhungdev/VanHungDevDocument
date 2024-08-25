@@ -125,6 +125,4 @@ kubeadm join xxx:6443 --token xxx \
 # Đánh label cho node
 kubectl label node <worker-node-name>  node-role.kubernetes.io/worker=worker
 
-
-
 ```
