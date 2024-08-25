@@ -156,6 +156,13 @@ services:
 volumes:
   rancher-data:
 
+
+# Xem cấu hình của cluster và ip api server
+kubectl cluster-info
+
+# Dổi IP thành Internal IP
+curl --insecure -sfL https://<Internal IP>:8443/v3/import/9pp5ct65lnqh4rqdw2cqfh8kj5tftkm8l6nf64tlmrf7jcmkz56jjt_c-m-bnp5kzxj.yaml | kubectl apply -f -
+#
  ```
 Xem cấu hình minikube 
 
