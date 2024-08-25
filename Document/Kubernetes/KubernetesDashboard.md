@@ -181,3 +181,19 @@ Internal IP           External IP
 # Truy cập sẽ có url sau
 http://35.239.213.160:30213/web-api/docs/index.html
 ```
+
+
+## Bước 4 cấu hình Metrics Server
+
+```bash
+
+# Cài đặt metric
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+
+# Xem thử
+kubectl get pods -n kube-system
+
+# Nếu gặp lỗi TLS
+kubectl patch deployment metrics-server -n kube-system --type='json' -p='[{"op": "add", "path": "/spec/template/spec/containers/0/args/-", "value": "--kubelet-insecure-tls"}]'
+
+```
