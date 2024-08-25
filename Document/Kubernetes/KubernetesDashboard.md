@@ -3,6 +3,12 @@
 Tham khảo
 
 ```bash
+# Cài và khởi tạo Kubeadm Cluster
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/
+
+# Cách lấy lại token join
+https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/create-cluster-kubeadm/
+
 # Cài account
 https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
 
