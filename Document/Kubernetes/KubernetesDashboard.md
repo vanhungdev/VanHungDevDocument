@@ -1,5 +1,14 @@
 # Cài đặt Kubenetes
 
+Tham khảo
+
+```bash
+# Cài account
+https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md
+
+# Cài dashboard
+https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
+```
 ### Bước 1: Tải k8s 
 
 ```bash
