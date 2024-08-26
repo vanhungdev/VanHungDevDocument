@@ -125,6 +125,8 @@ kubeadm join xxx:6443 --token xxx \
 # Đánh label cho node
 kubectl label node <worker-node-name>  node-role.kubernetes.io/worker=worker
 
+# Cách lấy lại code join worker node
+kubeadm token create --print-join-command
 ```
 
 Sau khi triển khai ứng dụng dùng nodeport của service và External IP của service luôn:
