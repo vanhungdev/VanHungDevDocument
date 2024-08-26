@@ -144,7 +144,27 @@ Internal IP           External IP
 # Truy cập sẽ có url sau
 http://35.239.213.160:30213/web-api/docs/index.html
 ```
+```bash
+# Vào root
+sudo passwd root
 
+# Tạo file SSH va bỏ script vào
+sudo vim /root/script_config_worker_node_k8s.sh
+
+# Phân quyền
+sudo chmod +x /root/script_config_worker_node_k8s.sh
+
+# Chay file ssh
+sudo /root/script_config_worker_node_k8s.sh
+
+# Xem log
+sudo cat /var/log/ssh_setup.log
+
+# Xoá nội dung file cũ
+`ggDg`
+
+
+```
 ## Bash script cài tự động
 
 ```bash
