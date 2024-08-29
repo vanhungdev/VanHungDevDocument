@@ -68,7 +68,7 @@
    - Istio
    - Envoy proxy
    - Consul Service Mesh
-5. Giao tiếp giữa các service trong Kubernetes
+5. Networking and Pod to Pod Communication
 
 ## Phần 5: Stateful Applications và Data Services (2-3 tuần)
 1. Triển khai Stateful Applications trên Kubernetes
