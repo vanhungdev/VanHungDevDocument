@@ -11,7 +11,7 @@
 3. Các khái niệm cơ bản:
    - Pods
    - ReplicationControllers (Phiên bản cũ của `replicaset`được giữ lại để chạy các ứng dụng cũ)
-   - ReplicaSets *** _(có bọ chọn selector linh hoạt hơn)_
+   - ReplicaSets *** _(có bộ chọn selector linh hoạt hơn)_
    - DaemonSets *** _(Đảm bảo 1 pods sẽ được triển khai nên một node, không sử dụng chung với replicaset)_
 4. Workload Resources:
    - Deployments
