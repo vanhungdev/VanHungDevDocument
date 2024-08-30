@@ -11,12 +11,12 @@
 3. Các khái niệm cơ bản:
    - Pods
    - ReplicationControllers (Phiên bản cũ của `replicaset`được giữ lại để chạy các ứng dụng cũ)
-   - ReplicaSets (có bọ chọn selector linh hoạt hơn)
-   - DaemonSets (Đảm bảo 1 pods sẽ được triển khai nên một node, không sử dụng chung với replicaset)
+   - ReplicaSets *** _(có bọ chọn selector linh hoạt hơn)_
+   - DaemonSets *** _(Đảm bảo 1 pods sẽ được triển khai nên một node, không sử dụng chung với replicaset)_
 4. Workload Resources:
    - Deployments
    - StatefulSets
-   - Jobs và CronJobs (`Job` là một công việc ví dụ như tạo một `pods` có thể cấu hình xóa pods khi xong job, CronJob thực chất là một đối tượng trong Kubernetes, có nhiệm vụ tạo ra các Job theo lịch trình định sẵn)
+   - Jobs và CronJobs *** _(`Job` là một công việc ví dụ như tạo một `pods` có thể cấu hình xóa pods khi xong job, CronJob thực chất là một đối tượng trong Kubernetes, có nhiệm vụ tạo ra các Job theo lịch trình định sẵn)_
 5. Services và Networking
 6. Volumes và Storage:
    - PersistentVolumes
