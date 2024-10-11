@@ -155,3 +155,19 @@ Cách dùm vim để chỉnh sửa file:
   - Phím `ggdG` để xoá toàn bộ file.  
   - Phím `dG` để xoá từ vị trí con trỏ chuột về cuối file và lưu ý `G viết hoa`.  
 
+
+
+
+## Phần 2: Chạy source .NET Core với VS code:  
+
+
+```bash
+# CD vào thư mục source api
+cd sale-platform-account-api
+```
+
+Chạy với profile cụ thể
+
+```bash
+dotnet run --launch-profile Development
+```
