@@ -1,6 +1,6 @@
 # Cài đặt Kubenetes
 
-### Bước 1: Cài đặt cấu hịnh mạng
+### Bước 1: Cài đặt cấu hình mạng
 
 ```bash
 
