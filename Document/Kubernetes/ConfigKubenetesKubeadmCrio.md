@@ -82,6 +82,15 @@ POD_CIDR="192.168.0.0/16" # dãy mạng của container runtime
 
 kubeadm init --apiserver-advertise-address=$IPADDR  --apiserver-cert-extra-sans=$IPADDR  --pod-network-cidr=$POD_CIDR --node-name $NODENAME --ignore-preflight-errors Swap
 
+or
+
+sudo kubeadm init \
+  --apiserver-advertise-address=${IPADDR} \
+  --cri-socket=/var/run/crio/crio.sock \
+  --apiserver-cert-extra-sans=${IPADDR} \
+  --pod-network-cidr=${POD_CIDR} \
+  --node-name ${NODENAME} \
+  --ignore-preflight-errors Swap
 
 
 # Config để dùng lênh kubectl 
