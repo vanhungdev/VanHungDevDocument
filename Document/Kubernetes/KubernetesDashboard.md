@@ -136,7 +136,7 @@ subjects:
 - kind: ServiceAccount
   name: admin-user
   namespace: kubernetes-dashboard
-  
+---  
 apiVersion: v1
 kind: Secret
 metadata:
