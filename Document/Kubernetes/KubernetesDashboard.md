@@ -149,6 +149,10 @@ type: kubernetes.io/service-account-token
 
 ```
 
+```bash
+kubectl apply -f admin-user.yaml
+```
+
 Cách lấy token
 
 ```bash
