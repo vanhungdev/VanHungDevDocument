@@ -163,7 +163,7 @@ Cách dùm vim để chỉnh sửa file:
 
 ```bash
 # CD vào thư mục source api
-cd sale-platform-account-api
+cd source-api
 ```
 
 Chạy với profile cụ thể
