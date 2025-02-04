@@ -171,3 +171,12 @@ Chạy với profile cụ thể
 ```bash
 dotnet run --launch-profile Development
 ```
+
+kill port
+
+```bash
+
+netstat -vanp tcp | grep 5000
+killall -9 [tên tiến trình]
+
+```
