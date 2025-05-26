@@ -79,3 +79,17 @@ Mở teminal chạy lệnh sau:
  ```bash
  Docker ps
  ```
+**Neu van khong duoc**
+
+ ```bash
+
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v EnableVirtualizationBasedSecurity /t REG_DWORD /d 0 /f
+reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceGuard" /v RequirePlatformSecurityFeatures /t REG_DWORD /d 0 /f
+ ```
+và  
+
+
+ ```bash
+bcdedit /set hypervisorlaunchtype auto
+dism.exe /online /enable-feature /featurename:Microsoft-Hyper-V-All /all
+ ```
