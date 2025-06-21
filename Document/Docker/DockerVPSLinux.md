@@ -243,6 +243,23 @@ services:
     command: server --console-address ":9001" /data
 
 
+version: "3"
+services:
+  minio:
+    image: minio/minio:RELEASE.2022-11-11T03-44-20Z
+    container_name: minio
+    ports:
+      - 9111:9000
+      - 9222:9001
+    volumes:
+      - ./minio_storage:/data
+    command: server --console-address ":9001" /data
+    environment:
+      MINIO_ROOT_USER: hungnv165
+      MINIO_ROOT_PASSWORD: Provanhung77
+networks: {}
+
+
 # public Image hoặc update bằng server thì dùng host này
 http://34.170.212.251:9111/bloghung/mobisalevn/dev/images/posts/wepik-fox-coder-logo-20240528151349HHQz (1).jpeg
 
