@@ -46,6 +46,7 @@ services:
       - 2181:2181
     networks:
       - kafka-net
+
   kafka:
     container_name: kafka
     image: wurstmeister/kafka
@@ -55,7 +56,7 @@ services:
       - 29092:29092
       - 9999:9999
     environment:
-      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://  <your-ip>    :9092,DOCKER://host.docker.internal:29092
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://localhost:9092,DOCKER://host.docker.internal:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT,DOCKER:PLAINTEXT
       KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092,DOCKER://0.0.0.0:29092
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
@@ -71,6 +72,9 @@ services:
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
     networks:
       - kafka-net
+    depends_on:
+      - zookeeper
+
   kafdrop:
     container_name: kafdrop
     image: obsidiandynamics/kafdrop
@@ -81,13 +85,34 @@ services:
       JVM_OPTS: -Xms32M -Xmx64M
     networks:
       - kafka-net
-    expose:
-      - "9093" # Expose Kafka listener port to other containers
+    depends_on:
+      - kafka
+
+  kafbat-ui:
+    container_name: kafbat-ui
+    image: ghcr.io/kafbat/kafka-ui:latest
+    ports:
+      - 8080:8080
+    environment:
+      DYNAMIC_CONFIG_ENABLED: "true"
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9093
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+      KAFKA_CLUSTERS_0_READONLY: "false"
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: first
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://kafka-connect:8083
+      # JMX configuration để monitor metrics
+      KAFKA_CLUSTERS_0_METRICS_PORT: 9999
+      KAFKA_CLUSTERS_0_METRICS_TYPE: JMX
+    networks:
+      - kafka-net
+    depends_on:
+      - kafka
+      - zookeeper
+
 networks:
   kafka-net:
     driver: bridge
-
-
 ```
 
  **Chạy Docker Compose:**  
