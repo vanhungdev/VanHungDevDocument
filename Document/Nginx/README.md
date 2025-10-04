@@ -210,3 +210,145 @@ Lưu ý: nếu muốn chạy 2 host độc lập thì chạy lại server api gi
  ```
 
 ## Coi kỹ file /etc/nginx/conf.d/default.conf tránh trường hợp login Loadbalancer
+
+
+
+
+
+
+
+## Cài đặt 2 website trên cùng 1 server
+
+Bạn chỉ cần **1 nginx-proxy** và **1 letsencrypt** để phục vụ nhiều website. Mỗi website chạy trên container riêng với domain riêng.
+
+---
+
+## **Bước 1: Tạo network (chỉ 1 lần)**
+
+```bash
+docker network create nginx-proxy
+```
+
+---
+
+## **Bước 2: Chạy Nginx Proxy (chỉ 1 lần)**
+
+```bash
+docker run -d --name nginx-proxy \
+  --network nginx-proxy \
+  -p 80:80 -p 443:443 \
+  -v ~/nginx-certs:/etc/nginx/certs:ro \
+  -v ~/nginx/vhost.d:/etc/nginx/vhost.d \
+  -v ~/nginx-html:/usr/share/nginx/html \
+  -v /var/run/docker.sock:/tmp/docker.sock:ro \
+  jwilder/nginx-proxy
+```
+
+---
+
+## **Bước 3: Chạy Let's Encrypt (chỉ 1 lần)**
+
+```bash
+docker run -d --name nginx-letsencrypt \
+  --network nginx-proxy \
+  --volumes-from nginx-proxy \
+  -v ~/nginx-certs:/etc/nginx/certs:rw \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  jrcs/letsencrypt-nginx-proxy-companion
+```
+
+---
+
+## **Bước 4: Chạy Website 1 (Port 5002)**
+
+```bash
+docker run -d --name website1 \
+  --network nginx-proxy \
+  --expose 5002 \
+  -e VIRTUAL_HOST=domain1.com,www.domain1.com \
+  -e VIRTUAL_PORT=5002 \
+  -e LETSENCRYPT_HOST=domain1.com,www.domain1.com \
+  -e LETSENCRYPT_EMAIL=vanhungdev@gmail.com \
+  -e ASPNETCORE_URLS=http://+:5002 \
+  -e ASPNETCORE_ENVIRONMENT=Production \
+  --restart unless-stopped \
+  vanhungdev/website1:latest
+```
+
+---
+
+## **Bước 5: Chạy Website 2 (Port 5007)**
+
+```bash
+docker run -d --name website2 \
+  --network nginx-proxy \
+  --expose 5007 \
+  -e VIRTUAL_HOST=binkbookstore.com,www.binkbookstore.com \
+  -e VIRTUAL_PORT=5007 \
+  -e LETSENCRYPT_HOST=binkbookstore.com,www.binkbookstore.com \
+  -e LETSENCRYPT_EMAIL=vanhungdev@gmail.com \
+  -e ASPNETCORE_URLS=http://+:5007 \
+  -e ASPNETCORE_ENVIRONMENT=Production \
+  --restart unless-stopped \
+  vanhungdev/ebook-project:bafc5534
+```
+
+---
+
+## **Sơ đồ hoạt động:**
+
+```
+Internet (port 80/443)
+         ↓
+   [nginx-proxy]  ← [letsencrypt-companion]
+         ↓
+    ├── domain1.com → website1:5002
+    └── binkbookstore.com → website2:5007
+```
+
+---
+
+## **Lưu ý quan trọng:**
+
+### ✅ **Điều kiện tiên quyết:**
+1. **DNS đã trỏ về server:**
+   - `domain1.com` → IP server
+   - `www.domain1.com` → IP server
+   - `binkbookstore.com` → IP server
+   - `www.binkbookstore.com` → IP server
+
+2. **Port 80 và 443 phải mở** trên firewall
+
+### 🔧 **Thay đổi cần thiết:**
+- Thay `domain1.com` bằng domain thật của website 1
+- Thay `vanhungdev/website1:latest` bằng Docker image của website 1
+- Đảm bảo mỗi container có tên khác nhau (`--name`)
+- Đảm bảo mỗi website lắng nghe đúng port nội bộ của nó
+
+### ⚡ **Kiểm tra:**
+
+```bash
+# Xem các container đang chạy
+docker ps
+
+# Xem logs nginx-proxy
+docker logs nginx-proxy
+
+# Xem logs letsencrypt
+docker logs nginx-letsencrypt
+
+# Xem logs website
+docker logs website1
+docker logs website2
+```
+
+---
+
+## **Thêm website thứ 3, 4, 5...**
+
+Chỉ cần chạy thêm container mới với:
+- Domain khác (`VIRTUAL_HOST`)
+- Port khác (nếu cần)
+- Cùng network `nginx-proxy`
+
+**Nginx-proxy sẽ tự động phát hiện và cấu hình!** 🎉
