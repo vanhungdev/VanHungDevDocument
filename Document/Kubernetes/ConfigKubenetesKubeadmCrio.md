@@ -342,3 +342,15 @@ log_result "Cài đặt kubeadm, kubelet, kubectl hoàn tất"
 ```
 
 Đối với master node cần chạy thêm `Bước 4` worker node thì join và coppy file về.
+
+
+Lâu lâu không chạy được  kubectl get pods thì chạy lại lệnh này
+
+```bash
+# Config để dùng lênh kubectl 
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+
+```
