@@ -263,27 +263,27 @@ Mở terminal và di chuyển đến thư mục chứa tệp docker-compose.yml,
 ## KAFKA Connect
 
 ```bash
+
 version: "3"
 services:
   zookeeper:
     container_name: zookeeper
     image: wurstmeister/zookeeper
-    restart: always
     ports:
       - 2181:2181
     networks:
       - kafka-net
+
   kafka:
     container_name: kafka
     image: wurstmeister/kafka
-    restart: always
     ports:
       - 9092:9092
       - 9093:9093
       - 29092:29092
       - 9999:9999
     environment:
-      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://34.135.32.57:9092,DOCKER://host.docker.internal:29092
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9093,OUTSIDE://34.67.125.213:9092,DOCKER://host.docker.internal:29092
       KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT,DOCKER:PLAINTEXT
       KAFKA_LISTENERS: INSIDE://0.0.0.0:9093,OUTSIDE://0.0.0.0:9092,DOCKER://0.0.0.0:29092
       KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
@@ -299,9 +299,11 @@ services:
       KAFKA_ALLOW_EVERYONE_IF_NO_ACL_FOUND: "true"
     networks:
       - kafka-net
+    depends_on:
+      - zookeeper
+
   kafdrop:
     container_name: kafdrop
-    restart: always
     image: obsidiandynamics/kafdrop
     ports:
       - 9091:9000
@@ -310,17 +312,45 @@ services:
       JVM_OPTS: -Xms32M -Xmx64M
     networks:
       - kafka-net
-    expose:
-      - "9093" # Expose Kafka listener port to other containers
+    depends_on:
+      - kafka
+
+  kafbat-ui:
+    container_name: kafbat-ui
+    image: ghcr.io/kafbat/kafka-ui:latest
+    ports:
+      - 8080:8080
+    environment:
+      DYNAMIC_CONFIG_ENABLED: "true"
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka:9093
+      KAFKA_CLUSTERS_0_ZOOKEEPER: zookeeper:2181
+      KAFKA_CLUSTERS_0_READONLY: "false"
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_NAME: first
+      KAFKA_CLUSTERS_0_KAFKACONNECT_0_ADDRESS: http://kafka-connect:8083
+      KAFKA_CLUSTERS_0_METRICS_PORT: 9999
+      KAFKA_CLUSTERS_0_METRICS_TYPE: JMX
+    networks:
+      - kafka-net
+    depends_on:
+      - kafka
+      - zookeeper
+
   schema-registry:
     container_name: schema-registry
-    image: confluentinc/cp-schema-registry:6.2.0
-    restart: always
+    image: confluentinc/cp-schema-registry:latest
     ports:
       - 8081:8081
     environment:
       SCHEMA_REGISTRY_HOST_NAME: schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: kafka:9093
+      SCHEMA_REGISTRY_LISTENERS: http://0.0.0.0:8081
+    networks:
+      - kafka-net
+    depends_on:
+      - kafka
+      - zookeeper
+
   kafka-connect:
     container_name: kafka-connect
     image: confluentinc/cp-kafka-connect:latest
@@ -329,7 +359,7 @@ services:
       - 8083:8083
     environment:
       CONNECT_BOOTSTRAP_SERVERS: kafka:9093
-      CONNECT_REST_ADVERTISED_HOST_NAME: connect
+      CONNECT_REST_ADVERTISED_HOST_NAME: kafka-connect
       CONNECT_REST_PORT: 8083
       CONNECT_GROUP_ID: compose-connect-group
       CONNECT_CONFIG_STORAGE_TOPIC: docker-connect-configs
@@ -339,42 +369,34 @@ services:
       CONNECT_STATUS_STORAGE_TOPIC: docker-connect-status
       CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 1
       CONNECT_KEY_CONVERTER: io.confluent.connect.avro.AvroConverter
-      CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: http://schema_registry:8081
+      CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
       CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
-      CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema_registry:8081
+      CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
       CONNECT_INTERNAL_KEY_CONVERTER: org.apache.kafka.connect.json.JsonConverter
       CONNECT_INTERNAL_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
-      CONNECT_ZOOKEEPER_CONNECT: zookeeper:2181
+      CONNECT_PLUGIN_PATH: /usr/share/java,/usr/share/confluent-hub-components,/etc/kafka-connect/jars
     command:
       - bash
       - -c
-      - >
-        echo "Installing Connector"
-
+      - |
+        echo "Installing Connectors..."
         confluent-hub install --no-prompt debezium/debezium-connector-mysql:1.7.0
-
         confluent-hub install --no-prompt confluentinc/kafka-connect-elasticsearch:14.1.0
-
         confluent-hub install --no-prompt neo4j/kafka-connect-neo4j:2.0.0
-
-        #
-
-        echo "Launching Kafka Connect worker"
-
-        /etc/confluent/docker/run &
-
-        #
-
-        sleep infinity
+        echo "Launching Kafka Connect worker..."
+        /etc/confluent/docker/run
     volumes:
       - ./kafka-connect-plugins:/etc/kafka-connect/jars
     networks:
       - kafka-net
+    depends_on:
+      - kafka
+      - zookeeper
+      - schema-registry
+
 networks:
   kafka-net:
     driver: bridge
-
-
 ```
 
 ```bash
